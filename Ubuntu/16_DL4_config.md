@@ -22,6 +22,13 @@ sudo apt install -y filezilla  # FileZilla client
 sudo apt install -y geeqie geeqie-common  # Geeqie image viewer
 ```
 
+Install [OpenSlide](https://openslide.org/download/):
+```shell script
+sudo apt install openslide-tools
+# Install Python interface into virtual environment
+pip install openslide-python
+```
+
 Unfortunately, installations via `snap` do not work.
 The error is:
 
