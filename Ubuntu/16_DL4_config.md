@@ -1,8 +1,28 @@
 Configurations I've made on DL4 server for **Ubuntu 20.04**.
 
+   - [How-to configure TensorFlow](#tf-how-to)
    - [Install useful software](#software)
    - [`pyenv` virtual environment](#pyenv)
    - [Shows PIDs of NVIDIA processes](#permissions)
+
+---
+## <a name="tf-how-to" />How-to configure TensorFlow
+You must have CUDA Toolkit and CuDNN install to use TensorFlow.
+Use virtual environment to install CUDA Toolkit and CuDNN.
+```shell script
+# Install Anaconda into virtual environment
+pyenv install anaconda3-2020.02
+# Activate virtual environment
+pyenv local anaconda3-2020.02
+# Install TF for GPU + installation of CUDA Toolkit and CuDNN inside
+conda install tensorflow-gpu
+# Enter into Iron Python
+ipython
+# Import TensorFlow
+import tensorflow as tf
+# Check available GPU
+tf.test.is_gpu_available()
+```
 
 ---
 ## <a name="software" />Install useful software
