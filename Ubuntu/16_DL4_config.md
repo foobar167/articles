@@ -7,7 +7,7 @@ Configurations I've made on DL4 server for **Ubuntu 20.04**.
 
 ---
 ## <a name="tf-how-to" />How-to configure TensorFlow
-You must have CUDA Toolkit and CuDNN install to use TensorFlow.
+You must have CUDA Toolkit and CuDNN installed to use TensorFlow.
 Use virtual environment to install CUDA Toolkit and CuDNN.
 ```shell script
 # Install Anaconda into virtual environment
