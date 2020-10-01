@@ -9,6 +9,7 @@ Configurations I've made on DL4 server for **Ubuntu 20.04**.
 ## <a name="tf-how-to" />How-to configure TensorFlow
 You must have CUDA Toolkit and CuDNN installed to use TensorFlow.
 Use virtual environment to install CUDA Toolkit and CuDNN.
+Install [`pyenv` virtual environment](pyenv). And then type:
 ```shell script
 # Install Anaconda into virtual environment
 pyenv install anaconda3-2020.02
@@ -80,6 +81,8 @@ Links:
   - [`pyenv` automatic installer](https://github.com/pyenv/pyenv-installer)
   - [Managing Multiple Python Versions With `pyenv`](https://realpython.com/intro-to-pyenv/)
 
+System administrator must install required for `pyenv` libraries.
+
 ```shell script
 # Install required libraries
 sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
@@ -87,7 +90,11 @@ libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
 
 sudo apt install -y libedit-dev
+```
 
+Install `pyenv` into your account.
+
+```shell script
 # The automatic installer
 curl https://pyenv.run | bash
 
