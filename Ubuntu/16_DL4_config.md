@@ -81,7 +81,7 @@ Links:
   - [`pyenv` automatic installer](https://github.com/pyenv/pyenv-installer)
   - [Managing Multiple Python Versions With `pyenv`](https://realpython.com/intro-to-pyenv/)
 
-System administrator must install required for `pyenv` libraries.
+System administrator must install required libraries for `pyenv`.
 
 ```shell script
 # Install required libraries
