@@ -10,6 +10,7 @@ Configurations I've made on DL4 server for **Ubuntu 20.04**.
 ## <a name="docker" />Docker installing and configuring
 Links:
    * [How To Install and Use Docker on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
+   * [Install Docker Compose](https://docs.docker.com/compose/install/)
 
 Install Docker from the official Docker repository.
 ```shell script
