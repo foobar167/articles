@@ -1,9 +1,52 @@
 Configurations I've made on DL4 server for **Ubuntu 20.04**.
 
+   - [Docker installing and configuring](#docker)
    - [How-to configure TensorFlow](#tf-how-to)
    - [Install useful software](#software)
    - [`pyenv` virtual environment](#pyenv)
    - [Shows PIDs of NVIDIA processes](#permissions)
+
+---
+## <a name="docker" />Docker installing and configuring
+Links:
+   * [How To Install and Use Docker on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
+
+Install Docker from the official Docker repository.
+```shell script
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
+
+# Check the service is running
+sudo systemctl status docker
+
+# Add username to the "docker" group
+sudo usermod -aG docker ${USER}
+sudo usermod -aG docker skliff13
+# Log out of the server and back in, or type the following:
+su - ${USER}
+# Confirm that the user is now added to the docker group
+id -nG ${USER}
+# or
+cat /etc/group | grep docker
+
+# Check installation
+docker run hello-world
+docker images
+```
+
+Install [Docker Compose](https://docs.docker.com/compose/) tool
+for defining and running multi-container Docker applications.
+```shell script
+sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+# Check installation
+docker-compose --version
+```
 
 ---
 ## <a name="tf-how-to" />How-to configure TensorFlow
