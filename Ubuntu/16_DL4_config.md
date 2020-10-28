@@ -11,6 +11,7 @@ Configurations I've made on DL4 server for **Ubuntu 20.04**.
 Links:
    * [How To Install and Use Docker on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
    * [Install Docker Compose](https://docs.docker.com/compose/install/)
+   * [NVIDIA Container Toolkit installation guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-ubuntu-and-debian)
 
 Install Docker from the official Docker repository.
 ```shell script
@@ -22,6 +23,8 @@ sudo apt update
 apt-cache policy docker-ce
 sudo apt install docker-ce
 
+# Configure Docker to start on boot
+sudo systemctl enable docker
 # Check the service is running
 sudo systemctl status docker
 
@@ -47,6 +50,20 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 # Check installation
 docker-compose --version
+```
+
+Install [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker) for
+[Clara Train Application Framework](https://docs.nvidia.com/clara/tlt-mi/clara-train-sdk-v3.0/index.html)
+```shell script
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update
+sudo apt-get install -y nvidia-docker2
+sudo systemctl restart docker
+
+# Check installation
+sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 ```
 
 ---
