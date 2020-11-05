@@ -531,7 +531,7 @@ cat nodesource_setup.sh  # take a look
 sudo bash nodesource_setup.sh
 sudo apt install nodejs
 nodejs --version  # v15.1.0
-nmp --version  # 7.0.8
+npm --version  # 7.0.8
 
 # Install development tools to build native addons
 sudo apt install gcc g++ make
@@ -554,8 +554,6 @@ sudo apt install git
 sudo apt install python3
 sudo apt install python3-pip
 sudo apt install python3-tk
-sudo apt install nodejs
-sudo apt install npm
 sudo apt install openslide-tools
 sudo apt install libsm6
 sudo apt install libxext6
