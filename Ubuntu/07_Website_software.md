@@ -522,7 +522,7 @@ sudo apt remove nodejs  # retain config files
 #sudo apt purge nodejs  # delete config files
 sudo apt autoremove
 
-# Install version 13.2.0 or later using a NodeSource PPA
+# Install Node.js using NodeSource PPA
 cd ~/Downloads
 # Version 13.x is not officially supported anymore
 #curl -sL https://deb.nodesource.com/setup_13.x -o nodesource_setup.sh
@@ -531,7 +531,7 @@ cat nodesource_setup.sh  # take a look
 sudo bash nodesource_setup.sh
 sudo apt install nodejs
 nodejs --version  # v15.1.0
-npm --version  # 7.0.8
+npm --version  # v7.0.8
 
 # Install development tools to build native addons
 sudo apt install gcc g++ make
