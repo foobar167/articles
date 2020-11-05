@@ -13,6 +13,7 @@
    - [Correctly delete `nginx`](#nginx)
    - [File compressor library](#file-compressor)
    - [Install Certbot for `nginx`](#certbot)
+   - [ORY Kratos deployment](#kratos)
    - [Packages for the website](#website)
    - [SQLite 3](#sqlite)
    - [Work with Nginx server and its API](#work)
@@ -477,6 +478,69 @@ To confirm that your site is set up properly, visit https://image.org.by via HTT
 
 You should add read permission to `webmasters` group and
 make a secure backup of `/etc/letsencrypt` folder.
+
+---
+## <a name="kratos" />ORY Kratos deployment
+[ORY Kratos](https://www.ory.sh/kratos/docs/) is an API-first Identity and
+User Management system that is built according to cloud architecture best practices.
+
+Links:
+   * [How To Install and Use PostgreSQL on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04)
+   * [NodeSource Node.js Binary Distributions](https://github.com/nodesource/distributions)
+   * [How To Install Node.js on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04)
+
+Install PostgreSQL
+```shell script
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+# Login to default "postgres" user
+sudo su - postgres
+# Login into the prompt interface
+psql
+# Give the "postgres" a password
+\password postgres
+# Exit from "postgres" user
+\q
+exit
+# Change password for the user
+passwd postgres
+# Restart the server
+sudo service postgresql restart
+
+# Check login without "sudo"
+su - postgres
+```
+
+Install nodejs using NodeSource PPA.
+The NodeSource `nodejs` package contains both the `node` binary and `npm`,
+so you don’t need to install `npm` separately.
+```shell script
+# Remove previous version v8.10.0,
+# which was installed via "sudo apt install nodejs"
+nodejs --version
+sudo apt remove nodejs  # retain config files
+#sudo apt purge nodejs  # delete config files
+sudo apt autoremove
+
+# Install version 13.2.0 or later using a NodeSource PPA
+cd ~/Downloads
+# Version 13.x is not officially supported anymore
+#curl -sL https://deb.nodesource.com/setup_13.x -o nodesource_setup.sh
+curl -sL https://deb.nodesource.com/setup_15.x -o nodesource_setup.sh
+cat nodesource_setup.sh  # take a look
+sudo bash nodesource_setup.sh
+sudo apt install nodejs
+nodejs --version  # v15.1.0
+nmp --version  # 7.0.8
+
+# Install development tools to build native addons
+sudo apt install gcc g++ make
+
+# Install the Yarn package manager
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update && sudo apt install yarn
+```
 
 ---
 ## <a name="website" />Packages for the website
