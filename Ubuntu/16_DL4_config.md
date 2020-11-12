@@ -134,6 +134,19 @@ sudo snap install pycharm-community --classic  # PyCharm IDE
 sudo apt install -y libcanberra-gtk-module
 ```
 
+Install [Visual Studio Code](https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-20-04/)
+```shell script
+sudo apt update
+sudo apt install software-properties-common apt-transport-https wget
+# Import the Microsoft GPG key
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+# Enable the Visual Studio Code repository
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt install code
+# Check installation
+code
+```
+
 ---
 ## <a name="pyenv" />`pyenv` virtual environment
 Links:
