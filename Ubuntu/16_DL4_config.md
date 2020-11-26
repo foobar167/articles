@@ -102,6 +102,7 @@ sudo apt install -y traceroute  # traceroute command
 sudo apt install -y emacs  # Emacs editor
 sudo apt install -y filezilla  # FileZilla client
 sudo apt install -y geeqie geeqie-common  # Geeqie image viewer
+sudo apt install -y nautilus  # Gnome based file manager
 
 # pydot is a Python interface to Graphviz's dot
 # pydot is needed for TensorFlow
