@@ -21,6 +21,7 @@ How-to:
    - [Manage software updates](#software-updates)
    - [Mount USB](#mount)
    - [Open console](#console)
+   - [Open image in Midnight Commander](#open-image-in-mc)
    - [Run scripts on start up](#autorun)
    - [Set environment variable](#envvar)
    - [Show the model of the computer](#show_the_model)
@@ -514,6 +515,30 @@ mount automatically in the `/media/<username>` directory.
 ### <a name="console" />Open console
 
 Press `<CTRL>+<ALT>+<T>` keys or press `<Win>` key and enter `terminal`.
+
+---
+### <a name="open-image-in-mc" />Open image in Midnight Commander
+Set ImageMagick as
+[default Jpeg viewer for Midnight Commander](https://www.linuxquestions.org/questions/linux-software-2/howto-to-use-imagemagick-as-default-jpeg-viewer-for-midnight-commander-862415/).
+
+Edit `~/.config/mc/mc.ext` file.
+
+Note that editing `/etc/mc/mc.ext` sets the system-wide configuration.
+
+In MC press `F9 -> Command -> Edit extension file`.
+
+The `View` command is used when `F3` is pressed.
+
+The `Open` command is used when `Enter` is pressed.
+
+To use `geeqie` as Jpeg viewer for MC set `Open=geeqie %f`.
+```shell script
+type/^JPEG
+        Open=geeqie %f
+        #Open=display %f
+        View=%view{ascii} /usr/lib/mc/ext.d/image.sh view jpeg
+        Include=image
+```
 
 ---
 ### <a name="autorun" />Run scripts on start up
