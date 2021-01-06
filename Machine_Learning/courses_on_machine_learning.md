@@ -2,9 +2,11 @@
    - [Courses to finish](#courses-to-finish)
    - [Completed courses](#completed-courses)
    - [Interesting resources](#interesting-resources)
+   - [NOT completed](#not-completed)
 
 ### <a name="courses-to-finish" />Courses to finish (before the dash are first to learn)
    * Course. [fastai](https://course.fast.ai/videos/?lesson=1)
+   * Course. [Deep Learning with PyTorch: Zero to GANs](https://jovian.ai/learn/deep-learning-with-pytorch-zero-to-gans)
    * Course. [Deep Learning from the Foundations](https://course.fast.ai/part2)
    * Course. [Introduction to Machine Learning for Coders](http://course18.fast.ai/ml)
    * Course. Andrew Ng [Machine Learning](https://www.coursera.org/learn/machine-learning)
@@ -46,23 +48,13 @@
    * DL. Tutorials for coders: https://course.fast.ai (get acquainted maybe interesting)
    * DL. Convolutional Neural Networks (Course 4 of the Deep Learning Specialization): https://www.youtube.com/playlist?list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF
    * DL. Andrew Ng. Convolutional Neural Networks: https://www.coursera.org/learn/convolutional-neural-networks
-   * Siraj Raval. Data Lit course: https://www.theschool.ai/courses/data-lit (not started)
-   * Siraj Raval. Move 37 course: https://www.theschool.ai/courses/move-37-course (not started)
-   * Siraj Raval. Decentralized Applications course: https://www.theschool.ai/courses/decentralized-application (not started)
-   * QuantumCasts (what is the quantum computing): https://www.youtube.com/playlist?list=PLQY2H8rRoyvwcpm6Nf-fL4sIYQUXtq3HR (0 videos from 5)
    * WebGL tutorial. https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial (finish «video-cube»)
    * WebGL Fundamentals: https://webglfundamentals.org (not started)
-   * JS. TensorFlow.js? (not started)
    * Keras getting started: https://keras.io/getting-started/sequential-model-guide (part: getting started)
 ---
-   * Russian. Гонсалес Р., Вудс Р. «Цифровая обработка изображений» (стр. 480)
-   * Online Book. [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com)
    * Video course. [Introduction to Algorithms](https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O)
    * Task. TensorFlow JS Demos: https://www.tensorflow.org/js/demos
    * Task. TensorFlow Lite example apps: https://www.tensorflow.org/lite/examples
-   * Task. Train a model in tf.keras with Colab, and run it in the browser with TensorFlow.js: https://medium.com/tensorflow/train-on-google-colab-and-run-on-the-browser-a-case-study-8a45f9b1474e
-   * Task. TensorFlow Guide (High Level APIs): https://www.tensorflow.org/guide/#high_level_apis
-   * Task. Word2vec in TensorFlow Explained: https://youtu.be/-3XedqEZpR4
    * Task. Build an AI Startup: https://youtu.be/NzmoPqte4V4
    * Task. An Introduction to Deep Learning with TensorFlow: https://youtu.be/vRF7ENlwD50
    * Task. Introducing TensorFlow.js: Machine Learning in Javascript: https://medium.com/tensorflow/introducing-tensorflow-js-machine-learning-in-javascript-bf3eab376db
@@ -161,3 +153,19 @@
      an open source version ([for Windows](https://gamejolt.com/games/runforrest/312818),
      [for Android](https://play.google.com/store/apps/details?id=com.SEFDStuff.RunForrest&hl=en))
    * 
+
+---
+### <a name="not-completed" />NOT completed (but can be useful and interesting for someone)
+   * Russian. Гонсалес Р., Вудс Р. «Цифровая обработка изображений» (стр. 480)
+   * Online Book. [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com)
+   * Task. Train a model in tf.keras with Colab, and run it in the browser with TensorFlow.js: https://medium.com/tensorflow/train-on-google-colab-and-run-on-the-browser-a-case-study-8a45f9b1474e
+   * Task. TensorFlow Guide (High Level APIs): https://www.tensorflow.org/guide/#high_level_apis
+   * Task. Word2vec in TensorFlow Explained: https://youtu.be/-3XedqEZpR4
+   * Siraj Raval. Data Lit course: https://www.theschool.ai/courses/data-lit (not started)
+   * Siraj Raval. Move 37 course: https://www.theschool.ai/courses/move-37-course (not started)
+   * Siraj Raval. Decentralized Applications course: https://www.theschool.ai/courses/decentralized-application (not started)
+   * QuantumCasts (what is the quantum computing): https://www.youtube.com/playlist?list=PLQY2H8rRoyvwcpm6Nf-fL4sIYQUXtq3HR (0 videos from 5)
+   * JS. TensorFlow.js? (not started)
+
+
+
