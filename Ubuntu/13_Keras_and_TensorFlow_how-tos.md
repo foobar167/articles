@@ -220,6 +220,8 @@ Web sites for ML/DL:
    * https://www.dlology.com — blog of Chengwei Zhang aka [Tony607](https://github.com/Tony607)
    * https://pythonprogramming.net — a bunch of tutorials about Machine Learning and more + [video blog](https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ)
    * https://paperswithcode.com — Machine Learning papers, code and evaluation tables all in one web-site.
+   * https://sotabench.com — benchmarking every open source model
+   * https://madewithml.com — deliver value with applied ML
    * https://ods.ai — Open Data Science community
    * https://www.deeplearningweekly.com — Bringing you everything new and exciting in the world
      of  deep learning from academia to the grubby depth  of industry every week right to your inbox.

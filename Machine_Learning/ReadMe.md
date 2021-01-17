@@ -4,6 +4,7 @@ Articles about Machine Learning (ML) in **English**:
    01. [ML code examples](code_examples)
    01. [Various interesting courses on Machine Learning](courses_on_machine_learning.md)
    01. [Rolling window on NumPy arrays without `for` loops](https://colab.research.google.com/drive/1Zru_-zzbtylgitbwxbi0eDBNhwr8qYl6)
+   01. [Machine Learning best ideas](ml-best-ideas-2020/ml-best-ideas.md) at the beginning of 2021.
 
 Articles about ML in **Russian**:
    01. [Новости ML](novosti_ml)

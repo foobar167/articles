@@ -5,11 +5,10 @@
    - [NOT completed](#not-completed)
 
 ### <a name="courses-to-finish" />Courses to finish (before the dash are first to learn)
-   * Course. [fastai](https://course.fast.ai/videos/?lesson=1)
-   * Course. [Deep Learning with PyTorch: Zero to GANs](https://jovian.ai/learn/deep-learning-with-pytorch-zero-to-gans)
+   * Course. Andrew Ng [Machine Learning](https://www.coursera.org/learn/machine-learning) — 11 weeks
+   * Course. [fastai](https://course.fast.ai/videos/?lesson=1) — 8 lessons
    * Course. [Deep Learning from the Foundations](https://course.fast.ai/part2)
    * Course. [Introduction to Machine Learning for Coders](http://course18.fast.ai/ml)
-   * Course. Andrew Ng [Machine Learning](https://www.coursera.org/learn/machine-learning)
    * Course. [Computational Linear Algebra for Coders](https://github.com/fastai/numerical-linear-algebra/blob/master/README.md)
    * Course. [Natural Language Processing](https://www.fast.ai/2019/07/08/fastai-nlp/)
    * Some [Kaggle micro-courses](https://www.kaggle.com/learn/overview)
@@ -66,6 +65,7 @@
 
 ---
 ### <a name="completed-courses" />Completed courses
+   * Course. [Deep Learning with PyTorch: Zero to GANs](https://jovian.ai/learn/deep-learning-with-pytorch-zero-to-gans) — 6 lessons
    * ML. [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course) (finished)
    * Course. [Keras](https://deeplizard.com/learn/video/RznKVRTFkBY) with [my source code](https://colab.research.google.com/drive/1fAuHsL4yJecJSeosXoEjaOdYPa8SOzmn?usp=sharing) - DeepLizard
    * [Convolutions-1](https://www.saama.com/different-kinds-convolutional-filters/), [convolutions-2](https://towardsdatascience.com/a-comprehensive-introduction-to-different-types-of-convolutions-in-deep-learning-669281e58215), [convolutions-3](https://towardsdatascience.com/a-basic-introduction-to-separable-convolutions-b99ec3102728), [convolutions-4](https://ikhlestov.github.io/pages/machine-learning/convolutions-types/#depthwise-separable-convolutions-separable-convolutions)
