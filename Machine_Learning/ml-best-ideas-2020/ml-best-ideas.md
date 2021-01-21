@@ -4,7 +4,6 @@
 **Under construction...**
 
 TODO:
-- [PyTorch](https://madewithml.com/courses/ml-foundations/pytorch/)
 - [Leslie Smith paper](https://arxiv.org/abs/1708.07120)
 - [Swift for TensorFlow](https://www.tensorflow.org/swift) tutorials
 - J
@@ -12,7 +11,6 @@ TODO:
 - BERT
 - GPT-3
 - capsule network
-- cooperative learning
 - one-shot learning
 - future learning
 - data generation
@@ -26,6 +24,7 @@ _<b>Disclaimer</b>_: ideas that were expressed in these videos may be wrong or m
 
 Article provides fresh interviews (mostly 2020) with the world's leading researchers in the field of Machine Learning. I've tried to find the most interesting ideas for thinking and developing new ML algorithms.
 
+
 [Geoffrey Hinton: The Foundations of Deep Learning](https://youtu.be/zl99IZvW7rE)
 
 ![Geoffrey Hinton](data/geoffrey-hinton-photo.jpg)
@@ -35,6 +34,7 @@ Article provides fresh interviews (mostly 2020) with the world's leading researc
 * [18:04](https://youtu.be/N0ER1MC9cqM?t=1084), [19:42](https://youtu.be/N0ER1MC9cqM?t=1182) Brain does not use backpropagation, at least not like in convolutional neural networks. [20:52](https://youtu.be/N0ER1MC9cqM?t=1252) So idea of distillation networks appeared. There is no need to backpropagate through all the layers, but reach an agreement between neighbouring layers in the layer stack. Like in TCP/IP protocol: neighbouring layers communicate with each other, but don't communicate with further layers. However for now it is not better than simple greedy bottom-up learning algorithm.
 * [31:55](https://youtu.be/N0ER1MC9cqM?t=1915) Neural networks are very good at recognizing textures. That's why there are adversarial examples where two things looks totally different to us, but very similar to neural net and vice versa.
 * [37:01](https://youtu.be/N0ER1MC9cqM?t=2221), [38:53](https://youtu.be/N0ER1MC9cqM?t=2333) **Big model (trained directly on the data) can teach smaller and faster models**, that would be as good as the big model. Models that are good at sucking structure out of the data are not necessarily the same as the models that are going to be small, agile and easy to use on the cell phones.
+
 
 [Jeremy Howard: fast.ai Deep Learning Courses and Research | Lex Fridman Podcast](https://youtu.be/J6XcP4JOHmk)
 
@@ -49,21 +49,26 @@ Article provides fresh interviews (mostly 2020) with the world's leading researc
 * [1:20:55](https://youtu.be/J6XcP4JOHmk?t=4855), [1:27:02](https://youtu.be/J6XcP4JOHmk?t=5222) The key differentiator between people that succeed and people that fail is tenacity.
 * [1:24:37](https://youtu.be/J6XcP4JOHmk?t=5077) We don't need more experts like create slightly evolutionary research in areas that everybody is studying. We need experts at using deep learning to diagnose malaria, to analyse fisheries to identify problem areas in ocean, etc. 
 
+
 [Andrew Ng: Deep Learning, Education, and Real-World AI](https://youtu.be/0jspaMLxBig)
 
 ![Andrew Ng](data/andrew-ng-photo.jpg)
 
 * [23:33](https://youtu.be/0jspaMLxBig?t=1413) The thing we really got wrong was the early importance of unsupervised learning. No way that most of what we know is through supervised learning, but modern ML is based on supervised learning. [46:10](https://youtu.be/0jspaMLxBig?t=2770) Unsupervised learning is a beautiful idea.
 * [50:54](https://youtu.be/0jspaMLxBig?t=3054) **Make learning a habit**. Just like brushing your teeth. [57:52](https://youtu.be/0jspaMLxBig?t=3472), [1:14:33](https://youtu.be/0jspaMLxBig?t=4473), [1:18:22](https://youtu.be/0jspaMLxBig?t=4702) **Start small** (article [AI Transformation Playbook](https://landing.ai/wp-content/uploads/2020/05/LandingAI_Transformation_Playbook_11-19.pdf)), but remember that the ML model is about less than 5% of the entire system.
-* [1:00:32](https://youtu.be/0jspaMLxBig?t=3632), [1:03:10](https://youtu.be/0jspaMLxBig?t=3790), [career advice](https://youtu.be/733m6qBH-jI?t=56) Try to find a good team for daily communication. Who are these 5-10 people you'll interact with every day?
+* [1:00:32](https://youtu.be/0jspaMLxBig?t=3632), [1:03:10](https://youtu.be/0jspaMLxBig?t=3790), [career advice](https://youtu.be/733m6qBH-jI?t=1757) Try to find a good team for daily communication. Who are these 5-10 people you'll interact with every day?
 
+
+## Several useful courses
 
 If you want to do ML for yourself there are several useful courses worth to study. I'm a practice fan of "[eating my own dog food](https://en.wikipedia.org/wiki/Eating_your_own_dog_food)", so I have studied these courses myself in the last six months or finishing them right now.
 
-* [Machine Learning](https://www.coursera.org/learn/machine-learning) course by [Andrew Ng](https://en.wikipedia.org/wiki/Andrew_Ng) gives math knowledge behind the stuff. 11 weeks.
-* [Deep Learning with PyTorch: Zero to GANs](https://jovian.ai/learn/deep-learning-with-pytorch-zero-to-gans). 6 lessons. If you're familiar with [PyTorch](https://madewithml.com/courses/ml-foundations/pytorch/), then review only the last lesson about [GANs and transfer learning](https://jovian.ai/learn/deep-learning-with-pytorch-zero-to-gans/lesson/lesson-6-image-generation-using-gans).
-* [Practical Deep Learning for Coders](https://course.fast.ai/videos/?lesson=1) course by [Jeremy Howard](https://en.wikipedia.org/wiki/Jeremy_Howard_(entrepreneur)). 8 lessons.
-* [CNN Architectures implementations](https://www.youtube.com/playlist?list=PLaPdEEY26UXyE3UchW0C742xh542yh0yI) on Keras with the [source code](https://github.com/Machine-Learning-Tokyo/CNN-Architectures/tree/master/Implementations) and [my review](https://colab.research.google.com/drive/10oWdIVyPTeF0C50OVZeTFwXJdNWMgCSw) on CoLab.
+* Start with [Machine Learning](https://www.coursera.org/learn/machine-learning) course by [Andrew Ng](https://en.wikipedia.org/wiki/Andrew_Ng), which gives math knowledge behind the stuff. 11 weeks.
+* Continue with [Deep Learning with PyTorch: Zero to GANs](https://jovian.ai/learn/deep-learning-with-pytorch-zero-to-gans). 6 lessons. If you're familiar with [PyTorch](https://madewithml.com/courses/ml-foundations/pytorch/), then review only the last lesson about [GANs and transfer learning](https://jovian.ai/learn/deep-learning-with-pytorch-zero-to-gans/lesson/lesson-6-image-generation-using-gans).
+* Deepen knowledge with [Practical Deep Learning for Coders](https://course.fast.ai/videos/?lesson=1) course by [Jeremy Howard](https://en.wikipedia.org/wiki/Jeremy_Howard_(entrepreneur\)). 8 lessons.
+* Understand model architectures with [CNN Architectures implementations](https://www.youtube.com/playlist?list=PLaPdEEY26UXyE3UchW0C742xh542yh0yI) on Keras with the [source code](https://github.com/Machine-Learning-Tokyo/CNN-Architectures/tree/master/Implementations) and [my review](https://colab.research.google.com/drive/10oWdIVyPTeF0C50OVZeTFwXJdNWMgCSw) on CoLab.
+* Stay in touch with newsletters: [deep learning weekly](https://www.deeplearningweekly.com) and [deep learning batch](https://www.deeplearning.ai/thebatch).
+
 
 ## Quick summary
 

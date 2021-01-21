@@ -235,6 +235,10 @@ Video channels to explain scientific publications in ML/DL:
    * [Yannic Kilcher](https://www.youtube.com/channel/UCZHmQk67mSJgfCCTn7xBfew/featured)
    * [CodeEmporium](https://www.youtube.com/channel/UC5_6ZD6s8klmMu9TXEB_1IA/featured)
 
+Newsletters:
+   * https://www.deeplearningweekly.com
+   * https://www.deeplearning.ai/thebatch
+
 ---
 ### <a name="tensorflow-for-android" />TensorFlow for Android
 
