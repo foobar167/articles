@@ -11,6 +11,7 @@
    * Course. [Introduction to Machine Learning for Coders](http://course18.fast.ai/ml)
    * Course. [Computational Linear Algebra for Coders](https://github.com/fastai/numerical-linear-algebra/blob/master/README.md)
    * Course. [Natural Language Processing](https://www.fast.ai/2019/07/08/fastai-nlp/)
+   * Task. Rewview [Python library with Neural Networks for Image Segmentation based on Keras and TensorFlow](https://github.com/qubvel/segmentation_models)
    * Some [Kaggle micro-courses](https://www.kaggle.com/learn/overview)
    * Google [ML Practica](https://developers.google.com/machine-learning/practica?authuser=1)
    * Google [TF beginner](https://www.tensorflow.org/tutorials/keras/keras_tuner?authuser=1)
