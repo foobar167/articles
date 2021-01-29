@@ -66,6 +66,7 @@
 
 ---
 ### <a name="completed-courses" />Completed courses
+   * Task. [Custom object detection in the browser using TensorFlow.js](https://blog.tensorflow.org/2021/01/custom-object-detection-in-browser.html?utm_source=Deep+Learning+Weekly&utm_campaign=96f0f962c5-EMAIL_CAMPAIGN_2019_04_24_03_18_COPY_01&utm_medium=email&utm_term=0_384567b42d-96f0f962c5-156883485) — reviewed
    * Course. [Deep Learning with PyTorch: Zero to GANs](https://jovian.ai/learn/deep-learning-with-pytorch-zero-to-gans) — 6 lessons
    * ML. [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course) (finished)
    * Course. [Keras](https://deeplizard.com/learn/video/RznKVRTFkBY) with [my source code](https://colab.research.google.com/drive/1fAuHsL4yJecJSeosXoEjaOdYPa8SOzmn?usp=sharing) - DeepLizard

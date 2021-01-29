@@ -70,7 +70,7 @@ sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 ## <a name="tf-how-to" />How-to configure TensorFlow
 You must have CUDA Toolkit and CuDNN installed to use TensorFlow.
 Use virtual environment to install CUDA Toolkit and CuDNN.
-Install [`pyenv` virtual environment](pyenv). And then type:
+Install [`pyenv` virtual environment](#pyenv). And then type:
 ```shell script
 # Install Anaconda into virtual environment
 pyenv install anaconda3-2020.02
