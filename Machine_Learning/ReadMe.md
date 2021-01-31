@@ -5,6 +5,7 @@ Articles about Machine Learning (ML) in **English**:
    01. [ML code examples](code_examples)
    01. [Various interesting courses on Machine Learning](courses_on_machine_learning.md)
    01. [Rolling window on NumPy arrays without `for` loops](https://colab.research.google.com/drive/1Zru_-zzbtylgitbwxbi0eDBNhwr8qYl6)
+   01. List of [open-source free software for image segmentation and labeling](free_image_segmentation_tools/free_image_segmentation_tools.md)
 
 Articles about ML in **Russian**:
    01. [Новости ML](novosti_ml)
