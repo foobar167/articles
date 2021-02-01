@@ -1,19 +1,12 @@
 # Ideas of the leading Machine Learning researches
 
-![Under construction](../data/2019.09.25-under-construction-icon.png)
-**Under construction...**
-
-TODO:
-- capsule network
-- [distillation networks](https://arxiv.org/abs/1503.02531)
-- ["Be Your Own Teacher"](https://arxiv.org/abs/1905.08094)
-
-
-_<b>Disclaimer</b>_: ideas that were expressed in these videos may be wrong or misunderstood and incorrectly conveyed by me.
+<!-- ![ML ideas](data/ideas_creative.jpg) -->
 
 [Published on Medium]()
 
-Article provides fresh interviews (mostly 2020) with the world's leading researchers in the field of Machine Learning. I've tried to find the most interesting ideas for thinking and developing new ML algorithms.
+_<b>Disclaimer</b>_: ideas that were expressed in these videos may be wrong or misunderstood and incorrectly conveyed by me.
+
+Article provides fresh interviews (2019-2020) with the world's leading researchers in the field of Machine Learning. I've tried to find the most interesting ideas for thinking and developing new ML algorithms.
 
 
 [Geoffrey Hinton: The Foundations of Deep Learning](https://youtu.be/zl99IZvW7rE)
