@@ -9,7 +9,7 @@ _<b>Disclaimer</b>_: ideas that were expressed in these videos may be wrong or m
 Article provides fresh interviews (2019-2020) with the world's leading researchers in the field of Machine Learning. I've tried to find the most interesting ideas for thinking and developing new ML algorithms.
 
 
-[Geoffrey Hinton: The Foundations of Deep Learning](https://youtu.be/zl99IZvW7rE)
+Interview with [Geoffrey Hinton: The Foundations of Deep Learning](https://youtu.be/zl99IZvW7rE)
 
 ![Geoffrey Hinton](data/geoffrey-hinton-photo.jpg)
 
@@ -20,7 +20,7 @@ Article provides fresh interviews (2019-2020) with the world's leading researche
 * **Big model (trained directly on the data) can teach smaller and faster models**, that would be as good as the big model ([37:01](https://youtu.be/N0ER1MC9cqM?t=2221), [38:53](https://youtu.be/N0ER1MC9cqM?t=2333)). Models that are good at sucking structure out of the data are not necessarily the same as the models that are going to be small, agile and easy to use on the cell phones.
 
 
-[Jeremy Howard: fast.ai Deep Learning Courses and Research | Lex Fridman Podcast](https://youtu.be/J6XcP4JOHmk)
+Interview with [Jeremy Howard: fast.ai Deep Learning Courses and Research | Lex Fridman Podcast](https://youtu.be/J6XcP4JOHmk)
 
 ![Jeremy Howard](data/jeremy-howard-photo.jpg)
 
@@ -34,7 +34,7 @@ Article provides fresh interviews (2019-2020) with the world's leading researche
 * We don't need more experts like create slightly evolutionary research in areas that everybody is studying ([1:24:37](https://youtu.be/J6XcP4JOHmk?t=5077)). We need experts at using deep learning to diagnose malaria, to analyse fisheries to identify problem areas in ocean, [predict mutations](https://science.sciencemag.org/content/371/6526/284?utm_campaign=The%20Batch&utm_medium=email&_hsmi=108410154&_hsenc=p2ANqtz-_mdkn1cWzG-HdEOBMszd16A0NhGuKNi8XIilSfOSn-1WgBIggGH-KaMSSxPTFbutLNf4eDcwwfF4JcXiKYuE6xaVs06MRGHrL_y2IV5CoqchSiFv8&utm_content=108407238&utm_source=hs_email) in viruses, etc.
 
 
-[Andrew Ng: Deep Learning, Education, and Real-World AI](https://youtu.be/0jspaMLxBig)
+Interview with [Andrew Ng: Deep Learning, Education, and Real-World AI](https://youtu.be/0jspaMLxBig)
 
 ![Andrew Ng](data/andrew-ng-photo.jpg)
 
