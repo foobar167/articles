@@ -56,4 +56,4 @@ If you want to do ML for yourself there are several useful courses worth to stud
 
 ## Quick summary
 
-Do more with less data. Use Machine Learning in your expert domain area and solve everyday life practical problems with this tool. Make learning a habit. Keep learning even if you don't understand something, because the key difference between people that succeed and people that fail is tenacity.
+Do more with less data. Use Machine Learning in **your** expert domain area to solve everyday life practical problems with this tool. Make learning a habit. Keep learning even if you don't understand something, because the key difference between people that succeed and people that fail is tenacity.
