@@ -3,11 +3,13 @@
 ![Under construction](../data/2019.09.25-under-construction-icon.png)
 **Under construction...**
 
-You can make your own segmentation and/or labeling tool. [I have my own](https://github.com/foobar167/junkyard/tree/master/manual_image_annotation1) image annotation tool and many of my colleagues have such software on MATLAB and Python. It's good programming practice to do it yourself or improve on an existing one. You’ll know a lot during software development! However, it is time-consuming, especially for advanced functional and it is not related with Machine Learning experience.
+[Published on Medium]()
+
+You can make your own segmentation and/or labeling tool. [I have my own](https://github.com/foobar167/junkyard/tree/master/manual_image_annotation1) image annotation tool and many of my colleagues have such software on MATLAB and Python. It's a good programming practice to do it by yourself or improve on an existing one. You’ll know a lot during software development! However, it is time-consuming, especially for advanced functional and it is not related with Machine Learning experience.
 
 This is why I have compiled a list of existing open source segmentation and labeling tools as of **early 2021**. I’ve not tested all of them, but only a few. See a review of my most favorite apps at the end of this article.
 
-Actually, there are [754 public repositories on GitHub](https://github.com/topics/annotation). I've just publish a several links from the top-rated. Also see [awesome data labeling](https://github.com/heartexlabs/awesome-data-labeling) list of tools.
+Actually, there are [754 public repositories on GitHub](https://github.com/topics/annotation). I've just publish a several links from the top-rated. Also see [awesome data labeling](https://github.com/heartexlabs/awesome-data-labeling) list of tools and [useful links](#useful-links)
 
 ## Image segmentation tools
 
