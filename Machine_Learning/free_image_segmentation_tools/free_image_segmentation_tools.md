@@ -9,7 +9,7 @@ You can make your own segmentation and/or labeling tool. [I have my own](https:/
 
 This is why I have compiled a list of existing open source segmentation and labeling tools as of **early 2021**. I’ve not tested all of them, but only a few. See a review of my most favorite apps at the end of this article.
 
-Actually, there are [754 public repositories on GitHub](https://github.com/topics/annotation). I've just publish a several links from the top-rated. Also see [awesome data labeling](https://github.com/heartexlabs/awesome-data-labeling) list of tools and [useful links](#useful-links)
+Actually, there are [756 public repositories on GitHub](https://github.com/topics/annotation). I've just publish a several links from the top-rated. Also see [awesome data labeling](https://github.com/heartexlabs/awesome-data-labeling) list of tools and [useful links](#useful-links)
 
 ## Image segmentation tools
 
@@ -95,7 +95,7 @@ Maybe in the near future I'll try [Groundwork](https://groundwork.azavea.com), a
 
 ## Useful links
 
-* [754 public repositories on GitHub](https://github.com/topics/annotation)
+* [756 public repositories on GitHub](https://github.com/topics/annotation)
 * [Awesome data labeling](https://github.com/heartexlabs/awesome-data-labeling) list of tools.
 * [Annotation tools for building datasets](https://www.datasetlist.com/tools/)
 * [Best Open Source Annotation Tools for Computer Vision](https://www.sicara.ai/blog/2019-09-01-top-five-open-source-annotation-tools-computer-vision)
