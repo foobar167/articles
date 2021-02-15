@@ -185,6 +185,7 @@ IPython.display.HTML(iframe)
 
    * Data visualization:
 
+       * [Tools to Design or Visualize Architecture of Neural Network](https://github.com/ashishpatel26/Tools-to-Design-or-Visualize-Architecture-of-Neural-Network)
        * [diagrams.net](https://www.diagrams.net/) is open source, online, desktop and container deployable diagramming software ([link](https://app.diagrams.net/)).
        * [Facets](https://ai.googleblog.com/2017/07/facets-open-source-visualization-tool.html)
          is an open source visualization tool for Machine Learning training data.
