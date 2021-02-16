@@ -825,6 +825,7 @@ sudo dmidecode -t bios
 
 ---
 ### <a name="disk-usage" />View disk usage
+Show disk usage or directory size
 
 ```shell script
 gnome-disks&  # open disks utility in background mode
@@ -835,6 +836,17 @@ baobab&  # launch it
 
 df -h /home/
 sudo du -sh /home 2> /dev/null
+
+# Show directory size
+du -sh /home/username 2> /dev/null
+
+# View all account sizes
+for ACCOUNT in $(ls /home); do
+    du -sh /home/$ACCOUNT 2> /dev/null
+done
+
+# Show all partitions usage on disks
+df -h $(ls /dev/sd[a-z][1-9])
 ```
 
 ---

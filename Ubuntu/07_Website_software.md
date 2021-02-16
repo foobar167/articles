@@ -346,7 +346,9 @@ Remember to backup and delete obsolede and unnecessary user accounts.
 
 ```shell script
 # Find all directories owned by a particular user
-find / -user vozman -type d
+sudo find / -type d -user vozman
+# Find all files owned by a particular user. If necessary.
+#sudo find / -type f -user vozman
 
 # Disable user accounts
 sudo usermod -L vozman
@@ -361,6 +363,9 @@ sudo deluser romanroskach webmasters
 sudo deluser vozman
 sudo deluser romanroskach
 
+# If error: "userdel: user is currently used by process 1864"
+sudo kill -9 1864  # kill the process
+
 # Backup the whole directory and delete it from $HOME
 sudo tar -zcvf /hdd_barracuda1/pavlenko_user_accounts_backups/vozman_2019.12.31_backup.tar.gz /home/vozman
 sudo tar -zcvf /hdd_barracuda1/pavlenko_user_accounts_backups/romanroskach_2019.12.31_backup.tar.gz /home/romanroskach
@@ -369,6 +374,7 @@ sudo rm -r /home/romanroskach  # use with caution!
 
 # Check
 cat /etc/group | grep 'vozman\|romanroskach'
+cat /etc/passwd | grep 'vozman\|romanroskach'
 ls /home | grep 'vozman\|romanroskach'
 ```
 

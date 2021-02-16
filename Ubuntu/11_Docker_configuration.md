@@ -42,12 +42,15 @@ sudo ufw status
 
 ---
 ### <a name="manage" />Manage Docker
+[Manage Docker containers](https://docs.docker.com/engine/reference/commandline/container/)
 
 ```shell script
 # To show only running containers
 docker ps
 # or
 docker container ls
+
+docker container stop 6827ed3a784f  # stop container
 
 # To show all containers
 docker ps -a
