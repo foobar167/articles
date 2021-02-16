@@ -9,6 +9,7 @@ How-to:
    - [Change password](#passwd)
    - [Check Linux version](#check-linux)
    - [Delete package](#delete)
+   - [Delete user account](#del-account)
    - [Exclude packages from `sudo apt upgrade`](#exclude-packages)
    - [Find file by name](#find)
    - [Find files owned by the user](#find-user)
@@ -294,6 +295,10 @@ sudo apt clean
 # Or do this
 sudo apt purge --auto-remove packagename
 ```
+
+---
+### <a name="del-account" />Delete user account
+See [Backup and delete deprecated user accounts](07_Website_software.md/#accounts) in the web-site section.
 
 ---
 ### <a name="exclude-packages" />Exclude packages from `sudo apt upgrade`
