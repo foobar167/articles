@@ -32,7 +32,7 @@ Links:
 # Download latest Anaconda distribution
 mkdir -p ~/Documents/Install/Anaconda/
 cd ~/Documents/Install/Anaconda
-curl -O https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+curl -O https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
 
 # Run installation script
 bash Anaconda3-2020.02-Linux-x86_64.sh

@@ -194,6 +194,7 @@ sudo systemctl status ssh  # verify
 Install free of charge PyCharm Community edition.
 
 [How-to install needed version](https://snapcraft.io/pycharm-community)
+[How to Install PyCharm on Ubuntu](https://www.liquidweb.com/kb/how-to-install-pycharm-on-ubuntu)
 
 ```shell script
 # Install PyCharm Community last stable release

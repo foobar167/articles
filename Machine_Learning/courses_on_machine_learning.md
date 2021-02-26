@@ -5,7 +5,7 @@
    - [NOT completed](#not-completed)
 
 ### <a name="courses-to-finish" />Courses to finish (before the dash are first to learn)
-   * Course. Andrew Ng [Machine Learning](https://www.coursera.org/learn/machine-learning) — 11 weeks
+   * Course. [PyTorch Tutorials]() by Aladdin Persson, [GitHub](https://github.com/aladdinpersson/Machine-Learning-Collection) — 49 videos
    * Course. [fastai](https://course.fast.ai/videos/?lesson=1) — 8 lessons
    * Course. [Deep Learning from the Foundations](https://course.fast.ai/part2)
    * Course. [Introduction to Machine Learning for Coders](http://course18.fast.ai/ml)
@@ -66,6 +66,7 @@
 
 ---
 ### <a name="completed-courses" />Completed courses
+   * Course. Andrew Ng [Machine Learning](https://www.coursera.org/learn/machine-learning) — 11 weeks
    * [AI for everyone](https://www.coursera.org/learn/ai-for-everyone) — 4 weeks
    * Task. [Custom object detection in the browser using TensorFlow.js](https://blog.tensorflow.org/2021/01/custom-object-detection-in-browser.html?utm_source=Deep+Learning+Weekly&utm_campaign=96f0f962c5-EMAIL_CAMPAIGN_2019_04_24_03_18_COPY_01&utm_medium=email&utm_term=0_384567b42d-96f0f962c5-156883485) — reviewed
    * Course. [Deep Learning with PyTorch: Zero to GANs](https://jovian.ai/learn/deep-learning-with-pytorch-zero-to-gans) — 6 lessons
