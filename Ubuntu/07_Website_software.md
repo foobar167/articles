@@ -54,80 +54,92 @@ sudo visudo -f /etc/sudoers.d/website
 # Write into the file /etc/sudoers.d/website
 
 # Create alias for WEBMASTERS group
-User_Alias WEBMASTERS = username, malyshevvalery
+User_Alias WEBMASTERS = username, webmaster, malyshevvalery, dmitryvoynov
 
 # Create commands alias to start, stop and restart some services and view BIOS
 Cmnd_Alias START1   = /bin/systemctl start nginx,              \
                       /bin/systemctl start generator,          \
                       /bin/systemctl start slide_analysis_api, \
                       /bin/systemctl start segmentation,       \
-                      /bin/systemctl start demoxray
+                      /bin/systemctl start demoxray,           \
+                      /bin/systemctl start adversarial
 
 Cmnd_Alias STOP1    = /bin/systemctl stop nginx,              \
                       /bin/systemctl stop generator,          \
                       /bin/systemctl stop slide_analysis_api, \
                       /bin/systemctl stop segmentation,       \
-                      /bin/systemctl stop demoxray
+                      /bin/systemctl stop demoxray,           \
+                      /bin/systemctl stop adversarial
 
 Cmnd_Alias RESTART1 = /bin/systemctl restart nginx,              \
                       /bin/systemctl restart generator,          \
                       /bin/systemctl restart slide_analysis_api, \
                       /bin/systemctl restart segmentation,       \
-                      /bin/systemctl restart demoxray
+                      /bin/systemctl restart demoxray,           \
+                      /bin/systemctl restart adversarial
 
 Cmnd_Alias STATUS1  = /bin/systemctl status nginx,              \
                       /bin/systemctl status generator,          \
                       /bin/systemctl status slide_analysis_api, \
                       /bin/systemctl status segmentation,       \
-                      /bin/systemctl status demoxray
+                      /bin/systemctl status demoxray,           \
+                      /bin/systemctl status adversarial
 
 Cmnd_Alias ENABLE1  = /bin/systemctl enable nginx,              \
                       /bin/systemctl enable generator,          \
                       /bin/systemctl enable slide_analysis_api, \
                       /bin/systemctl enable segmentation,       \
-                      /bin/systemctl enable demoxray
+                      /bin/systemctl enable demoxray,           \
+                      /bin/systemctl enable adversarial
 
 Cmnd_Alias DISABLE1 = /bin/systemctl disable nginx,              \
                       /bin/systemctl disable generator,          \
                       /bin/systemctl disable slide_analysis_api, \
                       /bin/systemctl disable segmentation,       \
-                      /bin/systemctl disable demoxray
+                      /bin/systemctl disable demoxray,           \
+                      /bin/systemctl disable adversarial
 
 Cmnd_Alias START2   = /usr/sbin/service nginx start,              \
                       /usr/sbin/service generator start,          \
                       /usr/sbin/service slide_analysis_api start, \
                       /usr/sbin/service segmentation start,       \
-                      /usr/sbin/service demoxray start
+                      /usr/sbin/service demoxray start,           \
+                      /usr/sbin/service adversarial start
 
 Cmnd_Alias STOP2    = /usr/sbin/service nginx stop,              \
                       /usr/sbin/service generator stop,          \
                       /usr/sbin/service slide_analysis_api stop, \
                       /usr/sbin/service segmentation stop,       \
-                      /usr/sbin/service demoxray stop
+                      /usr/sbin/service demoxray stop,           \
+                      /usr/sbin/service adversarial stop
 
 Cmnd_Alias RESTART2 = /usr/sbin/service nginx restart,              \
                       /usr/sbin/service generator restart,          \
                       /usr/sbin/service slide_analysis_api restart, \
                       /usr/sbin/service segmentation restart,       \
-                      /usr/sbin/service demoxray restart
+                      /usr/sbin/service demoxray restart,           \
+                      /usr/sbin/service adversarial restart
 
 Cmnd_Alias STATUS2  = /usr/sbin/service nginx status,              \
                       /usr/sbin/service generator status,          \
                       /usr/sbin/service slide_analysis_api status, \
                       /usr/sbin/service segmentation status,       \
-                      /usr/sbin/service demoxray status
+                      /usr/sbin/service demoxray status,           \
+                      /usr/sbin/service adversarial status
 
 Cmnd_Alias ENABLE2  = /usr/sbin/service nginx enable,              \
                       /usr/sbin/service generator enable,          \
                       /usr/sbin/service slide_analysis_api enable, \
                       /usr/sbin/service segmentation enable,       \
-                      /usr/sbin/service demoxray enable
+                      /usr/sbin/service demoxray enable,           \
+                      /usr/sbin/service adversarial enable
 
 Cmnd_Alias DISABLE2 = /usr/sbin/service nginx disable,              \
                       /usr/sbin/service generator disable,          \
                       /usr/sbin/service slide_analysis_api disable, \
                       /usr/sbin/service segmentation disable,       \
-                      /usr/sbin/service demoxray disable
+                      /usr/sbin/service demoxray disable,           \
+                      /usr/sbin/sercice adversarial disable
 
 Cmnd_Alias FUSER1   = /bin/fuser 3000/tcp, /bin/fuser -k 3000/tcp
 Cmnd_Alias FUSER2   = /bin/fuser 4000/tcp, /bin/fuser -k 4000/tcp
@@ -143,7 +155,7 @@ Cmnd_Alias BIOS     = /usr/sbin/dmidecode -t bios
 
 # Allow members of WEBMASTERS to restart some services and view BIOS
 WEBMASTERS ALL = START1, STOP1, RESTART1, STATUS1, ENABLE1, DISABLE1, \
-                 START2, STOP2, RESTART2, STATUS2, ENABLE2, DISABLE1, \
+                 START2, STOP2, RESTART2, STATUS2, ENABLE2, DISABLE2, \
                  FUSER1, FUSER2, FUSER3, FUSER4, FUSER5, FUSER6,      \
                  STATUS, DAEMON, LDCONFIG, BIOS
 
@@ -184,6 +196,8 @@ sudo addgroup webmasters
 # Add users to 'webmasters' group
 sudo usermod -a -G webmasters username
 sudo usermod -a -G webmasters malyshevvalery
+sudo usermod -a -G webmasters dmitryvoynov
+sudo usermod -a -G webmasters webmaster
 
 # Group assignment changes won't take effect
 # until the users log out and back in.
@@ -252,6 +266,8 @@ ls -hal /var/log/nginx
 cat /etc/group | grep adm
 sudo usermod -a -G adm username
 sudo usermod -a -G adm malyshevvalery
+sudo usermod -a -G adm dmitryvoynov
+sudo usermod -a -G adm webmaster
 cat /etc/group | grep adm
 ```
 
@@ -267,7 +283,6 @@ sudo addgroup xray
 # Add users to `xray` group
 sudo usermod -a -G xray skliff13
 sudo usermod -a -G xray sergeko
-sudo usermod -a -G xray toryscepeleva
 sudo usermod -a -G xray malyshevvalery
 sudo usermod -a -G xray pavlenko
 sudo usermod -a -G xray ahmed
