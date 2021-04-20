@@ -62,7 +62,7 @@ conda update anaconda
 source ~/.bashrc
 
 # Set up Anaconda virtual environment
-conda create --name myenv python=3.7
+conda create --name myenv python=3.8
 # Show virtual envs
 conda info --envs
 # Activate the new environment
