@@ -9,15 +9,50 @@ Configurations I've made on DL4 server for **Ubuntu 20.04**.
 
 ---
 ## <a name="disable-sleep" />Disable sleep/suspend
+[Lightlocker and Xscreensaver conflicting](https://askubuntu.com/questions/1063481/lightlocker-and-xscreensaver-conflicting)
+[How to Disable Suspend and Hibernation Modes In Linux](https://www.tecmint.com/disable-suspend-and-hibernation-in-linux)
 [How to permanently disable sleep/suspend?](https://askubuntu.com/questions/473037/how-to-permanently-disable-sleep-suspend)
 
 Some Ubuntu 20.04 distributions have sleep/suspend mode after 20 minutes.
 
-**NOTE**: these commands not tested
+**NOTE**: not all these commands were tested.
 
 ```shell script
+# delete light-locker service
+sudo apt purge light-locker
+# disable light-locker file
+sudo mv /etc/xdg/autostart/light-locker.desktop /etc/xdg/autostart/light-locker.desktop.bak
+# disable services
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
+
+Edit `/etc/systemd/logind.conf` file:
+```text
+#NAutoVTs=6
+#ReserveVT=6
+#KillUserProcesses=no
+#KillOnlyUsers=
+#KillExcludeUsers=root
+#InhibitDelayMaxSec=5
+HandlePowerKey=ignore
+HandleSuspendKey=ignore
+HandleHibernateKey=ignore
+HandleLidSwitch=ignore
+HandleLidSwitchExternalPower=ignore
+HandleLidSwitchDocked=ignore
+#PowerKeyIgnoreInhibited=no
+#SuspendKeyIgnoreInhibited=no
+#HibernateKeyIgnoreInhibited=no
+LidSwitchIgnoreInhibited=no
+#HoldoffTimeoutSec=30s
+IdleAction=ignore
+IdleActionSec=130min
+#RuntimeDirectorySize=10%
+#RemoveIPC=yes
+#InhibitorsMax=8192
+#SessionsMax=8192
+```
+
 Run the following command to open the file to edit:
 
 `sudo -H gedit /var/lib/polkit-1/localauthority/10-vendor.d/com.ubuntu.desktop.pkla`
