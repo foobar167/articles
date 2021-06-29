@@ -14,6 +14,7 @@ Configurations I've made on DL4 server for **Ubuntu 20.04**.
 Some Ubuntu 20.04 distributions have sleep/suspend mode after 20 minutes.
 
 **NOTE**: these commands not tested
+
 ```shell script
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
