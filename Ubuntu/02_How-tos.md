@@ -23,11 +23,13 @@ How-to:
    - [Mount USB](#mount)
    - [Open console](#console)
    - [Open image in Midnight Commander](#open-image-in-mc)
+   - [Restart system](#ubuntu-reboot)
    - [Run scripts on start up](#autorun)
    - [Set environment variable](#envvar)
    - [Show the model of the computer](#show_the_model)
    - [Switch language hotkey](#lang)
    - [Take screenshot](#screenshot)
+   - [Update system packages](#update-ubuntu)
    - [View computer resources](#resources)
    - [View disk usage](#disk-usage)
    - [View screen resolution](#resolution)
@@ -546,6 +548,17 @@ type/^JPEG
 ```
 
 ---
+### <a name="ubuntu-reboot" />Restart system
+```shell script
+sudo reboot now
+
+# force reboot
+sudo reboot -f
+
+sudo systemctl reboot
+```
+
+---
 ### <a name="autorun" />Run scripts on start up
 
 There are several ways to run scripts on start up:
@@ -742,6 +755,18 @@ There is an icon on the panel menu after `flameshot gui` is started.
 ```shell script
 sudo apt install kazam  # install Kazam
 kazam &  # start it in background mode
+```
+
+---
+### <a name="update-ubuntu" />Update system packages
+```shell script
+sudo apt update
+sudo apt dist-upgrade
+
+# or if you are concerned about package dependencies and
+# don't want any installed packages to be uninstalled
+# under no circumstances, instead use
+sudo apt upgrade
 ```
 
 ---

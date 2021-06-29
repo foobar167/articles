@@ -1,10 +1,46 @@
 Configurations I've made on DL4 server for **Ubuntu 20.04**.
 
+   - [Disable sleep/suspend](#disable-sleep)
    - [Docker installing and configuring](#docker)
    - [How-to configure TensorFlow](#tf-how-to)
    - [Install useful software](#software)
    - [`pyenv` virtual environment](#pyenv)
    - [Shows PIDs of NVIDIA processes](#permissions)
+
+---
+## <a name="disable-sleep" />Disable sleep/suspend
+[How to permanently disable sleep/suspend?](https://askubuntu.com/questions/473037/how-to-permanently-disable-sleep-suspend)
+
+Some Ubuntu 20.04 distributions have sleep/suspend mode after 20 minutes.
+
+**NOTE**: these commands not tested
+```shell script
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+```
+Run the following command to open the file to edit:
+
+`sudo -H gedit /var/lib/polkit-1/localauthority/10-vendor.d/com.ubuntu.desktop.pkla`
+
+Scroll to the bottom. Check to see if the following information exists, and if not add them:
+```text
+[Disable suspend]
+Identity=unix-user:*
+Action=org.freedesktop.upower.suspend
+ResultActive=no
+```
+Doing this makes suspend do nothing when you click it;
+it will disappear from the menu after you restart your computer.
+
+You can run this command also to prevent computer from sleeping:
+
+`gsettings set org.gnome.desktop.session idle-delay 0`
+
+With dconf Editor, navigate to:
+
+`org.gnome.settings-daemon.plugins.power`
+
+You will find lots of options relating to sleep and suspend.
+
 
 ---
 ## <a name="docker" />Docker installing and configuring
