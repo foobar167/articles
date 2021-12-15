@@ -1,0 +1,7 @@
+# Directories to ignore
+/.idea
+/old
+
+# Files to ignore
+*.tmp
+~$*

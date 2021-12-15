@@ -1,0 +1,88 @@
+h1 {
+    text-align: center;
+}
+div.left {
+    margin: 0 0 0 2em;
+}
+div.citation {
+    text-align: right;
+}
+div.image,
+img.formula {
+    display: block;
+    margin: 1em auto 1em auto;
+    text-align: center;
+}
+div.picture {
+    text-align: center;
+    margin: 0.5em 0 0 0;
+}
+span.formula {
+    font-family: "Courier New", Courier, monospace;
+    white-space: nowrap;
+}
+span.nowrap {
+    white-space: nowrap;
+}
+table {
+    margin: 1em 0 1em 0;
+    padding: 0;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-weight: normal;
+}
+th, td {
+    padding: 0.3em;
+}
+table > caption {
+    text-align: left;
+    text-indent: 0;
+    margin: 0;
+    padding: 0;
+}
+table.formula {
+    width: 100%;
+    margin: 0;
+    table-layout: fixed;
+    border: none;
+}
+table.formula td, table.formula th {
+    border: none;
+    padding: 0;
+}
+td.formula {
+    width: 4em;
+    text-align: right;
+}
+p {
+    text-indent: 2em;
+    text-align: justify;
+    margin: 0 0 0.5em 0;
+    padding: 0;
+}
+p.formula {
+    text-indent: 0;
+}
+ul, ol {
+    padding: 0;
+    margin: 0 0 0.5em 3em;
+}
+ol {
+    margin-left: 2em;
+    list-style-type: none;
+    counter-reset: item;
+}
+li > ol {
+    margin-bottom: 0;
+}
+ol > li {
+    display: table;
+    counter-increment: item;
+}
+ol > li:before {
+    content: counters(item, ".") ". ";
+    display: table-cell;
+    padding-right: 0.3em;
+}
