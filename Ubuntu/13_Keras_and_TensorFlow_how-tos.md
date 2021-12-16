@@ -136,9 +136,9 @@ IPython.display.HTML(iframe)
        * [Google Dataset Search](https://toolbox.google.com/datasetsearch) is a search engine for datasets.
        * [Kaggle datasets](https://www.kaggle.com/datasets) — search engine for 25 000 datasets on Kaggle.
        * [Academic Torrents](https://academictorrents.com/) distributed system for sharing datasets.
-       * [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets)
-         list of a topic-centric public data sources.
+       * [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets) list of a topic-centric public data sources.
        * [Awesome Open Source](https://awesomeopensource.com) find open source by browsing 7,000 topics across 59 categories.
+       * [NCBI Datasets](https://www.ncbi.nlm.nih.gov/datasets/). Find and download gene, transcript, protein and genome sequences, annotation and metadata. 
 
    * [Deep Learning add-on for Adaptive Vision Studio Lite](https://www.adaptive-vision.com/en/software/deep-learning) —
      If you need out-of-the-box solutions, you could try Adaptive Vision tool with Deep Learning add-on.
