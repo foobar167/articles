@@ -112,6 +112,7 @@ Additional useful tools everybody should know about:
          There must be an Internet connection to obtain URL.
          Copy-paste code below into your Jupyter notebook and replace the `url`:
 
+
 ```python
 # Display the associated webpage in a new window
 import IPython
@@ -119,6 +120,7 @@ url = 'https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=7e80
 iframe = '<iframe frameborder="0" class="juxtapose" width="100%" height="600" src="' + url + '"></iframe>'
 IPython.display.HTML(iframe)
 ```
+
 
    * Downloading tools:
 
@@ -131,6 +133,7 @@ IPython.display.HTML(iframe)
        * For older versions of Firefox [Google Images Downloader](https://addons.mozilla.org/en-US/firefox/addon/google-images-downloader/?src=recommended) Firefox add-on by Rushikesh Tade
        * [How to scrape the web for images](https://forums.fast.ai/t/how-to-scrape-the-web-for-images) forum
 
+
    * Datasets Search:
 
        * [Google Dataset Search](https://toolbox.google.com/datasetsearch) is a search engine for datasets.
@@ -138,7 +141,10 @@ IPython.display.HTML(iframe)
        * [Academic Torrents](https://academictorrents.com/) distributed system for sharing datasets.
        * [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets) list of a topic-centric public data sources.
        * [Awesome Open Source](https://awesomeopensource.com) find open source by browsing 7,000 topics across 59 categories.
-       * [NCBI Datasets](https://www.ncbi.nlm.nih.gov/datasets/). Find and download gene, transcript, protein and genome sequences, annotation and metadata. 
+
+       * [NCBI Datasets](https://www.ncbi.nlm.nih.gov/datasets/). Find and download gene, transcript, protein and genome sequences, annotation and metadata.
+       * [IEEEDataPort](https://ieee-dataport.org/datasets) datasets.
+
 
    * [Deep Learning add-on for Adaptive Vision Studio Lite](https://www.adaptive-vision.com/en/software/deep-learning) —
      If you need out-of-the-box solutions, you could try Adaptive Vision tool with Deep Learning add-on.
@@ -167,6 +173,7 @@ IPython.display.HTML(iframe)
        * [Computer Vision Annotation Tool](https://github.com/opencv/cvat) (CVAT). CVAT is free, online, interactive video and image annotation tool for computer vision.
        * [https://supervise.ly](https://supervise.ly) The leading platform for entire computer vision lifecycle.
 
+
    * Model Zoo:
 
        * [TensorFlow Hub](https://tfhub.dev) is a library for the publication, discovery, and consumption
@@ -183,6 +190,7 @@ IPython.display.HTML(iframe)
          deep learning framework.
        * [Model Zoo](https://modelzoo.co/) website curates and provides a platform
          for deep learning researchers to easily find pre-trained models for a variety of platforms and uses.
+
 
    * Data visualization:
 
@@ -203,14 +211,17 @@ IPython.display.HTML(iframe)
        * [Streamlit](https://streamlit.io/docs/) is an open-source Python library
          that makes it easy to build beautiful apps for machine learning. I didn't use it yet.
 
+
    * [OpenAI](https://openai.com/resources/#platforms) builds free software for training, benchmarking,
      and experimenting with AI. Reinforcement Learning (RL).
+
 
    * Resize multiple images with ratio [`resize_with_ratio.py`](https://github.com/skliff13/MilitaryDemo/blob/master/CreateDataset/resize_with_ratio.py)
      script.
 
+
    * [Kite](https://kite.com) autocomplete plugin for Python IDE (PyCharm, Spyder, etc.).
-   * 
+
 
 ---
 ### <a name="websites" />Web sites to visit from time to time
