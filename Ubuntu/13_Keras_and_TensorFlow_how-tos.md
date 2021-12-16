@@ -142,8 +142,8 @@ IPython.display.HTML(iframe)
        * [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets) list of a topic-centric public data sources.
        * [Awesome Open Source](https://awesomeopensource.com) find open source by browsing 7,000 topics across 59 categories.
 
+       * [Quantitative Imaging Data Warehouse (QIDW)](https://qidw.rsna.org/)
        * [NCBI Datasets](https://www.ncbi.nlm.nih.gov/datasets/). Find and download gene, transcript, protein and genome sequences, annotation and metadata.
-       * [IEEEDataPort](https://ieee-dataport.org/datasets) datasets.
 
 
    * [Deep Learning add-on for Adaptive Vision Studio Lite](https://www.adaptive-vision.com/en/software/deep-learning) —
