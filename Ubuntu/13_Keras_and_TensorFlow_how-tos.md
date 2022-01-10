@@ -341,6 +341,7 @@ htop
 #### <a name="limit-memory" />Limit TensorFlow to lower memory
 
 By default TensorFlow occupies all memory on GPU.
+[Limiting GPU memory growth.](https://www.tensorflow.org/guide/gpu#limiting_gpu_memory_growth)
 
 ##### <a name="reserve-dynamically" />1. Reserve dynamically
 
@@ -350,13 +351,18 @@ You can dynamically reserve only necessary, but not all available memory:
 # Reserve necessary GPU memory
 import tensorflow as tf
 
-# For TensorFlow 1.x
-config = tf.ConfigProto()
-config.gpu_options.allow_growth=True  # dynamically grow the memory used on the GPU  
-sess = tf.Session(config=config)
-
 # For TensorFlow 2.x
-tf.config.gpu.set_per_process_memory_growth()
+gpus = tf.config.list_physical_devices('GPU')
+if gpus:
+  try:
+    # Currently, memory growth needs to be the same across GPUs
+    for gpu in gpus:
+      tf.config.experimental.set_memory_growth(gpu, True)
+    logical_gpus = tf.config.list_logical_devices('GPU')
+    print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
+  except RuntimeError as e:
+    # Memory growth must be set before GPUs have been initialized
+    print(e)
 ```
 
 ##### <a name="reserve-fraction" />2. Reserve fixed fraction
@@ -368,18 +374,19 @@ by passing a `tf.GPUOptions` as part of the optional config argument:
 # Reserve GPU memory fraction
 import tensorflow as tf
 
-# For TensorFlow 1.x
-# Assume that you have 12GB of GPU memory and want to allocate ~4GB:
-gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
-sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
-
-# or the same for TensorFlow 1.x
-config = tf.ConfigProto()
-config.gpu_options.per_process_gpu_memory_fraction = 0.333  # set fixed fraction of memory
-session = tf.Session(config=config)
-
 # For TensorFlow 2.x
-tf.config.gpu.set_per_process_memory_fraction(0.333)
+gpus = tf.config.list_physical_devices('GPU')
+if gpus:
+  # Restrict TensorFlow to only allocate 1GB of memory on the first GPU
+  try:
+    tf.config.set_logical_device_configuration(
+        gpus[0],
+        [tf.config.LogicalDeviceConfiguration(memory_limit=1024)])
+    logical_gpus = tf.config.list_logical_devices('GPU')
+    print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
+  except RuntimeError as e:
+    # Virtual devices must be set before GPUs have been initialized
+    print(e)
 ```
 The `per_process_gpu_memory_fraction` acts as a hard upper bound on the amount of GPU memory
 that will be used by the process on each GPU on the same machine.
