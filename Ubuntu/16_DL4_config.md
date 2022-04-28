@@ -4,6 +4,7 @@ Configurations I've made on DL4 server for **Ubuntu 20.04**.
    - [Docker installing and configuring](#docker)
    - [How-to configure TensorFlow](#tf-how-to)
    - [Install useful software](#software)
+   - [Nvidia and CUDA installation](#nvidia)
    - [`pyenv` virtual environment](#pyenv)
    - [Shows PIDs of NVIDIA processes](#permissions)
 
@@ -229,6 +230,26 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 sudo apt install code
 # Check installation
 code
+```
+
+---
+## <a name="nvidia" />Nvidia and CUDA installation
+Install Nvidia drivers and CUDA Toolkit from binary files:
+```text
+sudo sh NVIDIA-Linux-x86_64-470.57.02.run
+
+wget https://developer.download.nvidia.com/compute/cuda/11.6.2/local_installers/cuda_11.6.2_510.47.03_linux.run
+sudo sh cuda_11.6.2_510.47.03_linux.run
+
+nvidia-smi      # verity Nvidia driver
+nvcc --version  # verify CUDA version
+```
+
+**CUDA 10** should be installed for bioinformatics.
+Set `no` for the question:
+`Do you want to install a symbolic link at /usr/local/cuda?`
+```shell script
+sudo sh cuda_10.0.130_410.48_linux.run
 ```
 
 ---

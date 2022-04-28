@@ -39,11 +39,13 @@ How-to:
 ---
 ### <a name="nvidia-smi-error" />`nvidia-smi` error after system update
 
-Unfortunately, there is `nvidia-smi` error after system update for DeepLab3.
+Unfortunately, there is `nvidia-smi` error after system update for DL3 server.
 I don't know how to turn off nVidia drivers from automatic updating yet.
 
 So after update I have to [reinstall nVidia drivers again](08_Nvidia_driver_and_CUDA_install.md/#nvidia-smi-error).
 It takes 5 minutes, but I would like to get rid of this problem in the future.
+
+For DL4 server, please, review [Nvidia driver installation](16_DL4_config.md/#nvidia).
 
 ---
 ### <a name="add_to_path" />Add directory to the $PATH
