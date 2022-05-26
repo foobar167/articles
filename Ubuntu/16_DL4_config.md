@@ -316,7 +316,7 @@ Set `no` for the question:
 `Do you want to install a symbolic link at /usr/local/cuda?`
 ```shell script
 # Get CUDA toolkit 10
-wget https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux.run
+wget -O cuda_10.0.130_410.48_linux.run https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux
 sudo sh cuda_10.0.130_410.48_linux.run
 ```
 
