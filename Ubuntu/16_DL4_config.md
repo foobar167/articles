@@ -409,6 +409,8 @@ conda --version  # check it
 ---
 ## <a name="permissions" />Shows PIDs of NVIDIA processes
 
+Create `nvidia-show` command for non-root users to view NVidia processes.
+
 Create and edit file with `visudo` editor
 in the directory `/etc/sudoers.d/`.
 
@@ -437,4 +439,7 @@ alias nvidia-pids='sudo fuser -v /dev/nvidia*'
 echo 'sudo fuser -v /dev/nvidia*' | sudo tee -a /usr/bin/nvidia-show
 sudo chmod u=rwx,g=rx,o=rx /usr/bin/nvidia-show
 ls -hal /usr/bin/nvidia-show /usr/bin/nvidia-smi  # check it
+
+# Run it
+nvidia-show
 ```
