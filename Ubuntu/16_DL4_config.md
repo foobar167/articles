@@ -232,6 +232,46 @@ sudo apt install code
 code
 ```
 
+Install [RStudio via CRAN](https://cran.rstudio.com)
+for [Ubuntu](https://cran.rstudio.com/bin/linux/ubuntu/).
+For more details read the
+[Getting Started](https://docs.rstudio.com/connect/1.4.2/admin/getting-started.html)
+guide.
+```shell
+# update indices
+sudo apt update -qq
+# install two helper packages we need
+sudo apt install --no-install-recommends software-properties-common dirmngr
+# add the signing key (by Michael Rutter) for these repos
+# To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
+# Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+# add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+
+sudo apt install --no-install-recommends r-base
+
+# Get 5000+ CRAN Packages. Add the current R 4.0 or later ‘c2d4u’ repository
+sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
+
+#sudo apt install --no-install-recommends r-cran-rstan
+#sudo apt install --no-install-recommends r-cran-tidyverse
+
+# Check installation of r-base
+R --version  # `R` command to start console and q() to exit
+
+# After installing latest version of r-base, install RStudio IDE
+wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-2022.02.2-485-amd64.deb
+sudo apt install -f ./rstudio-2022.02.2-485-amd64.deb
+#sudo apt remove rstudio  # Uninstall RStudio IDE
+
+# If there is an error "Could not initialize GLX", fix it with this:
+export QT_XCB_GL_INTEGRATION=none
+
+# Check installation
+rstudio
+```
+
 ---
 ## <a name="nvidia" />Nvidia and CUDA installation
 Install Nvidia drivers and CUDA Toolkit from binary files:
