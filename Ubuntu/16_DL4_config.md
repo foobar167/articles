@@ -274,6 +274,7 @@ rstudio
 ```
 
 Check it through the menu: Programming --> RStudio
+
 ![RStudio IDE menu](./data/2022.05.26_rstudio_menu.jpg)
 
 ---
