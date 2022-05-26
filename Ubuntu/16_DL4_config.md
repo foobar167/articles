@@ -267,10 +267,14 @@ sudo apt install -f ./rstudio-2022.02.2-485-amd64.deb
 
 # If there is an error "Could not initialize GLX", fix it with this:
 export QT_XCB_GL_INTEGRATION=none
+# Add export string to the end of files: ~/.bashrc and ~/.profile
 
 # Check installation
 rstudio
 ```
+
+Check it through the menu: Programming --> RStudio
+![RStudio IDE menu](./data/2022.05.26_rstudio_menu.jpg)
 
 ---
 ## <a name="nvidia" />Nvidia and CUDA installation
