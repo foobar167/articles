@@ -4,6 +4,10 @@ Configurations I've made on DL4 server for **Ubuntu 20.04**.
    - [Docker installing and configuring](#docker)
    - [How-to configure TensorFlow](#tf-how-to)
    - [Install useful software](#software)
+        - [OpenSlide](#open-slide)
+        - [Snap](#snap)
+        - [Visual Studio](#visual-studio)
+        - [R and RStudio](#rstudio)
    - [Nvidia and CUDA installation](#nvidia)
    - [`pyenv` virtual environment](#pyenv)
    - [Shows PIDs of NVIDIA processes](#permissions)
@@ -189,6 +193,9 @@ sudo apt install python-pyparsing
 sudo apt install python3-pyparsing
 ```
 
+---
+### <a name="open-slide" />OpenSlide
+
 Install [OpenSlide](https://openslide.org/download/):
 ```shell script
 sudo apt install openslide-tools
@@ -196,7 +203,10 @@ sudo apt install openslide-tools
 pip install openslide-python
 ```
 
-Unfortunately, installations via `snap` do not work.
+---
+### <a name="snap" />Snap
+
+Unfortunately, installations via `snap` do not work for now.
 The error is:
 
 ```text
@@ -213,11 +223,15 @@ sudo snap install notepad-plus-plus  # install Notepad++
 sudo snap install chromium  # Chromium web browser
 
 sudo snap install pycharm-community --classic  # PyCharm IDE
+
 # Remove possible error with Canberra Gtk.
 # canberra-gtk-module translates GTK+ widgets signals to event sounds
 # This module is needed for PyCharm successful start
 sudo apt install -y libcanberra-gtk-module
 ```
+
+---
+### <a name="visual-studio" />Visual Studio
 
 Install [Visual Studio Code](https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-20-04/)
 ```shell script
@@ -232,11 +246,12 @@ sudo apt install code
 code
 ```
 
-Install [RStudio via CRAN](https://cran.rstudio.com)
+---
+### <a name="rstudio" />R and RStudio
+
+Install latest version of [R via CRAN](https://cran.rstudio.com)
 for [Ubuntu](https://cran.rstudio.com/bin/linux/ubuntu/).
-For more details read the
-[Getting Started](https://docs.rstudio.com/connect/1.4.2/admin/getting-started.html)
-guide.
+And then install [RStudio IDE](https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/).
 ```shell
 # update indices
 sudo apt update -qq
@@ -249,6 +264,7 @@ wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sud
 # add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
 sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 
+# Install R
 sudo apt install --no-install-recommends r-base
 
 # Get 5000+ CRAN Packages. Add the current R 4.0 or later ‘c2d4u’ repository
@@ -280,9 +296,12 @@ Check it through the menu: Programming --> RStudio
 ---
 ## <a name="nvidia" />Nvidia and CUDA installation
 Install Nvidia drivers and CUDA Toolkit from binary files:
-```text
+```shell
+# Get NVidia driver
+wget https://download.nvidia.com/XFree86/Linux-x86_64/470.57.02/NVIDIA-Linux-x86_64-470.57.02.run
 sudo sh NVIDIA-Linux-x86_64-470.57.02.run
 
+# Get CUDA toolkit 11
 wget https://developer.download.nvidia.com/compute/cuda/11.6.2/local_installers/cuda_11.6.2_510.47.03_linux.run
 sudo sh cuda_11.6.2_510.47.03_linux.run
 
@@ -290,10 +309,12 @@ nvidia-smi      # verity Nvidia driver
 nvcc --version  # verify CUDA version
 ```
 
-**CUDA 10** should be installed for bioinformatics.
+**CUDA 10** should be installed for bioinformatics department.
 Set `no` for the question:
 `Do you want to install a symbolic link at /usr/local/cuda?`
 ```shell script
+# Get CUDA toolkit 10
+wget https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux.run
 sudo sh cuda_10.0.130_410.48_linux.run
 ```
 
