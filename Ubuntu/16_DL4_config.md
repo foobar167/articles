@@ -297,15 +297,18 @@ Check it through the menu: Programming --> RStudio
 
 ---
 ## <a name="nvidia" />Nvidia and CUDA installation
-Install Nvidia drivers and CUDA Toolkit from binary files:
+Install [Nvidia](https://www.nvidia.com/Download/index.aspx)
+drivers and
+[CUDA Toolkit](https://developer.nvidia.com/cuda-downloads)
+from binary files:
 ```shell
 # Get NVidia driver
 wget https://download.nvidia.com/XFree86/Linux-x86_64/470.57.02/NVIDIA-Linux-x86_64-470.57.02.run
 sudo sh NVIDIA-Linux-x86_64-470.57.02.run
 
 # Get CUDA toolkit 11
-wget https://developer.download.nvidia.com/compute/cuda/11.6.2/local_installers/cuda_11.6.2_510.47.03_linux.run
-sudo sh cuda_11.6.2_510.47.03_linux.run
+wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
+sudo sh cuda_11.7.0_515.43.04_linux.run
 
 nvidia-smi      # verity Nvidia driver
 nvcc --version  # verify CUDA version
