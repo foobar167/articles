@@ -368,11 +368,14 @@ sudo nano /etc/environment
 
 ----
 #### <a name="x2go" />X2Go server/client
+[How to Set Up a Remote Desktop with X2Go on Ubuntu 18.04](https://draculaservers.com/tutorials/install-x2go-ubuntu-remote-desktop/)
+
 Install X2Go [server](https://wiki.x2go.org/doku.php/doc:installation:x2goserver)
 and [client](https://wiki.x2go.org/doku.php/doc:installation:x2goclient) software.
 ```shell script
 # Install X2Go server
 sudo apt install -y software-properties-common
+sudo apt install -y python-software-properties
 sudo add-apt-repository ppa:x2go/stable
 sudo apt update
 sudo apt install -y x2goserver x2goserver-xsession
@@ -388,4 +391,7 @@ sudo apt install -y x2goclient
 # for X2Go remote sessions.
 # Set lightdm display manager in the appeared config window.
 sudo apt install -y lxde
+
+# Installing MATE Desktop
+sudo apt-get install mate-core mate-desktop-environment mate-notification-daemon
 ```

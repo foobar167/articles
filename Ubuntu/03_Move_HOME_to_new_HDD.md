@@ -180,7 +180,8 @@ Press `<Ctrl>+<Alt>+<F3>` hotkeys and switch to console mode.
 Login in the console mode.
 
 ```shell script
-# Copy /home directory to the new location
+# Copy /home directory to the new location.
+# NOTE: Copying will take A LOT of time!
 sudo rsync -avx /home/ /hdd_gold
 
 # Check if everything is copied correctly
@@ -201,13 +202,4 @@ UUID=1d049c7c-4565-480b-a181-2459e8ff8c1b  /home      ext4  defaults  0  2
 
 # After a reboot, your /home resides on the new drive having plenty of space.
 sudo reboot
-
-# Change permissions for goups and other for this HDD
-sudo chmod go+rx /hdd_purple
-# Change owner to root
-sudo chown root:root /hdd_purple
-# Add write permission for everyone
-sudo chmod o+w /hdd_purple
-# Check it
-ls -hal /
 ```

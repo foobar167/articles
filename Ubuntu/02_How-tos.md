@@ -7,6 +7,7 @@ How-to:
    - [Clear out Git history](#clear-git)
    - [Create user](#user)
    - [Change password](#passwd)
+   - [Change SSH Port](#change_ssh_port)
    - [Check Linux version](#check-linux)
    - [Delete package](#delete)
    - [Delete user account](#del-account)
@@ -27,6 +28,7 @@ How-to:
    - [Run scripts on start up](#autorun)
    - [Set environment variable](#envvar)
    - [Show the model of the computer](#show_the_model)
+   - [Static IP address](#static_ip)
    - [Switch language hotkey](#lang)
    - [Take screenshot](#screenshot)
    - [Update system packages](#update-ubuntu)
@@ -265,6 +267,29 @@ lab225@deeplab3:~$
 
 # To change other users password
 sudo passwd username
+```
+
+---
+### <a name="change_ssh_port" />Change SSH Port
+[How to Change SSH Port in Ubuntu 18.04](https://www.ubuntu18.com/ubuntu-change-ssh-port/)
+
+```shell
+# Check SSH port currently running on
+sudo netstat -tulnp | grep ssh
+# Check the current configuration
+sudo grep -i port /etc/ssh/sshd_config
+# Open the `/etc/ssh/sshd_config` file and locate the line:
+  #Port 22
+# Uncomment it (remove the leading # character) and change the value
+# with an appropriate port number (for example, 22000):
+  Port 22000
+# Restart the SSH server
+sudo systemctl restart sshd
+# Make sure that the ssh daemon now listen on the new ssh port
+netstat -tulpn | grep ssh
+
+# Use `-p` flag to specify SSH port number
+ssh username@ip.add.re.ss -p 22000
 ```
 
 ---
@@ -705,7 +730,7 @@ export PYTHONPATH
 ```
 
 ---
-### <a name="#show_the_model" />Show the model of the computer
+### <a name="show_the_model" />Show the model of the computer
 
 ```shell script
 # The first line will be product name.
@@ -720,6 +745,49 @@ sudo dmidecode -s baseboard-manufacturer  # show manufacturer
 # Install GUI application
 sudo apt install xsysinfo
 xsysinfo &
+```
+
+---
+### <a name="static_ip" />Static IP address
+[Ubuntu Static IP configuration](https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-10-cosmic-cuttlefish-linux)
+
+![IP config via GNOME GUI](./data/2022.11.08_ubuntu_static_ip_configuration.png)
+
+The simplest approach on how to configure a static IP address on Ubuntu Desktop
+is via GNOME graphical user interface.
+   * Open network settings Ubuntu Desktop.
+   * Click on the settings icon to start IP address configuration.
+   * Select IPv4 tab.
+   * Select manual and enter your desired IP address, netmask, gateway
+     and DNS settings. Once ready click `Apply` button.
+   * Turn OFF and ON switch to apply your new network static IP config settings.
+   * Click on the network settings icon once again to confirm your new
+     static IP address settings.
+
+Configure static IP address on Ubuntu server via `networkd` daemon.
+Open `/etc/netplan/` directory. There is a default netplan configuration file
+called `50-cloud-init.yaml` or `01-network-manager-all.yaml`.
+```text
+# This file is generated from information provided by the datasource. Changes
+# to it will not persist across an instance reboot. To disable cloud-init's
+# network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    ethernets:
+        ens9f0:
+            addresses:
+                    - ××.××.×××.××/24
+            gateway4: ××.××.×××.1
+            nameservers:
+                    addresses: [8.8.4.4,8.8.8.8,××.××.×××.2,××.××.×××.3]
+```
+
+```shell
+# Once ready apply changes with
+sudo netplan apply
+# In case you run into some issues execute
+sudo netplan --debug apply
 ```
 
 ---
@@ -861,9 +929,9 @@ sudo dmidecode -t bios
 
 ---
 ### <a name="disk-usage" />View disk usage
+[List Disks on Ubuntu](https://linuxhint.com/list_disks_ubuntu/)
 
 Show disk usage or directory size
-
 ```shell script
 gnome-disks&  # open disks utility in background mode
 
@@ -884,6 +952,16 @@ done
 
 # Show all partitions usage on disks
 df -h $(ls /dev/sd[a-z][1-9])
+```
+
+You can list all the attached disks on your computer from Ubuntu
+using the `lsblk` command.
+```shell
+sudo lsblk
+# Hide loop (-e7) and CD/DVD (-e11) devices
+sudo lsblk -e7 -e11
+# List attached disks with their vendor and model information
+sudo lsblk --scsi
 ```
 
 ---
