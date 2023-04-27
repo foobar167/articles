@@ -13,8 +13,6 @@
          - [Virtual environment for Ubuntu 18.04](#venv_18.04)
    - [EasyBuild environment on SURFsara server](#easy-build)
 
-test?
-
 ---
 ### <a name="task" />Task
 
