@@ -11,31 +11,103 @@
       - [Set up and configure virtual environment](#configure-venv)
          - [Virtual environment for Ubuntu 20.04](#venv_20.04)
          - [Virtual environment for Ubuntu 18.04](#venv_18.04)
-   - [EasyBuild environment on SURFsara server](#easy-build)
+   - [(OLD) EasyBuild environment on SURFsara server](#easy-build)
 
 ---
 ### <a name="task" />Task
 
-Install software for virtual environments. Set up and configure virtual env.
+Install software for Python virtual environments. Set up and configure virtual envs.
+
+To install TensorFlow, I recommend the Miniconda virtual environment,
+but you can use Anaconda or the regular virtual environment described below.
+The main difference between Miniconda and Anaconda is that Anaconda comes pre-loaded
+with hundreds of packages while Miniconda only includes conda and its dependencie.
+This means that Anaconda is larger and more convenient to use, but Miniconda is smaller
+and more flexible to install.
 
 ---
 ### <a name="miniconda" />Miniconda virtual environment
 
+Links:
+   - [Install TensorFlow with pip](https://www.tensorflow.org/install/pip#linux_1)
+   - [How to Install TensorFlow on Ubuntu](https://phoenixnap.com/kb/how-to-install-tensorflow-ubuntu)
+
+```shell script
+# Install system packages if necessary using sudo user (admin).
+# Python-dev for installing header files for Python extensions.
+# PIP package manager. 
+sudo apt install python3-dev python3-pip
+```
 
 #### <a name="install-miniconda" />Install Miniconda
+```shell script
+# Download latest Miniconda distribution
+mkdir -p ~/Downloads/
+cd ~/Downloads/
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
+# Run installation script. When asked to initialize Miniconda, type `yes`.
+bash Miniconda3-latest-Linux-x86_64.sh
+
+# Restart the shell
+source ~/.bashrc
+# Verify the installation
+conda --version
+
+# If you'd prefer that conda's base environment not be activated on startup, 
+#   set the auto_activate_base parameter to false: 
+# conda config --set auto_activate_base false
+
+# Update conda to the latest version
+conda update -n base -c defaults conda
+```
 
 #### <a name="configure-miniconda" />Set up and configure Miniconda virtual environment
 
+```shell script
+# Set up conda virtual environment
+conda create --name myenv python=3.9
+# Show virtual envs
+conda info --envs
+# Activate the environment
+conda activate myenv
+
+# Activate and deactivate virtual environment
+conda deactivate  # exit to the "base" environment
+conda deactivate  # exit from Anaconda base env
+conda activate myenv
+
+# Delete vitrual environment if necessary
+#conda deactivate
+#conda remove --name myenv --all
+#conda info --envs
+```
 
 #### <a name="tensorflow-gpu" />Install TensorFlow for GPU
 
+First install the [NVIDIA GPU driver](08_Nvidia_driver_and_CUDA_install.md/#nvidia-smi-error)
+if you have not. You can use the `nvidia-smi` command to verify it is installed.
+
+```shell script
+# install TensorFlow using Anaconda
+conda install tensorflow-gpu
+# Check it
+python -c "import tensorflow as tf;     \
+    print('Version:', tf.__version__);  \
+    print(tf.reduce_sum(tf.random.normal([1000, 1000])));"
+
+# Install necessary packages:
+conda install tensorflow-gpu matplotlib scipy opencv pillow \
+              scikit-learn scikit-image pandas ipython \
+              ipyparallel jupyter pyyaml graphviz -n myenv
+
+# Install PyTorch if necessary.
+# Check https://pytorch.org for installation parameters
+#conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
+```
 
 ---
 ### <a name="anaconda" />Anaconda virtual environment
-
-I recommend Anaconda virtual environment, but you could use common virtual env
-described in the next chapter.
 
 Links:
    - [How to Install Anaconda on Ubuntu 20.04](https://tecnstuff.net/how-to-install-anaconda-on-ubuntu-20-04/)
@@ -47,8 +119,8 @@ Links:
 
 ```shell script
 # Download latest Anaconda distribution
-mkdir -p ~/Documents/Install/Anaconda/
-cd ~/Documents/Install/Anaconda
+mkdir -p ~/Downloads/
+cd ~/Downloads/
 curl -O https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
 
 # Run installation script
@@ -79,33 +151,16 @@ conda update anaconda
 source ~/.bashrc
 
 # Set up Anaconda virtual environment
-conda create --name myenv python=3.8
+conda create --name myenv python=3.9
 # Show virtual envs
 conda info --envs
-# Activate the new environment
+# Activate the environment
 conda activate myenv
-
-# After activation of virtual environment,
-# install TensorFlow using Anaconda
-conda install tensorflow-gpu
-# Check it
-python -c "import tensorflow as tf;     \
-    print('Version:', tf.__version__);  \
-    print(tf.reduce_sum(tf.random.normal([1000, 1000])));"
 
 # Activate and deactivate virtual environment
 conda deactivate  # exit to the "base" environment
 conda deactivate  # exit from Anaconda base env
 conda activate myenv
-
-# Install necessary packages:
-conda install tensorflow-gpu matplotlib scipy opencv pillow \
-              scikit-learn scikit-image pandas ipython \
-              ipyparallel jupyter pyyaml graphviz -n myenv
-
-# Install PyTorch if necessary.
-# Check https://pytorch.org for installation parameters
-conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
 
 # Delete vitrual environment if necessary
 conda deactivate
@@ -229,24 +284,9 @@ workon myenv
 # (myenv) username@hostname:~/path/to/dir$
 # Make sure you "workon myenv" and install packages into myenv
 
-# Install TensorFlow 2.0 alpha0 — make sure you need this version of TF.
-pip install -U --pre tensorflow-gpu
-# or
-pip install tensorflow-gpu
-
-# Check it
-python -c "import tensorflow as tf;     \
-    print('Version:', tf.__version__);  \
-    print(tf.reduce_sum(tf.random.normal([1000, 1000])));"
-
-# Install all other packages into myenv
-conda install tensorflow-gpu matplotlib scipy opencv pillow \
-              scikit-learn scikit-image pandas ipython \
-              ipyparallel jupyter pyyaml graphviz
-
 # Install PyTorch if necessary
 # NOTE: check your installation here: https://pytorch.org/
-pip install torch torchvision
+#pip install torch torchvision
 
 # Deactivate myenv
 deactivate
@@ -256,7 +296,7 @@ rmvirtualenv myenv
 ```
 
 ---
-### <a name="easy-build" />EasyBuild environment on SURFsara server
+### <a name="easy-build" />(OLD) EasyBuild environment on SURFsara server
 
 Links to read:
    * [Tutorial: Easybuild and Environment Modules](https://varrette.gforge.uni.lu/blog/2017/06/01/tutorial-easybuild/)
@@ -313,16 +353,11 @@ module load Anaconda3/5.3.0
 which anaconda
 conda --version
 # Set up 'test' Anaconda virtual environment
-conda create --name test python=3
+conda create --name test python=3.9
 # Show virtual environments
 conda info --envs
 # Activate 'test' environment
 source activate test
-
-# Install necessary packages with one line in activated 'test' environment
-conda install tensorflow-gpu matplotlib scipy opencv pillow \
-              scikit-learn scikit-image pandas ipython \
-              ipyparallel jupyter pyyaml graphviz -n test
 
 # Update Anaconda if necessary
 conda update -n base -c defaults conda
@@ -356,11 +391,6 @@ which python
 python --version
 # Start Python in the local environment
 python3
-
-# Install necessary packages with one line in activated 'test' environment
-pip install tensorflow-gpu matplotlib scipy opencv pillow \
-              scikit-learn scikit-image pandas ipython \
-              ipyparallel jupyter pyyaml graphviz
 
 # Deactivate 'test' environment
 deactivate
