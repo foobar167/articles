@@ -74,7 +74,7 @@ conda activate myenv
 
 # Activate and deactivate virtual environment
 conda deactivate  # exit to the "base" environment
-conda deactivate  # exit from Anaconda base env
+conda deactivate  # exit from Miniconda base env
 conda activate myenv
 
 # Delete vitrual environment if necessary
@@ -89,21 +89,48 @@ First install the [NVIDIA GPU driver](08_Nvidia_driver_and_CUDA_install.md/#nvid
 if you have not. You can use the `nvidia-smi` command to verify it is installed.
 
 ```shell script
-# install TensorFlow using Anaconda
-conda install tensorflow-gpu
-# Check it
-python -c "import tensorflow as tf;     \
-    print('Version:', tf.__version__);  \
-    print(tf.reduce_sum(tf.random.normal([1000, 1000])));"
+# Activate virtual environment
+conda activate myenv
 
-# Install necessary packages:
-conda install tensorflow-gpu matplotlib scipy opencv pillow \
-              scikit-learn scikit-image pandas ipython \
-              ipyparallel jupyter pyyaml graphviz -n myenv
+# Search for CUDA Toolkit available versions.
+# The CUDA Toolkit enables GPU-accelerated development.
+conda search -c conda-forge cudatoolkit
+# Install CUDA Toolkit. Use newer version if necessary.
+conda install -c conda-forge cudatoolkit=11.8
 
-# Install PyTorch if necessary.
+# Search for cuDNN library available versions.
+# The cuDNN package provides GPU acceleration for deep neural networks (DNN).
+conda search -c conda-forge cudnn
+# Install cuDNN library. Use newer version if necessary.
+conda install -c conda-forge cudnn=8.8
+
+# Configure the system paths to activate when running the virtual environment
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+# Export the paths
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > \
+        $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+
+# NOTE: Try to not mix pip and conda installations together!
+# Update the pip package manager. Not necessary.
+#pip install --upgrade pip
+
+# Search for TensorFlow GPU available versions.
+conda search -c conda-forge tensorflow-gpu
+# Install TF with GPU support using Miniconda.
+# Do not use pip like in official web-site.
+# Try to not mix pip and conda installations together.
+conda install -c conda-forge tensorflow-gpu
+
+# Verify the GPU setup
+python -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
+
+# Install other Python packages
+conda install -c conda-forge tensorflow-hub matplotlib scipy numpy opencv pillow \
+    scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
+
+# Install PyTorch if necessary. But it's better to set it to the different environment.
 # Check https://pytorch.org for installation parameters
-#conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
+#conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
 
 ---
