@@ -1,4 +1,8 @@
    - [Task](#task)
+   - [Miniconda virtual environment](#miniconda)
+      - [Install Miniconda](#install-miniconda)
+      - [Set up and configure Miniconda virtual environment](#configure-miniconda)
+      - [Install TensorFlow for GPU](#tensorflow-gpu)
    - [Anaconda virtual environment](#anaconda)
       - [Install Anaconda](#install-anaconda)
       - [Set up and configure Anaconda virtual environment](#configure-anaconda)
@@ -13,6 +17,19 @@
 ### <a name="task" />Task
 
 Install software for virtual environments. Set up and configure virtual env.
+
+---
+### <a name="miniconda" />Miniconda virtual environment
+
+
+#### <a name="install-miniconda" />Install Miniconda
+
+
+#### <a name="configure-miniconda" />Set up and configure Miniconda virtual environment
+
+
+#### <a name="tensorflow-gpu" />Install TensorFlow for GPU
+
 
 ---
 ### <a name="anaconda" />Anaconda virtual environment
