@@ -7,8 +7,6 @@
       - [Install Pyenv](#install-pyenv)
       - [Configure Pyenv](#configure-pyenv)
       - [Install TensorFlow for GPU](#tensorflow-pyenv)
-
-
    - [Anaconda virtual environment](#anaconda)
       - [Install Anaconda](#install-anaconda)
       - [Configure Anaconda virtual environment](#configure-anaconda)
