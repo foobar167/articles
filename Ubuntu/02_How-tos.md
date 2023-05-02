@@ -545,6 +545,25 @@ Use sheet "Updates" to manage updates check.
 Also check file `/etc/apt/sources.list` and directory `/etc/apt/sources.list.d`
 which containes list of sources to update Ubuntu 18.04.
 
+Manage PPA via console. When update with command `sudo apt update`,
+some PPA has been removed and no longer exist and ther is an error:
+```text
+Err:5 https://dl.yarnpkg.com/debian stable InRelease
+  The following signatures were invalid: EXPKEYSIG 23E7166788B63E1E Yarn Packaging <yarn@dan.cx>
+```
+```shell
+# Delete the expired key
+sudo apt-key del 23E7166788B63E1E
+# Delete the PPA for yarn
+sudo rm yarn.list
+# Clean the local repository and remove unnecessary packages
+sudo apt clean
+sudo apt autoclean
+sudo apt autoremove
+# Update the packages again
+sudo apt update
+```
+
 ---
 ### <a name="mount" />Mount USB
 

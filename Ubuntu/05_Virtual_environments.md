@@ -1,14 +1,20 @@
    - [Task](#task)
    - [Miniconda virtual environment](#miniconda)
       - [Install Miniconda](#install-miniconda)
-      - [Set up and configure Miniconda virtual environment](#configure-miniconda)
-      - [Install TensorFlow for GPU](#tensorflow-gpu)
+      - [Configure Miniconda virtual environment](#configure-miniconda)
+      - [Install TensorFlow for GPU](#tensorflow-conda)
+   - [Pyenv Python version manager](#pyenv)
+      - [Install Pyenv](#install-pyenv)
+      - [Configure Pyenv](#configure-pyenv)
+      - [Install TensorFlow for GPU](#tensorflow-pyenv)
+
+
    - [Anaconda virtual environment](#anaconda)
       - [Install Anaconda](#install-anaconda)
-      - [Set up and configure Anaconda virtual environment](#configure-anaconda)
-   - [Common virtual environment](#venv)
+      - [Configure Anaconda virtual environment](#configure-anaconda)
+   - [(OLD) Common virtual environment](#venv)
       - [Install packages for virtual environment](#install-packages)
-      - [Set up and configure virtual environment](#configure-venv)
+      - [Configure virtual environment](#configure-venv)
          - [Virtual environment for Ubuntu 20.04](#venv_20.04)
          - [Virtual environment for Ubuntu 18.04](#venv_18.04)
    - [(OLD) EasyBuild environment on SURFsara server](#easy-build)
@@ -40,6 +46,7 @@ sudo apt install python3-dev python3-pip
 ```
 
 #### <a name="install-miniconda" />Install Miniconda
+
 ```shell script
 # Download latest Miniconda distribution
 mkdir -p ~/Downloads/
@@ -62,7 +69,7 @@ conda --version
 conda update -n base -c defaults conda
 ```
 
-#### <a name="configure-miniconda" />Set up and configure Miniconda virtual environment
+#### <a name="configure-miniconda" />Configure Miniconda virtual environment
 
 ```shell script
 # Set up conda virtual environment
@@ -83,7 +90,7 @@ conda activate myenv
 #conda info --envs
 ```
 
-#### <a name="tensorflow-gpu" />Install TensorFlow for GPU
+#### <a name="tensorflow-conda" />Install TensorFlow for GPU
 
 First install the [NVIDIA GPU driver](08_Nvidia_driver_and_CUDA_install.md/#nvidia-smi-error)
 if you have not. You can use the `nvidia-smi` command to verify it is installed.
@@ -131,10 +138,32 @@ conda install -c conda-forge tensorflow-hub matplotlib scipy numpy opencv pillow
 # Install PyTorch if necessary. But it's better to set it to the different environment.
 # Check https://pytorch.org for installation parameters
 #conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+# Install Curl downloader if necessary
+#conda install -c anaconda curl
 ```
 
 ---
+### <a name="pyenv" />Pyenv Python version manager
+
+
+
+#### <a name="install-pyenv" />Install Pyenv
+
+
+
+#### <a name="configure-pyenv" />Configure Pyenv
+
+
+
+#### <a name="tensorflow-pyenv" />Install TensorFlow for GPU
+
+
+
+---
 ### <a name="anaconda" />Anaconda virtual environment
+
+To install TensorFlow try to use Miniconda, because it is smaller.
 
 Links:
    - [How to Install Anaconda on Ubuntu 20.04](https://tecnstuff.net/how-to-install-anaconda-on-ubuntu-20-04/)
@@ -148,10 +177,10 @@ Links:
 # Download latest Anaconda distribution
 mkdir -p ~/Downloads/
 cd ~/Downloads/
-curl -O https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+curl -O https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
 
 # Run installation script
-bash Anaconda3-2020.02-Linux-x86_64.sh
+bash Anaconda3-2023.03-1-Linux-x86_64.sh
 
 # Next, you will be prompted to download Visual Studio Code,
 # which you can learn more about from the official VSCode website.
@@ -171,7 +200,7 @@ conda update anaconda
 #anaconda-clean ––yes
 ```
 
-#### <a name="configure-anaconda" />Set up and configure Anaconda virtual environment
+#### <a name="configure-anaconda" />Configure Anaconda virtual environment
 
 ```shell script
 # To activate installed Anaconda use command:
@@ -196,7 +225,7 @@ conda info --envs
 ```
 
 ---
-### <a name="venv" />Common virtual environment
+### <a name="venv" />(OLD) Common virtual environment
 
 Links:
    - [Python Virtual Environment](https://www.geeksforgeeks.org/python-virtual-environment)
@@ -252,7 +281,7 @@ It is better to use virtual environment.
 pip install --user pipenv
 ```
 
-#### <a name="configure-venv" />Set up and configure virtual environment
+#### <a name="configure-venv" />Configure virtual environment
 
 ##### <a name="venv_20.04" />Virtual environment for Ubuntu 20.04
 
