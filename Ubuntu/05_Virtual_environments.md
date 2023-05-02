@@ -3,6 +3,7 @@
       - [Install Miniconda](#install-miniconda)
       - [Configure Miniconda virtual environment](#configure-miniconda)
       - [Install TensorFlow for GPU using Conda installer](#tensorflow-conda)
+      - [Install TensorFlow for GPU using PIP installer](#tensorflow-conda-pip)
    - [Pyenv Python version manager](#pyenv)
       - [Install Pyenv](#install-pyenv)
       - [Configure Pyenv](#configure-pyenv)
@@ -138,6 +139,15 @@ conda install -c conda-forge tensorflow-hub matplotlib scipy numpy opencv pillow
 # Install Curl downloader if necessary
 #conda install -c anaconda curl
 ```
+#### <a name="tensorflow-conda-pip" />Install TensorFlow for GPU using PIP installer
+
+For now there is no CUDA Toolkit (`cudatoolkit`) for PIP,
+but it is available in the Conda repository. So install `cudatoolkit` with Conda
+and then install all other packages with PIP.
+
+```shell
+
+```
 
 ---
 ### <a name="pyenv" />Pyenv Python version manager
@@ -269,8 +279,9 @@ pyenv virtualenv miniconda3-latest tf  # create virtual env
 pyenv local tf  # activate virtual environment
 pyenv versions  # view all environments
 
+# Initialize Miniconda in the ~/.bashrc file
 ~/.pyenv/versions/miniconda3-latest/bin/conda init bash
-exec $SHELL
+exec $SHELL  # restart shell
 conda --version  # check it
 #conda update -n base -c defaults conda  # update Conda if necessary
 
