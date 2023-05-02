@@ -267,8 +267,11 @@ continue and install TensorFlow for GPU with PIP like in
 pyenv install -v miniconda3-latest  # install Miniconda
 pyenv virtualenv miniconda3-latest tf  # create virtual env
 pyenv local tf  # activate virtual environment
-conda --version  # check it
 pyenv versions  # view all environments
+
+~/.pyenv/versions/miniconda3-latest/bin/conda init bash
+exec $SHELL
+conda --version  # check it
 #conda update -n base -c defaults conda  # update Conda if necessary
 
 # Update the pip package manager
