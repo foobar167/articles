@@ -181,6 +181,9 @@ pip install tensorflow-hub matplotlib scipy numpy opencv-python pillow \
 ---
 ### <a name="pyenv" />Pyenv Python version manager
 
+<details>
+  <summary>Show details</summary>
+
 Links:
    - [Managing Multiple Python Versions With pyenv](https://realpython.com/intro-to-pyenv/)
    - [How to install 'pyenv' Python version manager on Ubuntu 20.04](https://brain2life.hashnode.dev/how-to-install-pyenv-python-version-manager-on-ubuntu-2004)
@@ -342,8 +345,13 @@ pip install tensorflow-hub matplotlib scipy numpy opencv-python pillow \
 
 ```
 
+</details>
+
 ---
 ### <a name="anaconda" />Anaconda virtual environment
+
+<details>
+  <summary>Show details</summary>
 
 For TensorFlow try to use Miniconda, because it is smaller.
 
@@ -406,8 +414,13 @@ conda remove --name myenv --all
 conda info --envs
 ```
 
+</details>
+
 ---
 ### <a name="venv" />(OLD) Common virtual environment
+
+<details>
+  <summary>Show details</summary>
 
 Links:
    - [Python Virtual Environment](https://www.geeksforgeeks.org/python-virtual-environment)
@@ -532,6 +545,8 @@ deactivate
 # Delete virtual environment if you don't need it any more.
 rmvirtualenv myenv
 ```
+
+</details>
 
 ---
 ### <a name="easy-build" />(OLD) EasyBuild environment on SURFsara server
