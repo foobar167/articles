@@ -250,42 +250,51 @@ pyenv local system  # set system Python locally
 #pyenv global system  # set system Python globally
 ```
 
-For example, install Miniconda and then
-[install TensorFlow for GPU using Conda installer](#tensorflow-conda):
-
-```shell script
-pyenv install -v miniconda3-latest
-pyenv local miniconda3-latest  # activate Miniconda
-pyenv virtualenv miniconda3-latest myenv2  # create virtual env
-pyenv local myenv2  # activate virtual environment
-conda --version  # check it
-pyenv versions  # view all environments
-```
-
 #### <a name="tensorflow-pyenv" />Install TensorFlow for GPU using PIP installer
-
-Install TensorFlow for GPU using PIP installer (not Conda).
 
 NOTE: Try to not mix PIP and Conda installations together!
 
+For now there is [no](https://stackoverflow.com/a/67912911/7550928)
+CUDA Toolkit (`cudatoolkit`) for PIP,
+but it is available in the Conda repository.
+So we have to mix PIP and Conda installators together.
+Install Miniconda and then
+[install TensorFlow for GPU using Conda installer](#tensorflow-conda) or
+continue and install TensorFlow for GPU with PIP like in
+[official tutorial](https://www.tensorflow.org/install/pip).
+
 ```shell
-pyenv virtualenv 3.9.16 tf
-pyenv local tf
-pyenv versions
+pyenv install -v miniconda3-latest  # install Miniconda
+pyenv virtualenv miniconda3-latest tf  # create virtual env
+pyenv local tf  # activate virtual environment
+conda --version  # check it
+pyenv versions  # view all environments
+#conda update -n base -c defaults conda  # update Conda if necessary
 
 # Update the pip package manager
 pyenv which pip  # check pip location
 pip install --upgrade pip
 
-pip install cuda-python
-pip install nvidia-cudnn-cu11
-pip install tensorflow
+# There is no CUDA Toolkit for PIP. Install it with Conda
+conda search -c conda-forge cudatoolkit
+conda install -c conda-forge cudatoolkit=11.8
+
+# Install cuDNN and TensorFlow with GPU support
+pip install nvidia-cudnn-cu11 tensorflow
+
+# Configure the system paths to activate when running the virtual environment
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> \
+    $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> \
+    $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 
 # Verify the GPU setup
 python -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
 
 # Install other Python packages
-pip install tensorflow-hub matplotlib scipy numpy opencv pillow \
+pip install tensorflow-hub matplotlib scipy numpy opencv-python pillow \
     scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
 
 ```
@@ -293,7 +302,7 @@ pip install tensorflow-hub matplotlib scipy numpy opencv pillow \
 ---
 ### <a name="anaconda" />Anaconda virtual environment
 
-To install TensorFlow try to use Miniconda, because it is smaller.
+For TensorFlow try to use Miniconda, because it is smaller.
 
 Links:
    - [How to Install Anaconda on Ubuntu 20.04](https://tecnstuff.net/how-to-install-anaconda-on-ubuntu-20-04/)
