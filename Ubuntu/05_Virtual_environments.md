@@ -536,6 +536,9 @@ rmvirtualenv myenv
 ---
 ### <a name="easy-build" />(OLD) EasyBuild environment on SURFsara server
 
+<details>
+  <summary>Show details</summary>
+
 Links to read:
    * [Tutorial: Easybuild and Environment Modules](https://varrette.gforge.uni.lu/blog/2017/06/01/tutorial-easybuild/)
    * [EasyBuild documentation](https://easybuild.readthedocs.io/en/latest)
@@ -639,3 +642,5 @@ rmvirtualenv test
 
 To transfer files via `gsiscp` and `gsisftp` read
 [this instruction](14_Install_GSI_openssh_client.md/#manage).
+
+</details>
