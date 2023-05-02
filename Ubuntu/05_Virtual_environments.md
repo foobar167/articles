@@ -143,10 +143,39 @@ conda install -c conda-forge tensorflow-hub matplotlib scipy numpy opencv pillow
 
 For now there is no CUDA Toolkit (`cudatoolkit`) for PIP,
 but it is available in the Conda repository. So install `cudatoolkit` with Conda
-and then install all other packages with PIP.
+and then install all other packages with PIP like in
+[official tutorial](https://www.tensorflow.org/install/pip).
 
 ```shell
+conda create --name tf python=3.11
+conda info --envs
+conda activate tf
 
+# Update the pip package manager
+which pip  # check pip location
+pip install --upgrade pip
+
+# There is no CUDA Toolkit for PIP. Install it with Conda
+conda search -c conda-forge cudatoolkit
+conda install -c conda-forge cudatoolkit=11.8
+
+# Install cuDNN and TensorFlow with GPU support
+pip install nvidia-cudnn-cu11 tensorflow
+
+# Configure the system paths to activate when running the virtual environment
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> \
+    $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> \
+    $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+
+# Verify the GPU setup
+python -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
+
+# Install other Python packages
+pip install tensorflow-hub matplotlib scipy numpy opencv-python pillow \
+    scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
 ```
 
 ---
