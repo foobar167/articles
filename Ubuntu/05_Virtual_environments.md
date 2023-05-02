@@ -2,11 +2,11 @@
    - [Miniconda virtual environment](#miniconda)
       - [Install Miniconda](#install-miniconda)
       - [Configure Miniconda virtual environment](#configure-miniconda)
-      - [Install TensorFlow for GPU](#tensorflow-conda)
+      - [Install TensorFlow for GPU using Conda installer](#tensorflow-conda)
    - [Pyenv Python version manager](#pyenv)
       - [Install Pyenv](#install-pyenv)
       - [Configure Pyenv](#configure-pyenv)
-      - [Install TensorFlow for GPU](#tensorflow-pyenv)
+      - [Install TensorFlow for GPU using PIP installer](#tensorflow-pyenv)
    - [Anaconda virtual environment](#anaconda)
       - [Install Anaconda](#install-anaconda)
       - [Configure Anaconda virtual environment](#configure-anaconda)
@@ -88,10 +88,12 @@ conda activate myenv
 #conda info --envs
 ```
 
-#### <a name="tensorflow-conda" />Install TensorFlow for GPU
+#### <a name="tensorflow-conda" />Install TensorFlow for GPU using Conda installer
 
 First install the [NVIDIA GPU driver](08_Nvidia_driver_and_CUDA_install.md/#nvidia-smi-error)
 if you have not. You can use the `nvidia-smi` command to verify it is installed.
+
+NOTE: Try to not mix PIP and Conda installations together!
 
 ```shell script
 # Activate virtual environment
@@ -115,15 +117,11 @@ mkdir -p $CONDA_PREFIX/etc/conda/activate.d
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > \
         $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 
-# NOTE: Try to not mix pip and conda installations together!
-# Update the pip package manager. Not necessary.
-#pip install --upgrade pip
-
 # Search for TensorFlow GPU available versions.
 conda search -c conda-forge tensorflow-gpu
 # Install TF with GPU support using Miniconda.
 # Do not use pip like in official web-site.
-# Try to not mix pip and conda installations together.
+# Try to not mix PIP and Conda installations together.
 conda install -c conda-forge tensorflow-gpu
 
 # Verify the GPU setup
@@ -144,19 +142,153 @@ conda install -c conda-forge tensorflow-hub matplotlib scipy numpy opencv pillow
 ---
 ### <a name="pyenv" />Pyenv Python version manager
 
+Links:
+   - [Managing Multiple Python Versions With pyenv](https://realpython.com/intro-to-pyenv/)
+   - [How to install 'pyenv' Python version manager on Ubuntu 20.04](https://brain2life.hashnode.dev/how-to-install-pyenv-python-version-manager-on-ubuntu-2004)
+   - [How to Install and Use Pyenv in Ubuntu](https://itslinuxfoss.com/install-use-pyenv-ubuntu/)
 
+`pyenv` - is a simple Python version manager tool,
+which allows to switch between multiple versions of Python.
+You can set local or global system-wide Python versions via the tool.
+
+Install required prerequisite dependencies as a system administrator
+```shell
+sudo apt update; sudo apt install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+```
 
 #### <a name="install-pyenv" />Install Pyenv
 
+```shell
+# Download and execute installation script for local account
+curl https://pyenv.run | bash
+```
 
+At the end of the run, you should see some text like this:
+
+```text
+WARNING: seems you still have not added 'pyenv' to the load path.
+
+# Load pyenv automatically by appending
+# the following to ~/.bash_profile if it exists, otherwise
+# ~/.profile (for login shells) and
+# ~/.bashrc (for interactive shells) :
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Restart your shell for the changes to take effect.
+
+# Load pyenv-virtualenv automatically by adding
+# the following to ~/.bashrc:
+
+eval "$(pyenv virtualenv-init -)"
+```
+
+The output will be based on your shell.
+But you should follow the instructions to add `pyenv` to your path and
+to initialize pyenv/pyenv-virtualenv auto completion.
+
+```shell
+nano ~/.bashrc  # edit .bashrc file
+
+# Load pyenv automatically by appending the following to
+# ~/.bashrc file:
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+exec $SHELL  # restart shell
+pyenv update  # update pyenv
+pyenv --version  # get version
+```
+
+To uninstall `pyenv` delete `~/.pyenv` directory and modify `~/.bashrc` file.
+
+```shell
+#rm -rf ~/.pyenv
+#nano ~/.bashrc  # edit .bashrc file
+#exec $SHELL  # restart shell
+```
 
 #### <a name="configure-pyenv" />Configure Pyenv
 
+Try to use only `local` or only `global` command to set `pyenv` version.
 
+NOTE: `global` command doesn't work for me.
 
-#### <a name="tensorflow-pyenv" />Install TensorFlow for GPU
+```shell
+pyenv install --list  # show all available versions
 
+# Choose Python version and install it.
+# This will take a while because `pyenv` is building Python from source.
+pyenv install -v 3.9.16
 
+# Uninstall Python version if necessary
+#rm -rf ~/.pyenv/versions/3.9.16
+# or
+#pyenv uninstall 3.9.16
+
+# Set Python version
+pyenv versions  # show installed versions
+pyenv local 3.9.16  # set an application-specific version
+python --version  # get current Python version
+#pyenv commands  # list of pyenv commands
+
+# Create virtual environment: pyenv virtualenv <python_version> <env_name>
+pyenv virtualenv 3.9.16 myproject
+pyenv local myproject  # activate environment locally
+pyenv versions  # view all environments
+#pyenv virtualenv-delete myproject  # delete virtual environment
+
+# Deactivation doesn't work without default system Python.
+# Just create another virtual environment and activate it.
+pyenv local system  # set system Python locally
+#pyenv global system  # set system Python globally
+```
+
+For example, install Miniconda and then
+[install TensorFlow for GPU using Conda installer](#tensorflow-conda):
+
+```shell script
+pyenv install -v miniconda3-latest
+pyenv local miniconda3-latest  # activate Miniconda
+pyenv virtualenv miniconda3-latest myenv2  # create virtual env
+pyenv local myenv2  # activate virtual environment
+conda --version  # check it
+pyenv versions  # view all environments
+```
+
+#### <a name="tensorflow-pyenv" />Install TensorFlow for GPU using PIP installer
+
+Install TensorFlow for GPU using PIP installer (not Conda).
+
+NOTE: Try to not mix PIP and Conda installations together!
+
+```shell
+pyenv virtualenv 3.9.16 tf
+pyenv local tf
+pyenv versions
+
+# Update the pip package manager
+pyenv which pip  # check pip location
+pip install --upgrade pip
+
+pip install cuda-python
+pip install nvidia-cudnn-cu11
+pip install tensorflow
+
+# Verify the GPU setup
+python -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
+
+# Install other Python packages
+pip install tensorflow-hub matplotlib scipy numpy opencv pillow \
+    scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
+
+```
 
 ---
 ### <a name="anaconda" />Anaconda virtual environment
