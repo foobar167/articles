@@ -55,8 +55,7 @@ curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 # Run installation script. When asked to initialize Miniconda, type `yes`.
 bash Miniconda3-latest-Linux-x86_64.sh
 
-# Restart the shell
-source ~/.bashrc
+exec $SHELL  # restart the shell
 # Verify the installation
 conda --version
 
@@ -243,7 +242,7 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-exec $SHELL  # restart shell
+exec $SHELL  # restart the shell
 pyenv update  # update pyenv
 pyenv --version  # get version
 ```
@@ -253,7 +252,7 @@ To uninstall `pyenv` delete `~/.pyenv` directory and modify `~/.bashrc` file.
 ```shell
 #rm -rf ~/.pyenv
 #nano ~/.bashrc  # edit .bashrc file
-#exec $SHELL  # restart shell
+#exec $SHELL  # restart the shell
 ```
 
 #### <a name="configure-pyenv" />Configure Pyenv
@@ -313,7 +312,7 @@ pyenv versions  # view all environments
 
 # Initialize Miniconda in the ~/.bashrc file
 ~/.pyenv/versions/miniconda3-latest/bin/conda init bash
-exec $SHELL  # restart shell
+exec $SHELL  # restart the shell
 conda --version  # check it
 #conda update -n base -c defaults conda  # update Conda if necessary
 
