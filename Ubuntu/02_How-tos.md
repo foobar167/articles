@@ -230,7 +230,7 @@ sudo kill -9 1864           # kill the process
 sudo deluser -f tempuser    # try again
 ```
 
-More info on how to [backup and delete deprecated user accounts](https://github.com/foobar167/articles/blob/master/Ubuntu/07_Website_software.md#backup-and-delete-deprecated-user-accounts)
+More info on how to [backup and delete deprecated user accounts](https://github.com/foobar167/articles/blob/master/Ubuntu/07_Website_software.md#backup-and-delete-deprecated-user-accounts).
 
 ---
 ### <a name="passwd" />Change password

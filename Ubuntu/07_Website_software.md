@@ -396,7 +396,7 @@ sudo deluser romanroskach
 
 # Backup the whole directory and delete it from $HOME
 du -sh /home/username 2> /dev/null  # show directory size
-sudo tar -zcvf /hdd_barracuda1/pavlenko_user_accounts_backups/vozman_2019**.12.31_backup.tar.gz /home/vozman
+sudo tar -zcvf /hdd_barracuda1/pavlenko_user_accounts_backups/vozman_2019.12.31_backup.tar.gz /home/vozman
 sudo tar -zcvf /hdd_barracuda1/pavlenko_user_accounts_backups/romanroskach_2019.12.31_backup.tar.gz /home/romanroskach
 sudo rm -r /home/vozman  # use with caution!
 sudo rm -r /home/romanroskach  # use with caution!
