@@ -655,6 +655,6 @@ rmvirtualenv test
 ```
 
 To transfer files via `gsiscp` and `gsisftp` read
-[this instruction](14_Install_GSI_openssh_client.md/#manage).
+[this instruction](old/14_Install_GSI_openssh_client.md/#manage).
 
 </details>

@@ -15,7 +15,6 @@ Periodically updated instructions:
    * [Nvidia driver and CUDA install](08_Nvidia_driver_and_CUDA_install.md)
    * [Docker configuration and use](11_Docker_configuration.md)
    * [Keras and TensorFlow How-to and use](13_Keras_and_TensorFlow_how-tos.md)
-   * [Install GSI openssh client (Ubuntu and Debian)](14_Install_GSI_openssh_client.md)
    * [Raspbian configuration instruction](15_Raspbian_configuration.md)
    * [DL4 Ubuntu 20.04 configuration instructions](16_DL4_config.md)
 
@@ -23,3 +22,5 @@ Not supported instructions in the `old` directory:
    * [TensorFlow installation](old/09_TensorFlow_installation.md)
    * [Neural networks software](old/10_Neural_networks_software.md)
    * [DIGITS configuration and use](old/12_Nvidia_DIGITS.md)
+   * [Install GSI openssh client (Ubuntu and Debian)](old/14_Install_GSI_openssh_client.md)
+   * 
