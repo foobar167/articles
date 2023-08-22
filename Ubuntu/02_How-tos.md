@@ -844,6 +844,7 @@ Links:
 The small set of different CPU performance tests focuses on 'headless'
 operation only (no GPU/display stuff, no floating point number crunching).
    * Browser benchmark with [Speedometer 2.0](https://browserbench.org/Speedometer2.0/).
+   * [How to benchmark your Ubuntu Linux servers with the Phoronix Test Suite](https://www.techrepublic.com/article/benchmark-ubuntu-linux-servers-phoronix-test-suite/)
    * [Phoronix Test Suite HowTo](https://wiki.ubuntu.com/PhoronixTestSuite)
 
 Show system parameters:
@@ -864,20 +865,32 @@ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 
 # sbc-bench.sh from Thomas kaiser
 # wget https://raw.githubusercontent.com/ThomasKaiser/sbc-bench/master/sbc-bench.sh
-sudo /bin/bash ./sbc-bench.sh -r
+sudo /bin/bash ./sbc-bench.sh -r  # or "-c" for shorter tests
 ```
 
-To fix broken dependencies for Phoronix Test Suite:
+Phoronix Test Suite:
 ```shell script
+# Install Phoronix Test Suite
 # sudo apt install phoronix-test-suite
 # or
+# wget https://phoronix-test-suite.com/releases/repo/pts.debian/files/phoronix-test-suite_10.8.4_all.deb
 # sudo dpkg -i ~/Downloads/phoronix-test-suite_10.8.4_all.deb
+
+# To fix broken dependencies
 sudo apt --fix-broken install
+# or
+# sudo apt install -f
 
 # Install OPTIONAL but recommended extensions
 # Install GD library
-sudo apt install php-gd
+sudo apt install php-gd bzip2 sqlite3 curl
 
+# Check installation
+phoronix-test-suite version  # or phoronix-test-suite
+# List the available tests
+phoronix-test-suite list-available-tests
+# List the tests by group
+phoronix-test-suite list-available-suites
 ```
 
 ---
