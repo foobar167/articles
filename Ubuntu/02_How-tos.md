@@ -839,11 +839,11 @@ sudo gnome-tweaks &
 ### <a name="sys_info" />System info and benchmarks
 
 Links:
-   [Khadas Edge2 Pro review – A Rockchip RK3588S SBC tested with Ubuntu 22.04](https://www.cnx-software.com/2022/09/20/khadas-edge2-pro-review-rockchip-rk3588s-sbc-ubuntu-22-04/)
-   Thomas Kaiser [sbc-bench script](https://github.com/ThomasKaiser/sbc-bench).
+   * [Khadas Edge2 Pro review – A Rockchip RK3588S SBC tested with Ubuntu 22.04](https://www.cnx-software.com/2022/09/20/khadas-edge2-pro-review-rockchip-rk3588s-sbc-ubuntu-22-04/)
+   * Thomas Kaiser [sbc-bench script](https://github.com/ThomasKaiser/sbc-bench).
 The small set of different CPU performance tests focuses on 'headless'
 operation only (no GPU/display stuff, no floating point number crunching).
-   Browser benchmark with [Speedometer 2.0](https://browserbench.org/Speedometer2.0/).
+   * Browser benchmark with [Speedometer 2.0](https://browserbench.org/Speedometer2.0/).
 
 Show system parameters:
 ```shell script
