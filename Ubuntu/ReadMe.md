@@ -23,4 +23,3 @@ Not supported instructions in the `old` directory:
    * [Neural networks software](old/10_Neural_networks_software.md)
    * [DIGITS configuration and use](old/12_Nvidia_DIGITS.md)
    * [Install GSI openssh client (Ubuntu and Debian)](old/14_Install_GSI_openssh_client.md)
-   * 

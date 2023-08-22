@@ -30,6 +30,7 @@ How-to:
    - [Show the model of the computer](#show_the_model)
    - [Static IP address](#static_ip)
    - [Switch language hotkey](#lang)
+   - [System info and benchmarks](#sys_info)
    - [Take screenshot](#screenshot)
    - [Update system packages](#update-ubuntu)
    - [View computer resources](#resources)
@@ -833,6 +834,33 @@ sudo gnome-tweaks &
    - Select checkbox *Alt+Shift* there
 
 ![Gnome Tweaks Keyboard & Mouse](data/2018.12.03_keyboard_layout.png)
+
+---
+### <a name="sys_info" />System info and benchmarks
+
+[Khadas Edge2 Pro review – A Rockchip RK3588S SBC tested with Ubuntu 22.04](https://www.cnx-software.com/2022/09/20/khadas-edge2-pro-review-rockchip-rk3588s-sbc-ubuntu-22-04/)
+
+Show system parameters:
+```shell script
+cat /etc/lsb-release 
+uname -a
+free -mh
+df -mh
+
+# Install and run inxi command line tool
+# sudo apt install inxi
+sudo inxi -Fc0
+```
+Run some Linux benchmarks:
+```shell script
+# CPU default to the performance governor
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+
+# sbc-bench.sh from Thomas kaiser
+sudo ./sbc-bench.sh
+
+
+```
 
 ---
 ### <a name="screenshot" />Take screenshot
