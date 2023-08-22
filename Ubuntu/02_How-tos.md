@@ -844,6 +844,7 @@ Links:
 The small set of different CPU performance tests focuses on 'headless'
 operation only (no GPU/display stuff, no floating point number crunching).
    * Browser benchmark with [Speedometer 2.0](https://browserbench.org/Speedometer2.0/).
+   * [Phoronix Test Suite HowTo](https://wiki.ubuntu.com/PhoronixTestSuite)
 
 Show system parameters:
 ```shell script
@@ -864,6 +865,18 @@ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 # sbc-bench.sh from Thomas kaiser
 # wget https://raw.githubusercontent.com/ThomasKaiser/sbc-bench/master/sbc-bench.sh
 sudo /bin/bash ./sbc-bench.sh -r
+```
+
+To fix broken dependencies for Phoronix Test Suite:
+```shell script
+# sudo apt install phoronix-test-suite
+# or
+# sudo dpkg -i ~/Downloads/phoronix-test-suite_10.8.4_all.deb
+sudo apt --fix-broken install
+
+# Install OPTIONAL but recommended extensions
+# Install GD library
+sudo apt install php-gd
 
 ```
 
