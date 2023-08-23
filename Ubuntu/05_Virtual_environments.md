@@ -71,7 +71,7 @@ conda update -n base -c defaults conda
 
 ```shell script
 # Set up conda virtual environment
-conda create --name myenv python=3.9
+conda create --name myenv python=3.11
 # Show virtual envs
 conda info --envs
 # Activate the environment

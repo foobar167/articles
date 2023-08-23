@@ -891,9 +891,19 @@ phoronix-test-suite
 phoronix-test-suite list-available-tests
 # List the tests by group
 phoronix-test-suite list-available-suites
-# The machine learning test suite
-phoronix-test-suite info pts/machine-learning
 
+# Run the Numpy test suite (or pts/machine-learning)
+phoronix-test-suite info numpy 
+phoronix-test-suite install numpy
+phoronix-test-suite run numpy
+# Use `benchmark` to install and run
+phoronix-test-suite benchmark numpy
+```
+
+Run some stress tests:
+```shell script
+sudo apt install stress
+stress --cpu 8 --io 4 --vm 4 --vm-bytes 256M --hdd 4 -hdd-bytes --timeout 10s
 ```
 
 ---
