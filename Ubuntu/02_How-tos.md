@@ -893,17 +893,20 @@ phoronix-test-suite list-available-tests
 phoronix-test-suite list-available-suites
 
 # Run the Numpy test suite (or pts/machine-learning)
-phoronix-test-suite info numpy 
-phoronix-test-suite install numpy
-phoronix-test-suite run numpy
+phoronix-test-suite info numpy  # show information 
+sudo phoronix-test-suite install numpy  # install necessary software
+phoronix-test-suite run numpy  # run benchmark suite
 # Use `benchmark` to install and run
-phoronix-test-suite benchmark numpy
+phoronix-test-suite benchmark numpy  # install and run in 1 command
 ```
 
 Run some stress tests:
 ```shell script
 sudo apt install stress
+stress --help  # show options
 stress --cpu 8 --io 4 --vm 4 --vm-bytes 256M --hdd 4 --hdd-bytes 1024M --timeout 10s
+# Stress-ng is an updated implementation of Stress tool
+sudo apt install stress-ng
 ```
 
 ---
