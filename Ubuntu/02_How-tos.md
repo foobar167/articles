@@ -882,15 +882,18 @@ sudo apt --fix-broken install
 # sudo apt install -f
 
 # Install OPTIONAL but recommended extensions
-# Install GD library
 sudo apt install php-gd bzip2 sqlite3 curl
 
 # Check installation
-phoronix-test-suite version  # or phoronix-test-suite
+phoronix-test-suite version
+phoronix-test-suite
 # List the available tests
 phoronix-test-suite list-available-tests
 # List the tests by group
 phoronix-test-suite list-available-suites
+# The machine learning test suite
+phoronix-test-suite info pts/machine-learning
+
 ```
 
 ---
