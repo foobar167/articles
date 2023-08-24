@@ -9,6 +9,7 @@ How-to:
    - [Change password](#passwd)
    - [Change SSH Port](#change_ssh_port)
    - [Check Linux version](#check-linux)
+   - [Coral USB Accelerator](#coral)
    - [Delete package](#delete)
    - [Delete user account](#del-account)
    - [Exclude packages from `sudo apt upgrade`](#exclude-packages)
@@ -314,6 +315,60 @@ lsb_release -cs
 # Even more options
 cat /proc/version
 cat /etc/issue
+```
+
+---
+### <a name="coral" />Coral USB Accelerator
+
+[Get started with the USB Accelerator](https://coral.ai/docs/accelerator/get-started)
+
+For Ubuntu 22.04 with system Python 3.10 use instruction below:
+```shell script
+# Add package repository to the Ubuntu 22.04:
+echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt update
+
+# Install the Edge TPU runtime (standard, not maximum package):
+sudo apt install libedgetpu1-std
+
+# Reconnect the USB Accelerator to your computer using the provided USB 3.0 cable.
+
+# This command doesn't work for Ubuntu 22.04:
+#     sudo apt-get install python3-pycoral
+
+# Use Conda virtual environment with Python 3.9. Download and install wheel files:
+wget https://github.com/google-coral/pycoral/releases/download/v2.0.0/pycoral-2.0.0-cp39-cp39-linux_aarch64.whl
+wget https://github.com/google-coral/pycoral/releases/download/v2.0.0/tflite_runtime-2.5.0.post1-cp39-cp39-linux_aarch64.whl
+pip install tflite_runtime-2.5.0.post1-cp39-cp39-linux_aarch64.whl
+pip install pycoral-2.0.0-cp39-cp39-linux_aarch64.whl
+
+# Download the example code from GitHub:
+mkdir coral && cd coral
+git clone https://github.com/google-coral/pycoral.git
+cd pycoral
+
+# Download the model, labels, and bird photo:
+bash examples/install_requirements.sh classify_image.py
+
+# Run the image classifier with the bird photo:
+python3 examples/classify_image.py \
+--model test_data/mobilenet_v2_1.0_224_inat_bird_quant_edgetpu.tflite \
+--labels test_data/inat_bird_labels.txt \
+--input test_data/parrot.jpg
+
+# In the file `classify_image.py` change `Image.ANTIALIAS` on `Image.LANCZOS`.
+
+# Results should be like this:
+#    ----INFERENCE TIME----
+#    Note: The first inference on Edge TPU is slow because it includes loading the model into Edge TPU memory.
+#    11.8ms
+#    3.0ms
+#    2.8ms
+#    2.9ms
+#    2.9ms
+#    -------RESULTS--------
+#    Ara macao (Scarlet Macaw): 0.75781
 ```
 
 ---
