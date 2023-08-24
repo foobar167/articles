@@ -857,7 +857,14 @@ df -mh
 # Install and run inxi command line tool
 # sudo apt install inxi
 sudo inxi -Fc0
+
+# Linux monitor
+# sudo apt install htop
+htop
+ps -aux | grep X  # list processes with `X`
 ```
+View [CPU load and temperature sensors](#temperature) here.
+
 Run some Linux console benchmarks:
 ```shell script
 # CPU default to the performance governor
@@ -887,17 +894,22 @@ sudo apt install php-gd bzip2 sqlite3 curl
 # Check installation
 phoronix-test-suite version
 phoronix-test-suite
-# List the available tests
+# List tests compatible with your OS
+phoronix-test-suite list-recommended-tests
+# List all available tests
 phoronix-test-suite list-available-tests
 # List the tests by group
 phoronix-test-suite list-available-suites
 
 # Run the Numpy test suite (or pts/machine-learning)
-phoronix-test-suite info numpy  # show information 
+phoronix-test-suite info numpy 2>&1 | less  # show info in the terminal 
 sudo phoronix-test-suite install numpy  # install necessary software
 phoronix-test-suite run numpy  # run benchmark suite
 # Use `benchmark` to install and run
 phoronix-test-suite benchmark numpy  # install and run in 1 command
+
+# Show info about some other tests
+phoronix-test-suite info tensorflow-lite stress-ng
 ```
 
 Run some stress tests:
@@ -936,12 +948,11 @@ kazam &  # start it in background mode
 
 ```shell script
 sudo apt update
-sudo apt dist-upgrade
-
-# or if you are concerned about package dependencies and
-# don't want any installed packages to be uninstalled
-# under no circumstances, instead use
+# sudo apt dist-upgrade
 sudo apt upgrade
+
+# If message: `The following packages have been kept back`
+sudo apt install <list of packages kept back>
 ```
 
 ---
