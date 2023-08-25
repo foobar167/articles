@@ -21,6 +21,7 @@ Buster with desktop and recommended software.
 To install Miniconda Python on Raspbian OS use
 [GitHub Miniforge](https://github.com/conda-forge/miniforge) installation package.
 
+
 ---
 ## <a name="remote-desktop" />Remote desktop
 Install [AnyDesk](http://deb.anydesk.com/howto.html) remote desktop.
