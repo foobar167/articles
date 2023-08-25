@@ -65,6 +65,7 @@ conda --version
 
 # Update conda to the latest version
 conda update -n base -c defaults conda
+conda update --all
 ```
 
 #### <a name="configure-miniconda" />Configure Miniconda virtual environment

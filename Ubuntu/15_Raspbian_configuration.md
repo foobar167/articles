@@ -152,6 +152,14 @@ the toggle key-combination and have a panel indicator at the same time.
 cat /etc/os-release
 # Midnight Commander
 sudo apt install mc
+```
+
+<details>
+  <summary>Use virtual environment to install Python packages</summary>
+
+Use [virtual environment](05_Virtual_environments.md) to install Python packages.
+
+```shell script
 # Delete wolfram package, because its upgrade is extremely slow
 sudo apt purge wolfram-engine
 # Install packages for Pillow
@@ -162,6 +170,7 @@ sudo apt install libjpeg-dev zlibc
 sudo apt install libatlas-base-dev
 # Install for OpenCV
 sudo apt install libjasper-dev
+
 # Install Python packages
 sudo apt install python-pip         python2.7           \
                  python3-pip        python3             \
@@ -188,6 +197,8 @@ sudo apt install python-pip         python2.7           \
                  python-dev         python3-dev         \
                  python-yaml        python3-yaml        \
                  python-setuptools  python3-setuptools
+```
+</details>
 
 ```
 Install packages for virtual environment
