@@ -18,6 +18,9 @@ Buster with desktop and recommended software.
    - [Video4Linux](#video4linux)
    - [KeDei display](#kedei)
 
+To install Miniconda Python on Raspbian OS use
+[GitHub Miniforge](https://github.com/conda-forge/miniforge) installation package.
+
 ---
 ## <a name="remote-desktop" />Remote desktop
 Install [AnyDesk](http://deb.anydesk.com/howto.html) remote desktop.
