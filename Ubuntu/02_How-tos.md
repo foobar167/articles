@@ -6,6 +6,7 @@ How-to:
    - [Calculator](#calculator)
    - [Clear out Git history](#clear-git)
    - [Create user](#user)
+   - [Change Desktop and Login managers](#change-desktop)
    - [Change password](#passwd)
    - [Change SSH Port](#change_ssh_port)
    - [Check Linux version](#check-linux)
@@ -233,6 +234,26 @@ sudo deluser -f tempuser    # try again
 ```
 
 More info on how to [backup and delete deprecated user accounts](https://github.com/foobar167/articles/blob/master/Ubuntu/07_Website_software.md#backup-and-delete-deprecated-user-accounts).
+
+---
+### <a name="change-desktop" />Change Desktop and Login managers
+
+Links:
+   - [Install LXDE Desktop](https://bytexd.com/how-to-install-lxde-desktop-in-ubuntu/)
+   - [Change The Default Display Manager](https://www.linuxuprising.com/2018/12/how-to-change-default-display-manager.html)
+   - [5 login managers and how to change the one you use](https://ubunlog.com/en/5-gestores-de-inicio-de-sesion-y-como-cambiar-el-que-usas/)
+
+Set LXDE desktop and LXDM login manager.
+
+```shell script
+sudo apt install lxde
+sudo apt install lxdm
+sudo dpkg-reconfigure lxdm
+sudo reboot now
+
+# After reboot terminal login by default. To change on GUI press:
+#     <Ctrl>+<Alt>+<F7>
+```
 
 ---
 ### <a name="passwd" />Change password
