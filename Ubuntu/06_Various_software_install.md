@@ -3,19 +3,19 @@
       - [All other different software](#other-software)
       - [Anydesk](#anydesk)
       - [ASAP](#asap)
-      - [Chromium](#Chromium)
-      - [Elastix](#Elastix)
-      - [Emacs](#Emacs)
+      - [Chromium](#chromium)
+      - [Elastix](#elastix)
+      - [Emacs](#emacs)
       - [FileZilla](#filezilla)
-      - [Geeqie](#Geeqie)
-      - [JebBrains IntelliJ](#IntelliJ)
+      - [Geeqie](#geeqie)
+      - [JebBrains IntelliJ](#intellij)
       - [Notepad++](#notepad-plus-plus)
       - [OpenSSH server](#openssh)
-      - [PyCharm Community](#PyCharm)
+      - [PyCharm Community](#pycharm)
       - [TeamViewer Host](#teamviewer)
-      - [Tmux](#Tmux)
-      - [Ubuntu Software Center](#Ubuntu-Software-Center)
-      - [uTorrent](#uTorrent)
+      - [Tmux](#tmux)
+      - [Ubuntu Software Center](#ubuntu-software-center)
+      - [uTorrent](#utorrent)
    - [Starting any process in background mode](#background-mode)
    - [Snap commands](#snap)
    - [X2Go server/client](#x2go)
@@ -89,7 +89,7 @@ ASAP &  # run ASAP
 ```
 
 ----
-#### <a name="Chromium" />Chromium
+#### <a name="chromium" />Chromium
 
 ```shell script
 # Install Chromium web browser
@@ -99,7 +99,7 @@ chromium-browser &> /dev/null
 ```
 
 ----
-#### <a name="Elastix" />Elastix
+#### <a name="elastix" />Elastix
 
 *NOTE*: there is no installation for Ubuntu 20.04 yet (2020.06.07)
 ```shell script
@@ -112,7 +112,7 @@ elastix --version
 ```
 
 ----
-#### <a name="Emacs" />Emacs
+#### <a name="emacs" />Emacs
 
 ```shell script
 # Emacs editor
@@ -128,7 +128,7 @@ filezilla &> /dev/null
 ```
 
 ----
-#### <a name="Geeqie" />Geeqie
+#### <a name="geeqie" />Geeqie
 
 [Geeqie](https://www.linuxhelp.com/how-to-install-geeqie-in-ubuntu)
 is an open source image viewer and organizer that allows the users to view graphics files.
@@ -145,7 +145,7 @@ sudo apt remove geeqie
 ```
 
 ----
-#### <a name="IntelliJ" />JebBrains IntelliJ
+#### <a name="intellij" />JebBrains IntelliJ
 
 ```shell script
 # Install JetBrains IntelliJ IDEA Community edition
@@ -191,7 +191,7 @@ sudo systemctl status ssh  # verify
 ```
 
 ----
-#### <a name="PyCharm" />PyCharm Community
+#### <a name="pycharm" />PyCharm Community
 
 Install free of charge PyCharm Community edition.
 
@@ -220,7 +220,7 @@ teamviewer  # launch and configure TeamViewer
 ```
 
 ----
-#### <a name="Tmux" />Tmux
+#### <a name="tmux" />Tmux
 
 Tmux (the **T**erminal **MU**ltiple**X**er) allows multiple terminal sessions
 to be accessed simultaneously in a single window. It is useful for running
@@ -285,7 +285,7 @@ tmux kill-server
 ```
 
 ----
-#### <a name="Ubuntu-Software-Center" />Ubuntu Software Center
+#### <a name="ubuntu-software-center" />Ubuntu Software Center
 
 [Ubuntu Software Center](https://www.ubuntupit.com/how-to-install-software-in-ubuntu-linux-a-complete-guide-for-newbie/)
 is a GUI to install software for newbie.
@@ -296,7 +296,7 @@ gnome-software  # run ubuntu software center
 ```
 
 ----
-#### <a name="uTorrent" />uTorrent
+#### <a name="utorrent" />uTorrent
 
 ```shell script
 snap find torrent
