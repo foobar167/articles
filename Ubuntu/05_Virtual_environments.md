@@ -123,7 +123,10 @@ conda search -c conda-forge tensorflow-gpu
 # Install TF with GPU support using Miniconda.
 # Do not use pip like in official web-site.
 # Try to not mix PIP and Conda installations together.
-conda install -c conda-forge tensorflow-gpu
+
+# Check for TF/CUDA/CUDNN versions here:
+#     https://www.tensorflow.org/install/source#gpu
+conda install -c conda-forge tensorflow-gpu=2.12
 
 # Verify the GPU setup
 python -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
