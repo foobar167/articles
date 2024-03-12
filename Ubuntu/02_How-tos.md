@@ -129,6 +129,21 @@ sudo nano -c /etc/hosts.deny  # -c - show line numbers
 
 [How-to allow `sudo` commands and write permission into system directories](07_Website_software.md/#permissions)
 
+Set **default group** upon file modification and creation.
+Make sure new files are owned by the default group,
+set `g+s` and set the default permissions to read, write and execute.
+
+```commandline
+sudo chgrp -R mygroup /dir/path       # 1st option
+#sudo chown -R :mygroup /dir/path     # 2nd option
+sudo chmod -R g+s /dir/path           # set default group
+sudo chmod -R g+rwx /dir/path         # 1st option
+#sudo setfacl -d -m g::rwx /dir/path  # 2nd option
+
+# check it
+ls -hal
+```
+
 ---
 ### <a name="calculator" />Calculator
 

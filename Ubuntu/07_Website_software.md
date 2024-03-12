@@ -247,6 +247,11 @@ getfacl /etc/letsencrypt
 
 sudo -u username touch /etc/systemd/system/test.txt  # should work
 sudo -u username touch /etc/systemd/test.txt  # Permission denied
+
+# Remove entry
+sudo setfacl -R -x u:username,g:groupname  /dir/path/
+setfacl -b /dir/path  # remove all extended ACL entries
+setfacl --help  # for more information
 ```
 
 Give read permission to files in the directory `/var/log/nginx`.
