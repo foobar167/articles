@@ -9,7 +9,7 @@
       - [FileZilla](#filezilla)
       - [Geeqie](#geeqie)
       - [JebBrains IntelliJ](#intellij)
-      - [LibreOffice](#libreoffice)
+      - [LibreOffice or OpenOffice](#libreoffice)
       - [Notepad++](#notepad-plus-plus)
       - [OpenSSH server](#openssh)
       - [PyCharm Community](#pycharm)
