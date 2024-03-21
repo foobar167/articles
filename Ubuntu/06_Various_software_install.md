@@ -158,19 +158,19 @@ intellij-idea-community &> /dev/null
 ```
 
 ----
-#### <a name="libreoffice" />LibreOffice
+#### <a name="libreoffice" />LibreOffice or OpenOffice
 
 ```shell
-libreoffice --version  # show version if installed
+sudo apt install libreoffice
 #sudo apt install libreoffice-common
 #sudo snap install libreoffice
-sudo apt install libreoffice
+libreoffice --version  # show version if installed
 ```
 
 Note: [LibreOffice](https://gcore.com/learning/how-to-install-libri-office-on-ubuntu/)
-terminates the X2Go session for our DL4 server. Try
+terminates the X2Go session for our DL4 server. Installed
 [OpenOffice](https://www.openoffice.org/download/common/instructions.html) instead
-([ru](https://losst.pro/ustanovka-openoffice-ubuntu)).
+([ru](https://losst.pro/ustanovka-openoffice-ubuntu) instructions).
 
 ```shell
 sudo apt remove --purge libreoffice\*  # remove all libreoffice tools
