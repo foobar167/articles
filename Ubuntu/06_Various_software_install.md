@@ -9,6 +9,7 @@
       - [FileZilla](#filezilla)
       - [Geeqie](#geeqie)
       - [JebBrains IntelliJ](#intellij)
+      - [LibreOffice](#libreoffice)
       - [Notepad++](#notepad-plus-plus)
       - [OpenSSH server](#openssh)
       - [PyCharm Community](#pycharm)
@@ -154,6 +155,36 @@ sudo snap install intellij-idea-community --classic
 
 # Run JetBrains IntelliJ IDEA Community edition
 intellij-idea-community &> /dev/null
+```
+
+----
+#### <a name="libreoffice" />LibreOffice
+
+```shell
+libreoffice --version  # show version if installed
+#sudo apt install libreoffice-common
+#sudo snap install libreoffice
+sudo apt install libreoffice
+```
+
+Note: [LibreOffice](https://gcore.com/learning/how-to-install-libri-office-on-ubuntu/)
+terminates the X2Go session for our DL4 server. Try
+[OpenOffice](https://www.openoffice.org/download/common/instructions.html) instead
+([ru](https://losst.pro/ustanovka-openoffice-ubuntu)).
+
+```shell
+sudo apt remove --purge libreoffice\*  # remove all libreoffice tools
+sudo apt install -f  # find unused dependencies
+sudo apt-get autoremove  # delete unused dependencies
+sudo apt install openjdk-17-jre-headless  # install Java version >= 6
+# Download the last version for Ubuntu - Linux 64-bit (x86-64) (DEB)
+wget https://sourceforge.net/projects/openofficeorg.mirror/files/4.1.15/binaries/en-US/Apache_OpenOffice_4.1.15_Linux_x86-64_install-deb_en-US.tar.gz
+tar xzf Apache_OpenOffice_4.1.15_Linux_x86-64_install-deb_en-US.tar.gz  # unpack installer
+cd en-US//DEBS/  # go to directory with packages
+sudo dpkg -i *.deb  # install all packages in the directory
+cd desktop-integration/  # go to subdirectory
+sudo dpkg -i *.deb  # install all packages in the directory
+soffice -help 2>&1 | head -n1  # show OpenOffice version via command line
 ```
 
 ----
