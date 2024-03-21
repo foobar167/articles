@@ -164,7 +164,7 @@ intellij-idea-community &> /dev/null
 sudo apt install libreoffice
 #sudo apt install libreoffice-common
 #sudo snap install libreoffice
-libreoffice --version  # show version if installed
+libreoffice --version  # show version
 ```
 
 Note: [LibreOffice](https://gcore.com/learning/how-to-install-libri-office-on-ubuntu/)
