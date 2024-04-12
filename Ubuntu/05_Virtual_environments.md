@@ -217,12 +217,11 @@ pip install tensorflow tensorflow-datasets tensorflow-hub matplotlib \
 
 There is an error when `import tensorflow-datasets as tfds` for Windows and PYthon 3.9.
 To fix it in the file `~\Envs\python39\lib\site-packages\tensorflow_datasets\core\shuffle.py`
-comment string `import resource` to
+comment string `#import resource` to
 ```shell
 if os.name == 'posix':
     import resource # pylint: disable=import-error
 ```
-
 
 ---
 ### <a name="pyenv" />Pyenv Python version manager
