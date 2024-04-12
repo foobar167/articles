@@ -4,18 +4,27 @@
       - [Configure Miniconda virtual environment](#configure-miniconda)
       - [Install TensorFlow for GPU using Conda installer](#tensorflow-conda)
       - [Install TensorFlow for GPU using PIP installer](#tensorflow-conda-pip)
+   - [virtualenvwrapper](#virtualenvwrapper-config)
+
+
    - [Pyenv Python version manager](#pyenv)
-      - [Install Pyenv](#install-pyenv)
-      - [Configure Pyenv](#configure-pyenv)
-      - [Install TensorFlow for GPU using PIP installer](#tensorflow-pyenv)
+
+[//]: # (      - [Install Pyenv]&#40;#install-pyenv&#41;)
+[//]: # (      - [Configure Pyenv]&#40;#configure-pyenv&#41;)
+[//]: # (      - [Install TensorFlow for GPU using PIP installer]&#40;#tensorflow-pyenv&#41;)
+
    - [Anaconda virtual environment](#anaconda)
-      - [Install Anaconda](#install-anaconda)
-      - [Configure Anaconda virtual environment](#configure-anaconda)
+
+[//]: # (      - [Install Anaconda]&#40;#install-anaconda&#41;)
+[//]: # (      - [Configure Anaconda virtual environment]&#40;#configure-anaconda&#41;)
+
    - [(OLD) Common virtual environment](#venv)
-      - [Install packages for virtual environment](#install-packages)
-      - [Configure virtual environment](#configure-venv)
-         - [Virtual environment for Ubuntu 20.04](#venv_20.04)
-         - [Virtual environment for Ubuntu 18.04](#venv_18.04)
+
+[//]: # (      - [Install packages for virtual environment]&#40;#install-packages&#41;)
+[//]: # (      - [Configure virtual environment]&#40;#configure-venv&#41;)
+[//]: # (         - [Virtual environment for Ubuntu 20.04]&#40;#venv_20.04&#41;)
+[//]: # (         - [Virtual environment for Ubuntu 18.04]&#40;#venv_18.04&#41;)
+
    - [(OLD) EasyBuild environment on SURFsara server](#easy-build)
 
 ---
@@ -179,6 +188,39 @@ python -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical
 # Install other Python packages
 pip install tensorflow-hub matplotlib scipy numpy opencv-python pillow \
     scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
+```
+
+---
+### <a name="virtualenvwrapper-config" />virtualenvwrapper
+
+Install for Windows. To use `virtualenvwrapper` you **should have
+needed version** of Python 3.x on your computer installed.
+For example, to use Python 3.9 virtual environment, install standalone
+Python 3.9 on your computer first.
+```shell
+# Create Python 3.9 virtual environment
+# Install Python 3.12. Place it in the PATH.
+# Install Python 3.9.
+pip install virtualenvwrapper
+# mkvirtualenv venv_name -p python_version
+mkvirtualenv python39 -p 3.9
+workon  # show all virtual envs
+workon python39  # switch to Python 3.9
+python --version  # check it
+
+pip install tensorflow tensorflow-datasets tensorflow-hub matplotlib \
+            scipy numpy opencv-python pillow scikit-learn scikit-image \
+            pandas ipython jupyter tqdm graphviz nodejs ipyparallel
+
+
+```
+
+There is an error when `import tensorflow-datasets as tfds` for Windows and PYthon 3.9.
+To fix it in the file `~\Envs\python39\lib\site-packages\tensorflow_datasets\core\shuffle.py`
+comment string `import resource` to
+```shell
+if os.name == 'posix':
+    import resource # pylint: disable=import-error
 ```
 
 ---
