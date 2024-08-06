@@ -13,6 +13,7 @@ How-to:
    - [Coral USB Accelerator](#coral)
    - [Delete package](#delete)
    - [Delete user account](#del-account)
+   - [End user session](#end-user-session)
    - [Exclude packages from `sudo apt upgrade`](#exclude-packages)
    - [Find file by name](#find)
    - [Find files owned by the user](#find-user)
@@ -430,6 +431,14 @@ sudo apt purge --auto-remove packagename
 ---
 ### <a name="del-account" />Delete user account
 See [Backup and delete deprecated user accounts](07_Website_software.md/#accounts) in the web-site section.
+
+---
+### <a name="end-user-session" />End user session
+```shell script
+killall -user username  # end all processes for the user
+pkill -u username
+kill -9 -1 # end all processes you can
+```
 
 ---
 ### <a name="exclude-packages" />Exclude packages from `sudo apt upgrade`

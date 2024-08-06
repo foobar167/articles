@@ -208,9 +208,10 @@ workon  # show all virtual envs
 workon python39  # switch to Python 3.9
 python --version  # check it
 
-pip install tensorflow tensorflow-datasets tensorflow-hub matplotlib \
-            scipy numpy opencv-python pillow scikit-learn scikit-image \
-            pandas ipython jupyter tqdm graphviz nodejs ipyparallel
+pip install tensorflow==2.15.* tensorflow-datasets tensorflow-hub \
+            matplotlib scipy numpy opencv-python pillow scikit-learn \
+            scikit-image pandas ipython jupyter tqdm graphviz nodejs \
+            ipyparallel
 
 
 ```
