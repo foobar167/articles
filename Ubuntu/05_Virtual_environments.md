@@ -85,16 +85,14 @@ conda activate myenv
 #conda info --envs
 ```
 
-**Install additional packages via `pip` installer**
+**Install additional packages via PIP installer**
 ```shell script
-# Activate virtual environment
-conda activate myenv
-# Check pip
-pip --version
-which pip
-which python3
-# Update pip if necessary
-pip install --upgrade pip
+conda activate myenv  # activate virtual environment
+
+pip install --upgrade pip  # upgrade pip
+pip --version  # verify pip version
+which pip      # verify pip location
+which python3  # verify python location
 
 # Install TensorFlow with GPU support
 python3 -m pip install tensorflow[and-cuda]
