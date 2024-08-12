@@ -191,207 +191,213 @@ pip install tensorflow-hub matplotlib scipy numpy opencv-python pillow \
 ```
 
 ---
-### <a name="virtualenvwrapper-config" />virtualenvwrapper
-
-Install for Windows. To use `virtualenvwrapper` you **should have
-needed version** of Python 3.x on your computer installed.
-For example, to use Python 3.9 virtual environment, install standalone
-Python 3.9 on your computer first.
-```shell
-# Create Python 3.9 virtual environment
-# Install Python 3.12. Place it in the PATH.
-# Install Python 3.9.
-pip install virtualenvwrapper
-# mkvirtualenv venv_name -p python_version
-mkvirtualenv python39 -p 3.9
-workon  # show all virtual envs
-workon python39  # switch to Python 3.9
-python --version  # check it
-
-pip install tensorflow==2.15.* tensorflow-datasets tensorflow-hub \
-            matplotlib scipy numpy opencv-python pillow scikit-learn \
-            scikit-image pandas ipython jupyter tqdm graphviz nodejs \
-            ipyparallel
-
-
-```
-
-There is an error when `import tensorflow-datasets as tfds` for Windows and PYthon 3.9.
-To fix it in the file `~\Envs\python39\lib\site-packages\tensorflow_datasets\core\shuffle.py`
-comment string `#import resource` to
-```shell
-if os.name == 'posix':
-    import resource # pylint: disable=import-error
-```
-
----
-### <a name="pyenv" />Pyenv Python version manager
+### <a name="virtualenvwrapper-config" />(OlD) virtualenvwrapper
 
 <details>
   <summary>Show details</summary>
 
-Links:
-   - [Managing Multiple Python Versions With pyenv](https://realpython.com/intro-to-pyenv/)
-   - [How to install 'pyenv' Python version manager on Ubuntu 20.04](https://brain2life.hashnode.dev/how-to-install-pyenv-python-version-manager-on-ubuntu-2004)
-   - [How to Install and Use Pyenv in Ubuntu](https://itslinuxfoss.com/install-use-pyenv-ubuntu/)
+    Install for Windows. To use `virtualenvwrapper` you **should have
+    needed version** of Python 3.x on your computer installed.
+    For example, to use Python 3.9 virtual environment, install standalone
+    Python 3.9 on your computer first.
+    ```shell
+    # Create Python 3.9 virtual environment
+    # Install Python 3.12. Place it in the PATH.
+    # Install Python 3.9.
+    pip install virtualenvwrapper
+    # mkvirtualenv venv_name -p python_version
+    mkvirtualenv python39 -p 3.9
+    workon  # show all virtual envs
+    workon python39  # switch to Python 3.9
+    python --version  # check it
+    
+    pip install tensorflow==2.15.* tensorflow-datasets tensorflow-hub \
+                matplotlib scipy numpy opencv-python pillow scikit-learn \
+                scikit-image pandas ipython jupyter tqdm graphviz nodejs \
+                ipyparallel
+    
+    
+    ```
+    
+    There is an error when `import tensorflow-datasets as tfds` for Windows and PYthon 3.9.
+    To fix it in the file `~\Envs\python39\lib\site-packages\tensorflow_datasets\core\shuffle.py`
+    comment string `#import resource` to
+    ```shell
+    if os.name == 'posix':
+        import resource # pylint: disable=import-error
+    ```
+</details>
 
-`pyenv` - is a simple Python version manager tool,
-which allows to switch between multiple versions of Python.
-You can set local or global system-wide Python versions via the tool.
 
-Install required prerequisite dependencies as a system administrator
-```shell
-sudo apt update; sudo apt install make build-essential libssl-dev zlib1g-dev \
-    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev \
-    xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-```
+---
+### <a name="pyenv" />(OLD) Pyenv Python version manager
 
-#### <a name="install-pyenv" />Install Pyenv
+<details>
+  <summary>Show details</summary>
 
-```shell
-# Download and execute installation script for local account
-curl https://pyenv.run | bash
-```
-
-At the end of the run, you should see some text like this:
-
-```text
-WARNING: seems you still have not added 'pyenv' to the load path.
-
-# Load pyenv automatically by appending
-# the following to ~/.bash_profile if it exists, otherwise
-# ~/.profile (for login shells) and
-# ~/.bashrc (for interactive shells) :
-
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# Restart your shell for the changes to take effect.
-
-# Load pyenv-virtualenv automatically by adding
-# the following to ~/.bashrc:
-
-eval "$(pyenv virtualenv-init -)"
-```
-
-The output will be based on your shell.
-But you should follow the instructions to add `pyenv` to your path and
-to initialize pyenv/pyenv-virtualenv auto completion.
-
-```shell
-nano ~/.bashrc  # edit .bashrc file
-
-# Load pyenv automatically by appending the following to
-# ~/.bashrc file:
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-exec $SHELL  # restart the shell
-pyenv update  # update pyenv
-pyenv --version  # get version
-```
-
-To uninstall `pyenv` delete `~/.pyenv` directory and modify `~/.bashrc` file.
-
-```shell
-#rm -rf ~/.pyenv
-#nano ~/.bashrc  # edit .bashrc file
-#exec $SHELL  # restart the shell
-```
-
-#### <a name="configure-pyenv" />Configure Pyenv
-
-Try to use only `local` or only `global` command to set `pyenv` version.
-
-NOTE: `global` command doesn't work for me.
-
-```shell
-pyenv install --list  # show all available versions
-
-# Choose Python version and install it.
-# This will take a while because `pyenv` is building Python from source.
-pyenv install -v 3.9.16
-
-# Uninstall Python version if necessary
-#rm -rf ~/.pyenv/versions/3.9.16
-# or
-#pyenv uninstall 3.9.16
-
-# Set Python version
-pyenv versions  # show installed versions
-pyenv local 3.9.16  # set an application-specific version
-python --version  # get current Python version
-#pyenv commands  # list of pyenv commands
-
-# Create virtual environment: pyenv virtualenv <python_version> <env_name>
-pyenv virtualenv 3.9.16 myproject
-pyenv local myproject  # activate environment locally
-pyenv versions  # view all environments
-#pyenv virtualenv-delete myproject  # delete virtual environment
-
-# Deactivation doesn't work without default system Python.
-# Just create another virtual environment and activate it.
-pyenv local system  # set system Python locally
-#pyenv global system  # set system Python globally
-```
-
-#### <a name="tensorflow-pyenv" />Install TensorFlow for GPU using PIP installer
-
-NOTE: Try to not mix PIP and Conda installations together!
-
-For now there is [no](https://stackoverflow.com/a/67912911/7550928)
-CUDA Toolkit (`cudatoolkit`) for PIP,
-but it is available in the Conda repository.
-So we have to mix PIP and Conda installators together.
-Install Miniconda and then
-[install TensorFlow for GPU using Conda installer](#tensorflow-conda) or
-continue and install TensorFlow for GPU with PIP like in
-[official tutorial](https://www.tensorflow.org/install/pip).
-
-```shell
-pyenv install -v miniconda3-latest  # install Miniconda
-pyenv virtualenv miniconda3-latest tf  # create virtual env
-pyenv local tf  # activate virtual environment
-pyenv versions  # view all environments
-
-# Initialize Miniconda in the ~/.bashrc file
-~/.pyenv/versions/miniconda3-latest/bin/conda init bash
-exec $SHELL  # restart the shell
-conda --version  # check it
-#conda update -n base -c defaults conda  # update Conda if necessary
-
-# Update the pip package manager
-pyenv which pip  # check pip location
-pip install --upgrade pip
-
-# There is no CUDA Toolkit for PIP. Install it with Conda
-conda search -c conda-forge cudatoolkit
-conda install -c conda-forge cudatoolkit=11.8
-
-# Install cuDNN and TensorFlow with GPU support
-pip install nvidia-cudnn-cu11 tensorflow
-
-# Configure the system paths to activate when running the virtual environment
-mkdir -p $CONDA_PREFIX/etc/conda/activate.d
-echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> \
-    $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> \
-    $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-
-# Verify the GPU setup
-python -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
-
-# Install other Python packages
-pip install tensorflow-hub matplotlib scipy numpy opencv-python pillow \
-    scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
-
-```
+    Links:
+       - [Managing Multiple Python Versions With pyenv](https://realpython.com/intro-to-pyenv/)
+         - [How to install 'pyenv' Python version manager on Ubuntu 20.04](https://brain2life.hashnode.dev/how-to-install-pyenv-python-version-manager-on-ubuntu-2004)
+         - [How to Install and Use Pyenv in Ubuntu](https://itslinuxfoss.com/install-use-pyenv-ubuntu/)
+    
+    `pyenv` - is a simple Python version manager tool,
+    which allows to switch between multiple versions of Python.
+    You can set local or global system-wide Python versions via the tool.
+    
+    Install required prerequisite dependencies as a system administrator
+    ```shell
+    sudo apt update; sudo apt install make build-essential libssl-dev zlib1g-dev \
+        libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev \
+        xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+    ```
+    
+    #### <a name="install-pyenv" />Install Pyenv
+    
+    ```shell
+    # Download and execute installation script for local account
+    curl https://pyenv.run | bash
+    ```
+    
+    At the end of the run, you should see some text like this:
+    
+    ```text
+    WARNING: seems you still have not added 'pyenv' to the load path.
+    
+    # Load pyenv automatically by appending
+    # the following to ~/.bash_profile if it exists, otherwise
+    # ~/.profile (for login shells) and
+    # ~/.bashrc (for interactive shells) :
+    
+    export PYENV_ROOT="$HOME/.pyenv"
+    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+    
+    # Restart your shell for the changes to take effect.
+    
+    # Load pyenv-virtualenv automatically by adding
+    # the following to ~/.bashrc:
+    
+    eval "$(pyenv virtualenv-init -)"
+    ```
+    
+    The output will be based on your shell.
+    But you should follow the instructions to add `pyenv` to your path and
+    to initialize pyenv/pyenv-virtualenv auto completion.
+    
+    ```shell
+    nano ~/.bashrc  # edit .bashrc file
+    
+    # Load pyenv automatically by appending the following to
+    # ~/.bashrc file:
+    export PYENV_ROOT="$HOME/.pyenv"
+    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+    
+    exec $SHELL  # restart the shell
+    pyenv update  # update pyenv
+    pyenv --version  # get version
+    ```
+    
+    To uninstall `pyenv` delete `~/.pyenv` directory and modify `~/.bashrc` file.
+    
+    ```shell
+    #rm -rf ~/.pyenv
+    #nano ~/.bashrc  # edit .bashrc file
+    #exec $SHELL  # restart the shell
+    ```
+    
+    #### <a name="configure-pyenv" />Configure Pyenv
+    
+    Try to use only `local` or only `global` command to set `pyenv` version.
+    
+    NOTE: `global` command doesn't work for me.
+    
+    ```shell
+    pyenv install --list  # show all available versions
+    
+    # Choose Python version and install it.
+    # This will take a while because `pyenv` is building Python from source.
+    pyenv install -v 3.9.16
+    
+    # Uninstall Python version if necessary
+    #rm -rf ~/.pyenv/versions/3.9.16
+    # or
+    #pyenv uninstall 3.9.16
+    
+    # Set Python version
+    pyenv versions  # show installed versions
+    pyenv local 3.9.16  # set an application-specific version
+    python --version  # get current Python version
+    #pyenv commands  # list of pyenv commands
+    
+    # Create virtual environment: pyenv virtualenv <python_version> <env_name>
+    pyenv virtualenv 3.9.16 myproject
+    pyenv local myproject  # activate environment locally
+    pyenv versions  # view all environments
+    #pyenv virtualenv-delete myproject  # delete virtual environment
+    
+    # Deactivation doesn't work without default system Python.
+    # Just create another virtual environment and activate it.
+    pyenv local system  # set system Python locally
+    #pyenv global system  # set system Python globally
+    ```
+    
+    #### <a name="tensorflow-pyenv" />Install TensorFlow for GPU using PIP installer
+    
+    NOTE: Try to not mix PIP and Conda installations together!
+    
+    For now there is [no](https://stackoverflow.com/a/67912911/7550928)
+    CUDA Toolkit (`cudatoolkit`) for PIP,
+    but it is available in the Conda repository.
+    So we have to mix PIP and Conda installators together.
+    Install Miniconda and then
+    [install TensorFlow for GPU using Conda installer](#tensorflow-conda) or
+    continue and install TensorFlow for GPU with PIP like in
+    [official tutorial](https://www.tensorflow.org/install/pip).
+    
+    ```shell
+    pyenv install -v miniconda3-latest  # install Miniconda
+    pyenv virtualenv miniconda3-latest tf  # create virtual env
+    pyenv local tf  # activate virtual environment
+    pyenv versions  # view all environments
+    
+    # Initialize Miniconda in the ~/.bashrc file
+    ~/.pyenv/versions/miniconda3-latest/bin/conda init bash
+    exec $SHELL  # restart the shell
+    conda --version  # check it
+    #conda update -n base -c defaults conda  # update Conda if necessary
+    
+    # Update the pip package manager
+    pyenv which pip  # check pip location
+    pip install --upgrade pip
+    
+    # There is no CUDA Toolkit for PIP. Install it with Conda
+    conda search -c conda-forge cudatoolkit
+    conda install -c conda-forge cudatoolkit=11.8
+    
+    # Install cuDNN and TensorFlow with GPU support
+    pip install nvidia-cudnn-cu11 tensorflow
+    
+    # Configure the system paths to activate when running the virtual environment
+    mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+    echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> \
+        $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+    echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> \
+        $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+    source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+    
+    # Verify the GPU setup
+    python -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
+    
+    # Install other Python packages
+    pip install tensorflow-hub matplotlib scipy numpy opencv-python pillow \
+        scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
+    
+    ```
 
 </details>
+
 
 ---
 ### <a name="anaconda" />Anaconda virtual environment
