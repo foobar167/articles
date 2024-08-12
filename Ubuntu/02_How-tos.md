@@ -18,6 +18,7 @@ How-to:
    - [Find file by name](#find)
    - [Find files owned by the user](#find-user)
    - [Install deb file](#deb)
+   - [Jupyter clear output](#jupyter-clear-output)
    - [Kill the tty](#tty-kill)
    - [List all environment variables](#printenv)
    - [List installed packages](#list-installed)
@@ -544,6 +545,14 @@ If there are broken dependences:
 sudo apt --fix-broken install
 # and then
 sudo dpkg -i my.deb
+```
+
+---
+### <a name="jupyter-clear-output" />Jupyter clear output
+When you open a large Jupyter Notebook, the browser crashes
+[link](https://stackoverflow.com/a/47774393/7550928).
+```shell script
+jupyter nbconvert --clear-output --inplace filename.ipynb
 ```
 
 ---
