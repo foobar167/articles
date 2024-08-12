@@ -1,13 +1,12 @@
    - [Task](#task)
+   - [Miniconda virtual environment](#miniconda)
+
+      - [Install Miniconda](#install-miniconda)
+      - [Configure Miniconda virtual environment](#configure-miniconda)
+      - [Install TensorFlow for GPU using Conda installer](#tensorflow-conda)
+      - [Install TensorFlow for GPU using PIP installer](#tensorflow-conda-pip)
+
    - [Miniconda and pip](#miniconda-pip)
-
-
-   - [(OLD) Miniconda virtual environment](#miniconda)
-
-[//]: # (      - [Install Miniconda]&#40;#install-miniconda&#41;)
-[//]: # (      - [Configure Miniconda virtual environment]&#40;#configure-miniconda&#41;)
-[//]: # (      - [Install TensorFlow for GPU using Conda installer]&#40;#tensorflow-conda&#41;)
-[//]: # (      - [Install TensorFlow for GPU using PIP installer]&#40;#tensorflow-conda-pip&#41;)
 
    - [(OLD) virtualenvwrapper](#virtualenvwrapper-config)
 
@@ -40,93 +39,7 @@ Install software for Python virtual environments.
 Set up and configure virtual envs.
 
 ---
-### <a name="miniconda-pip" />Miniconda and pip
-
-**Install Miniconda**
-```shell script
-# Download latest Miniconda distribution
-mkdir -p ~/Downloads/
-cd ~/Downloads/
-curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-
-# Run installation script. When asked to initialize Miniconda, type `yes`.
-bash Miniconda3-latest-Linux-x86_64.sh
-
-exec $SHELL  # restart the shell
-# Verify the installation
-conda --version
-
-# If you'd prefer that conda's base environment not be activated on startup, 
-#   set the auto_activate_base parameter to false: 
-# conda config --set auto_activate_base false
-
-# Update conda to the latest version
-conda update -n base -c defaults conda
-conda update --all
-```
-
-**Configure Miniconda virtual environment**
-```shell script
-# Set up conda virtual environment
-conda create --name myenv python=3.11
-# Show virtual envs
-conda info --envs
-# Activate the environment
-conda activate myenv
-
-# Activate and deactivate virtual environment
-conda deactivate  # exit to the "base" environment
-conda deactivate  # exit from Miniconda base env
-conda activate myenv
-
-# Delete vitrual environment if necessary
-#conda deactivate
-#conda remove --name myenv --all
-#conda info --envs
-```
-
-**Install all additional packages via PIP installer**
-```shell script
-conda activate myenv  # activate virtual environment
-
-pip install --upgrade pip  # upgrade pip
-pip --version  # verify pip version
-which pip      # verify pip location
-which python3  # verify python location
-
-# Install TensorFlow with GPU support
-python3 -m pip install tensorflow[and-cuda]
-# Verify the GPU setup
-python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
-python3 -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
-
-#pip install tensorrt  # if Warning: Could not find TensorRT <-- Long wheel build!
-
-# Install other packages
-pip install tensorflow-hub matplotlib scipy numpy opencv-python \
-      pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
-
-# View installed packages
-pip list | grep tensor
-````
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-### <a name="miniconda" />(OLD) Miniconda virtual environment
-
-<details>
-  <summary>Show details</summary>
+### <a name="miniconda" />Miniconda virtual environment
 
 To install TensorFlow, I recommend the Miniconda virtual environment,
 but you can use Anaconda or the regular virtual environment described below.
@@ -283,7 +196,83 @@ pip install tensorflow-hub matplotlib scipy numpy opencv-python pillow \
     scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
 ```
 
-</details>
+
+
+
+---
+### <a name="miniconda-pip" />Miniconda and pip
+
+**Install Miniconda**
+```shell script
+# Download latest Miniconda distribution
+mkdir -p ~/Downloads/
+cd ~/Downloads/
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# Run installation script. When asked to initialize Miniconda, type `yes`.
+bash Miniconda3-latest-Linux-x86_64.sh
+
+exec $SHELL  # restart the shell
+# Verify the installation
+conda --version
+
+# If you'd prefer that conda's base environment not be activated on startup, 
+#   set the auto_activate_base parameter to false: 
+# conda config --set auto_activate_base false
+
+# Update conda to the latest version
+conda update -n base -c defaults conda
+conda update --all
+```
+
+**Configure Miniconda virtual environment**
+```shell script
+# Set up conda virtual environment
+conda create --name myenv python=3.11
+#conda create --name myenv python=3.10
+# Show virtual envs
+conda info --envs
+# Activate the environment
+conda activate myenv
+
+# Activate and deactivate virtual environment
+conda deactivate  # exit to the "base" environment
+conda deactivate  # exit from Miniconda base env
+conda activate myenv
+
+# Delete vitrual environment if necessary
+#conda deactivate
+#conda remove --name myenv --all
+#conda info --envs
+```
+
+**Install all additional packages via PIP installer**
+
+**This instruction doesn't work for old version of CUDA==11.4**
+```shell script
+conda activate myenv  # activate virtual environment
+
+pip install --upgrade pip  # upgrade pip
+pip --version  # verify pip version
+which pip      # verify pip location
+which python3  # verify python location
+
+# Install TensorFlow with GPU support
+#python3 -m pip install tensorflow==2.12[and-cuda]
+python3 -m pip install tensorflow[and-cuda]
+# Verify the GPU setup
+python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+python3 -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
+
+# Install other packages
+pip install tensorflow-hub matplotlib scipy numpy opencv-python \
+      pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz \
+      openpyxl
+
+# View installed packages
+pip list | grep tensor
+````
+
 
 ---
 ### <a name="virtualenvwrapper-config" />(OlD) virtualenvwrapper
