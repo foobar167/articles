@@ -31,8 +31,6 @@
 
    - [(OLD) EasyBuild environment on SURFsara server](#easy-build)
 
-<details>
-  <summary>Show details</summary>
 
 ---
 ### <a name="task" />Task
@@ -42,6 +40,9 @@ Set up and configure virtual envs.
 
 ---
 ### <a name="miniconda" />(OLD) Miniconda virtual environment
+
+<details>
+  <summary>Show details</summary>
 
 To install TensorFlow, I recommend the Miniconda virtual environment,
 but you can use Anaconda or the regular virtual environment described below.
