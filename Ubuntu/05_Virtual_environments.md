@@ -1,4 +1,5 @@
    - [Task](#task)
+   - [Miniconda and pip](#miniconda-pip)
 
 
    - [(OLD) Miniconda virtual environment](#miniconda)
@@ -37,6 +38,76 @@
 
 Install software for Python virtual environments.
 Set up and configure virtual envs.
+
+---
+### <a name="miniconda-pip" />Miniconda and pip
+
+**Install Miniconda**
+```shell script
+# Download latest Miniconda distribution
+mkdir -p ~/Downloads/
+cd ~/Downloads/
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# Run installation script. When asked to initialize Miniconda, type `yes`.
+bash Miniconda3-latest-Linux-x86_64.sh
+
+exec $SHELL  # restart the shell
+# Verify the installation
+conda --version
+
+# If you'd prefer that conda's base environment not be activated on startup, 
+#   set the auto_activate_base parameter to false: 
+# conda config --set auto_activate_base false
+
+# Update conda to the latest version
+conda update -n base -c defaults conda
+conda update --all
+```
+
+**Configure Miniconda virtual environment**
+```shell script
+# Set up conda virtual environment
+conda create --name myenv python=3.11
+# Show virtual envs
+conda info --envs
+# Activate the environment
+conda activate myenv
+
+# Activate and deactivate virtual environment
+conda deactivate  # exit to the "base" environment
+conda deactivate  # exit from Miniconda base env
+conda activate myenv
+
+# Delete vitrual environment if necessary
+#conda deactivate
+#conda remove --name myenv --all
+#conda info --envs
+```
+
+**Install additional packages via `pip` installer**
+```shell script
+# Activate virtual environment
+conda activate myenv
+# Check pip
+pip --version
+which pip
+which python3
+# Update pip if necessary
+pip install --upgrade pip
+
+# Install TensorFlow with GPU support
+python3 -m pip install tensorflow[and-cuda]
+# Verify the GPU setup
+python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+
+# Install other packages
+pip install tensorflow-hub matplotlib scipy numpy opencv-python pillow \
+      scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
+
+# View installed packages
+pip list | grep tensor
+````
 
 ---
 ### <a name="miniconda" />(OLD) Miniconda virtual environment
