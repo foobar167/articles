@@ -85,7 +85,7 @@ conda activate myenv
 #conda info --envs
 ```
 
-**Install additional packages via PIP installer**
+**Install all additional packages via PIP installer**
 ```shell script
 conda activate myenv  # activate virtual environment
 
@@ -98,14 +98,29 @@ which python3  # verify python location
 python3 -m pip install tensorflow[and-cuda]
 # Verify the GPU setup
 python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+python3 -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
+
+#pip install tensorrt  # if Warning: Could not find TensorRT <-- Long wheel build!
 
 # Install other packages
-pip install tensorflow-hub matplotlib scipy numpy opencv-python pillow \
-      scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
+pip install tensorflow-hub matplotlib scipy numpy opencv-python \
+      pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
 
 # View installed packages
 pip list | grep tensor
 ````
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 ### <a name="miniconda" />(OLD) Miniconda virtual environment
