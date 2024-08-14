@@ -150,6 +150,10 @@ python -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical
 conda install -c conda-forge tensorflow-hub matplotlib scipy numpy opencv pillow \
     scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
 
+# Access a multitude of neuroimaging data formats.
+conda install conda-forge::nibabel
+conda install anaconda::pytest
+
 # Install PyTorch if necessary. But it's better to set it to the different environment.
 # Check https://pytorch.org for installation parameters
 #conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
