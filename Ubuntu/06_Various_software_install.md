@@ -3,6 +3,7 @@
       - [All other different software](#other-software)
       - [Anydesk](#anydesk)
       - [ASAP](#asap)
+      - [Chrome](#chrome-browser)
       - [Chromium](#chromium)
       - [Elastix](#elastix)
       - [Emacs](#emacs)
@@ -87,6 +88,18 @@ sudo nano /etc/environment
 
 # Check it
 ASAP &  # run ASAP
+```
+
+----
+#### <a name="chrome-browser" />Chrome
+
+```shell script
+# Download Google Chrome browser
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# Install the package
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+# If some dependency errors occured
+sudo apt --fix-broken install
 ```
 
 ----
