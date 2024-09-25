@@ -3,6 +3,7 @@
 
       - [Install Miniconda](#install-miniconda)
       - [Configure Miniconda virtual environment](#configure-miniconda)
+      - [TF-GPU for CUDA 12 using PIP](#tensorflow-pip)
       - [Install TensorFlow for GPU using Conda installer](#tensorflow-conda)
       - [Install TensorFlow for GPU using PIP installer](#tensorflow-conda-pip)
 
@@ -103,6 +104,29 @@ conda activate myenv
 #conda remove --name myenv --all
 #conda info --envs
 ```
+
+#### <a name="tensorflow-pip" />TF-GPU for CUDA 12 using PIP
+For Nvidia driver version 550.107.02 and CUDA version 12.4
+
+[Keras 3](https://keras.io/getting_started/) is starting with TensorFlow 2.16.
+```shell script
+conda create --name python3.12 python=3.12  # create virtual env
+conda activate python3.12  # activate virtual environment
+pip install tensorflow[and-cuda]  # for GPU support
+# install main libraries
+pip install matplotlib scipy numpy opencv-python pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
+# install additional libraries
+pip install nibabel pytest tf_keras
+```
+To use Keras 2:
+```shell script
+pip install tf_keras  # install it to use Keras 2
+
+# These lines would need to be before any `import tensorflow` statement
+import os
+os.environ["TF_USE_LEGACY_KERAS"] = "1"  # use Keras 2 instead of Keras 3
+```
+
 
 #### <a name="tensorflow-conda" />Install TensorFlow for GPU using Conda installer
 

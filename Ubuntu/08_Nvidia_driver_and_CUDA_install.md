@@ -146,6 +146,8 @@ _Try to not mix runfile and package manager install methods._
 
 Package manager method ([link](http://maxprog.net.pl/artifficial-intelligence-in-practice/solved-deep-learning-on-gpu-and-error-nvidia-smi-has-failed-because-it-couldnt-communicate-with-the-nvidia-driver)):
 ```shell script
+# Install ubuntu-drivers
+# sudo apt install ubuntu-drivers-common
 # Check what driver is valid
 sudo ubuntu-drivers devices
 ```
@@ -153,6 +155,8 @@ sudo ubuntu-drivers devices
 ```shell script
 # Pick the right driver and run it
 sudo apt install nvidia-driver-430
+# Sometimes --fix-missing flag is needed
+# sudo apt install nvidia-driver-535 --fix-missing
 # Install CUDA toolkit
 sudo apt install nvidia-cuda-toolkit
 ```
