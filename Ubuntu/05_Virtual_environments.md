@@ -117,8 +117,13 @@ pip install tensorflow[and-cuda]  # for GPU support
 pip install matplotlib scipy numpy opencv-python pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
 # install additional libraries
 pip install nibabel pytest tf_keras
+
+# To fix the error:
+#   Loaded runtime CuDNN library: 8.8.0 but source was compiled with: 8.9.6.
+#   pip install -U "jax[cuda12]"
+pip install nvidia-cudnn-cu11==8.9.*
 ```
-To use Keras 2:
+To use Keras 3 replace `.h5` with `.keras`. To use Keras 2:
 ```shell script
 pip install tf_keras  # install it to use Keras 2
 
