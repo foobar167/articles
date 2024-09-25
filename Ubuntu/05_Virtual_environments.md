@@ -112,6 +112,7 @@ For Nvidia driver version 550.107.02 and CUDA version 12.4
 ```shell script
 conda create --name python3.12 python=3.12  # create virtual env
 conda activate python3.12  # activate virtual environment
+
 pip install tensorflow[and-cuda]  # for GPU support
 # install main libraries
 pip install matplotlib scipy numpy opencv-python pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
