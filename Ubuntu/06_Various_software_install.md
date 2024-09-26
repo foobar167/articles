@@ -11,6 +11,7 @@
       - [Geeqie](#geeqie)
       - [JebBrains IntelliJ](#intellij)
       - [LibreOffice or OpenOffice](#libreoffice)
+      - [Mango viewer](#mango-viewer)
       - [Notepad++](#notepad-plus-plus)
       - [OpenSSH server](#openssh)
       - [PyCharm Community](#pycharm)
@@ -201,7 +202,38 @@ soffice -help 2>&1 | head -n1  # show OpenOffice version via command line
 ```
 
 ----
+#### <a name="mango-viewer" />Mango viewer
+[Mango](https://mangoviewer.com/index.html) – short for
+Multi-image Analysis GUI – is a viewer for medical research images.
+It provides analysis tools and a user interface to navigate image volumes.
+
+There are three versions of Mango:
+**Mango** for Desktop, **Papaya** for Browser and **iMango** for Apple iPad.
+
+[Download for Linux](https://mangoviewer.com/downloads/mango_unix.zip).
+In the Midnight Commander create extension associations:
+Open Midnight Commander (`mc`) → press <F9> →
+choose menu "Command" → menu "Edit extension file" → copy-paste this text:
+```text
+[nii.gz]
+Shell=.nii.gz
+Open=~/install/mango/mango %f
+View=~/install/mango/mango %f
+
+[nii]
+Shell=.nii
+Open=~/install/mango/mango %f
+View=~/install/mango/mango %f
+
+[dcm]
+Shell=.dcm
+Open=~/install/mango/mango %f
+View=~/install/mango/mango %f
+```
+
+----
 #### <a name="notepad-plus-plus" />Notepad++
+**Warning**: Wine Tool is large!
 
 [Notepad++](https://www.tecrobust.com/install-notepad-plus-plus-linux-ubuntu)
 is a Best Programming Text Editor and as well as a Source Code Editor which was developed
