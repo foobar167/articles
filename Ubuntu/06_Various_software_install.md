@@ -211,6 +211,7 @@ There are three versions of Mango:
 **Mango** for Desktop, **Papaya** for Browser and **iMango** for Apple iPad.
 
 [Download for Linux](https://mangoviewer.com/downloads/mango_unix.zip).
+
 In the Midnight Commander create extension associations:
 Open Midnight Commander (`mc`) → press <F9> →
 choose menu "Command" → menu "Edit extension file" → copy-paste this text:
