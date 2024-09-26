@@ -206,7 +206,6 @@ soffice -help 2>&1 | head -n1  # show OpenOffice version via command line
 [Mango](https://mangoviewer.com/index.html) – short for
 Multi-image Analysis GUI – is a viewer for medical research images.
 It provides analysis tools and a user interface to navigate image volumes.
-
 There are three versions of Mango:
 **Mango** for Desktop, **Papaya** for Browser and **iMango** for Apple iPad.
 
