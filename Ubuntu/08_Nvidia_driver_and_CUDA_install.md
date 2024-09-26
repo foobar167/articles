@@ -162,7 +162,7 @@ sudo apt install nvidia-driver-430
 # Sometimes `--fix-missing` flag is needed
 # sudo apt install nvidia-driver-535 --fix-missing
 # Install CUDA toolkit not on the System, but into your Virtual Environment
-#sudo apt install nvidia-cuda-toolkit  # don't install it :-)
+# sudo apt install nvidia-cuda-toolkit  # don't install it :-)
 ```
 
 Runfile method:
