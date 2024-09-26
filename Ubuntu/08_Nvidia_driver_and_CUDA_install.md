@@ -142,12 +142,16 @@ Error when executing command `nvidia-smi`:
 `NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver.
 Make sure that the latest NVIDIA driver is installed and running.`
 
-_Try to not mix runfile and package manager install methods._
+**Warning**: Try to not mix runfile and package manager install methods.
+
+**Warning**: Install CUDA Toolkit into your
+[Virtual Environment](05_Virtual_environments.md).
+Otherwise, it could be a conflicts between System and Virtual Env. libraries.
 
 Package manager method ([link](http://maxprog.net.pl/artifficial-intelligence-in-practice/solved-deep-learning-on-gpu-and-error-nvidia-smi-has-failed-because-it-couldnt-communicate-with-the-nvidia-driver)):
 ```shell script
 # Install ubuntu-drivers
-# sudo apt install ubuntu-drivers-common
+sudo apt install ubuntu-drivers-common
 # Check what driver is valid
 sudo ubuntu-drivers devices
 ```
@@ -155,10 +159,10 @@ sudo ubuntu-drivers devices
 ```shell script
 # Pick the right driver and run it
 sudo apt install nvidia-driver-430
-# Sometimes --fix-missing flag is needed
+# Sometimes `--fix-missing` flag is needed
 # sudo apt install nvidia-driver-535 --fix-missing
-# Install CUDA toolkit
-sudo apt install nvidia-cuda-toolkit
+# Install CUDA toolkit not on the System, but into your Virtual Environment
+#sudo apt install nvidia-cuda-toolkit  # don't install it :-)
 ```
 
 Runfile method:
@@ -206,6 +210,9 @@ sudo apt purge xserver-xorg-video-nouveau
 
 ---
 ### <a name="cuda" />Install CUDA library for all users
+**Warning**: Install CUDA Toolkit into your
+[Virtual Environment](05_Virtual_environments.md).
+Otherwise, it could be a conflicts between System and Virtual Env. libraries.
 
 ```shell script
 # Update and upgrade your system
