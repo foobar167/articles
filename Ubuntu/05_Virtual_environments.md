@@ -112,16 +112,23 @@ For Nvidia driver version 550.107.02 and CUDA version 12.4
 ```shell script
 conda create --name python3.12 python=3.12  # create virtual env
 conda activate python3.12  # activate virtual environment
+
 pip install tensorflow[and-cuda]  # for GPU support
 # install main libraries
 pip install matplotlib scipy numpy opencv-python pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
 # install additional libraries
-pip install nibabel pytest tf_keras
+pip install nibabel pytest tf_keras tensorflow-hub
 
 # To fix the error:
 #   Loaded runtime CuDNN library: 8.8.0 but source was compiled with: 8.9.6.
-#   pip install -U "jax[cuda12]"
-pip install nvidia-cudnn-cu11==8.9.*
+#   One should explicitly write CUDNN path to virtual environment.
+# Configure the system paths to activate when running the virtual environment
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> \
+    $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> \
+    $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 ```
 To use Keras 3 replace `.h5` with `.keras`. To use Keras 2:
 ```shell script
