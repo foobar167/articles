@@ -33,6 +33,7 @@ Install different software on Ubuntu 18.04.
 
 ----
 #### <a name="other-software" />All other different software
+
 ```shell script
 sudo apt install htop      # CPU monitoring
 sudo apt install git       # Git
@@ -44,14 +45,16 @@ sudo apt install gcc g++   # GCC and C++ compilers
 sudo apt install net-tools   # ifconfig command
 sudo apt install traceroute  # traceroute command
 sudo apt install python-is-python3  # for Ubuntu 20.04 default Python
+sudo apt install nemo      # Nemo file manager from MATE
 
 # Or in one command
-sudo apt install htop git mc autoconf make curl gcc g++ \
-                 net-tools traceroute python-is-python3
+sudo apt install htop git mc autoconf make curl gcc g++ net-tools traceroute \
+                 python-is-python3 nemo
 ```
 
 ---
 #### <a name="anydesk" />Anydesk
+
 Remote desktop sharing with
 [AnyDesk on Ubuntu 20.04](https://linuxconfig.org/remote-desktop-sharing-with-anydesk-on-ubuntu-20-04-focal-fossa)
 Focal Fossa.
@@ -66,6 +69,7 @@ sudo apt install anydesk
 
 ----
 #### <a name="asap" />ASAP
+
 [ASAP](https://github.com/computationalpathologygroup/ASAP),
 **A**utomated **S**lide **A**nalysis **P**latform is an open source platform for visualizing,
 annotating and automatically analyzing whole-slide histopathology images.
@@ -106,6 +110,7 @@ sudo apt --fix-broken install
 ----
 #### <a name="chromium" />Chromium
 
+Chrome is better.
 ```shell script
 # Install Chromium web browser
 sudo apt install chromium-browser
@@ -203,6 +208,7 @@ soffice -help 2>&1 | head -n1  # show OpenOffice version via command line
 
 ----
 #### <a name="mango-viewer" />Mango viewer
+
 [Mango](https://mangoviewer.com/index.html) – short for
 Multi-image Analysis GUI – is a viewer for medical research images.
 It provides analysis tools and a user interface to navigate image volumes.
@@ -233,8 +239,8 @@ View=~/install/mango/mango %f
 
 ----
 #### <a name="notepad-plus-plus" />Notepad++
-**Warning**: Wine Tool is large!
 
+**Warning**: Wine Tool is large!
 [Notepad++](https://www.tecrobust.com/install-notepad-plus-plus-linux-ubuntu)
 is a Best Programming Text Editor and as well as a Source Code Editor which was developed
 for Windows Platform and is more famous among the Windows users.
@@ -253,6 +259,7 @@ notepad-plus-plus &> /dev/null       # run Notepad++
 
 ----
 #### <a name="openssh" />OpenSSH server
+
 [Install OpenSSH server](https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/)
 for Ubuntu Linux.
 ```shell script
@@ -288,6 +295,7 @@ sudo apt install libcanberra-gtk-module
 
 ----
 #### <a name="teamviewer" />TeamViewer Host
+
 [Download](https://www.teamviewer.com/en/download/linux)
 deb package for TeamViewer **Host**.
 ```shell script
@@ -444,6 +452,7 @@ sudo nano /etc/environment
 
 ----
 #### <a name="x2go" />X2Go server/client
+
 [How to Set Up a Remote Desktop with X2Go on Ubuntu 18.04](https://draculaservers.com/tutorials/install-x2go-ubuntu-remote-desktop/)
 
 Install X2Go [server](https://wiki.x2go.org/doku.php/doc:installation:x2goserver)
