@@ -1,5 +1,6 @@
    - [Task](#task)
    - [Useful links](#useful)
+   - [Change Docker Default Root Data Directory](#docker-root-dir)
    - [Close port 5000](#close-port)
    - [Manage Docker](#manage)
    - [Manage Docker as a non-root user](#non-root)
@@ -22,6 +23,56 @@
 Docker Compose links:
    - [Docker compose tutorial for beginners by example [all you need to know]](https://youtu.be/4EqysCR3mjo)
    - [What is Docker Compose | How to create docker compose file](https://youtu.be/HUpIoF_conA)
+
+
+---
+### <a name="docker-root-dir" />Change Docker Default Root Data Directory
+Links:
+  * [Change Docker Default Root Data Directory](https://medium.com/@calvineotieno010/change-docker-default-root-data-directory-a1d9271056f4)
+  * [Relocating the Docker root directory](https://www.ibm.com/docs/en/z-anomaly-analytics/5.1.0?topic=compose-relocating-docker-root-directory)
+
+Sometimes there is not enough space in the `/var/lib/docker` directory:
+```shell
+df -H /var/lib/docker
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/md2p1      106G   31G   69G  32% /
+```
+
+To change Docker default root data directory:
+```shell
+# Check root dir
+#docker info | grep "Docker Root Dir"
+docker info -f '{{ .DockerRootDir}}'
+# Stop the Docker services
+sudo systemctl stop docker
+sudo systemctl stop docker.socket
+sudo systemctl stop containerd
+# Verify Docker has been stopped
+ps aux | grep -i docker | grep -v grep
+# Edit JSON file
+sudo vim /etc/docker/daemon.json
+# Add the following information to this file
+{
+  "data-root": "/data/docker_root"
+}
+# To exit Vim editor press the `Esc` key to enter "Normal mode".
+# Then type `:` to enter "Command-line mode".
+:wq  # to write and quit
+# Copy files to new Docker dir
+sudo rsync -axPS /var/lib/docker/ /data/docker_root
+# Start the Docker services
+sudo systemctl start docker
+# Verify docker is up and is using the new dir
+#docker info | grep "Docker Root Dir"
+docker info -f '{{ .DockerRootDir}}'
+# Check containers has started and running
+docker ps
+# Try Hello-World
+docker pull hello-world
+docker run hello-world
+# Remove previous dir
+#sudo rm -r /var/lib/docker
+```
 
 ---
 ### <a name="close-port" />Close port 5000
