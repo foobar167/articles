@@ -52,12 +52,12 @@ ps aux | grep -i docker | grep -v grep
 # Edit JSON file
 sudo vim /etc/docker/daemon.json
 # Add the following information to this file
-{
-  "data-root": "/data/docker_root"
-}
+    {
+      "data-root": "/data/docker_root"
+    }
 # To exit Vim editor press the `Esc` key to enter "Normal mode".
 # Then type `:` to enter "Command-line mode".
-:wq  # to write and quit
+    :wq  # to write and quit
 # Copy files to new Docker dir
 sudo rsync -axPS /var/lib/docker/ /data/docker_root
 # Start the Docker services
