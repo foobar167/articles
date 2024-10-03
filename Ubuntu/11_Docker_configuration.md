@@ -40,7 +40,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 
 To change Docker default root data directory:
 ```shell
-# Check root dir
+# Check root dir is `/var/lib/docker`
 #docker info | grep "Docker Root Dir"
 docker info -f '{{ .DockerRootDir}}'
 # Stop the Docker services
@@ -62,7 +62,7 @@ sudo vim /etc/docker/daemon.json
 sudo rsync -axPS /var/lib/docker/ /data/docker_root
 # Start the Docker services
 sudo systemctl start docker
-# Verify docker is up and is using the new dir
+# Verify Docker is up and is using the new dir `/data/docker_root`
 #docker info | grep "Docker Root Dir"
 docker info -f '{{ .DockerRootDir}}'
 # Check containers has started and running
