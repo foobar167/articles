@@ -1,5 +1,4 @@
 Articles in **English**
-   01. [How to publish Scopus paper for free](free_scopus_paper_how_to/how_to_publish_scopus_paper_for_free.md)
    01. [Future economics for physicists](future_economics_for_physicists/2020.01.12_future_economics_for_physicists.md)
    01. [Slavery, arms race and chemical coup between ants](Slavery_arms_race_and_chemical_coup_between_ants.md)
 

@@ -1,6 +1,7 @@
 <img src="https://raw.githubusercontent.com/foobar167/articles/master/Machine_Learning/Brochure/data/Ris1.6-Skhema-iskusstvennogo-neyrona.png" alt="Artificial neuron" title="Artificial neuron" height="250" />
 
 Articles about Machine Learning (ML) in **English**:
+   01. [How to publish Scopus paper for free](free_scopus_paper_how_to/how_to_publish_scopus_paper_for_free.md)
    01. [Machine Learning best ideas](ml-best-ideas-2020/ml-best-ideas.md) at the beginning of 2021.
    01. [ML code examples](code_examples)
    01. [Various interesting courses on Machine Learning](courses_on_machine_learning.md)
