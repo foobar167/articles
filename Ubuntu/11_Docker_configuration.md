@@ -43,33 +43,37 @@ To change Docker default root data directory:
 # Check root dir is `/var/lib/docker`
 #docker info | grep "Docker Root Dir"
 docker info -f '{{ .DockerRootDir}}'
+
 # Stop the Docker services
 sudo systemctl stop docker
 sudo systemctl stop docker.socket
 sudo systemctl stop containerd
 # Verify Docker has been stopped
 ps aux | grep -i docker | grep -v grep
+
 # Edit JSON file
 sudo vim /etc/docker/daemon.json
 # Add the following information to this file
-    {
-      "data-root": "/data/docker_root"
-    }
+{
+  "data-root": "/data/docker_root"
+}
 # To exit Vim editor press the `Esc` key to enter "Normal mode".
 # Then type `:` to enter "Command-line mode".
     :wq  # to write and quit
+
 # Copy files to new Docker dir
 sudo rsync -axPS /var/lib/docker/ /data/docker_root
 # Start the Docker services
 sudo systemctl start docker
 # Verify Docker is up and is using the new dir `/data/docker_root`
-#docker info | grep "Docker Root Dir"
 docker info -f '{{ .DockerRootDir}}'
+
 # Check containers has started and running
 docker ps
 # Try Hello-World
 docker pull hello-world
 docker run hello-world
+
 # Remove previous dir
 #sudo rm -r /var/lib/docker
 ```
