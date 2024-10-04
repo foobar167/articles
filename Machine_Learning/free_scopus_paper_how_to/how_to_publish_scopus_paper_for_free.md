@@ -4,8 +4,8 @@
 
 - [Task](#task)
 - [Open Access Journals with No APC](#free-journals)
-    - [Scientific Journals with Open Access and no APC](#noapc)
     - [JournalSearches](#journal-searches)
+    - [Scientific Journals with Open Access and no APC](#noapc)
     - [DOAJ](#doaj)
     - [Eigenfactor Project](#eigenfactor)
     - [Google Sheet](#google-sheet)
@@ -46,18 +46,6 @@ i.e., no paid subscription needed.
 ---
 ## <a name="free-journals" />Open Access Journals with No APC
 
-### <a name="noapc" />Scientific Journals with Open Access and no APC
-
-[Open Access Journals with No APC](https://noapc.com/).
-Free to publish and Free to read journals list.
-
-An updated list of open-access journals indexed in Scopus &
-Web of Science that do not charge authors and readers.
-Non-APC-Open Access Journals are free to publish for authors
-and free to read for readers. This website is supposed to list
-open-access research journals across various subject categories
-that publish without charging authors publication fees.
-
 ### <a name="journal-searches" />JournalSearches
 
 [JournalSearches](https://journalsearches.com/)
@@ -72,6 +60,18 @@ of **free** publication journals indexed in Scopus and Web of Science.
 indexed in Scopus, SCI.
 * Free publishing [Machine Learning](https://journalsearches.com/free-journals.php?id=Machine%20Learning)
 Journals indexed in Scopus, SCI.
+
+### <a name="noapc" />Scientific Journals with Open Access and no APC
+
+[Open Access Journals with No APC](https://noapc.com/).
+Free to publish and Free to read journals list.
+
+An updated list of open-access journals indexed in Scopus &
+Web of Science that do not charge authors and readers.
+Non-APC-Open Access Journals are free to publish for authors
+and free to read for readers. This website is supposed to list
+open-access research journals across various subject categories
+that publish without charging authors publication fees.
 
 ### <a name="doaj" />DOAJ
 
