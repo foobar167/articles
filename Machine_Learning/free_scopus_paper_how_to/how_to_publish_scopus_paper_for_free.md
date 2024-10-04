@@ -35,7 +35,6 @@ i.e., no paid subscription needed.
 ---
 ## <a name="free-journals" />Open Access Journals with No APC
 
----
 ### <a name="journals-list-01" />Scientific Journals with Open Access and no APC
 
 [Open Access Journals with No APC](https://noapc.com/).
@@ -48,7 +47,6 @@ and free to read for readers. This website is supposed to list
 open-access research journals across various subject categories
 that publish without charging authors publication fees.
 
----
 ### <a name="journals-list-02" />JournalSearches
 
 [JournalSearches](https://journalsearches.com/)
@@ -72,7 +70,6 @@ The journal's ranking can be viewed on the websites:
 Note the journal quartile from Q1 (highest) to Q4
 * [Scopus Source List](https://www.scopus.com/sources)
 
----
 ## <a name="checked-journals" />Checked Journals
 
 * [International Journal Of Interactive Multimedia And Artificial Intelligence](https://www.ijimai.org)<br />
@@ -123,7 +120,6 @@ indexed in [Scopus](https://www.scopus.com/sourceid/23629).<br />
 "**Technical content should be kept to a minimum**"
 ([link](https://onlinelibrary.wiley.com/page/journal/23719621/homepage/productinformation.html)).
 
----
 ## <a name="journals-to-check" />Journals to Check
 * [Data Intelligence](https://journalsearches.com/journal.php?title=data%20intelligence) High rating. Short bio at the end.
 * [Harvard Data Science Review](https://journalsearches.com/journal.php?title=harvard%20data%20science%20review)
@@ -135,17 +131,14 @@ indexed in [Scopus](https://www.scopus.com/sourceid/23629).<br />
 ---
 ## <a name="publishing-tools" />Publishing Tools
 
----
 ### <a name="online-editors" />Online Editors
 * [Overleaf LaTeX](https://www.overleaf.com)
 * [Google Docs](https://docs.google.com)
 * [Microsoft 365](https://word.cloud.microsoft/)
 
----
 ### <a name="other-tools" />Other Tools
 * [iLovePDF](https://www.ilovepdf.com/) online PDF tools
 
----
 ### <a name="references-citations" />References and Citations
 * [Mendeley](https://www.mendeley.com)
 and [Top 10](https://www.g2.com/products/mendeley/competitors/alternatives) Mendeley alternatives and Competitors,
@@ -155,7 +148,6 @@ converts your Bibtex bibliography text or file instantly.
 * [Zotero](https://www.zotero.org)
 * [ZoteroBib](https://zbib.org)
 
----
 #### <a name="mendeley-howto" />How to use Mendeley
 
 1. Watch [this video](https://youtu.be/PJXnfBSq4Lg) on YouTube
