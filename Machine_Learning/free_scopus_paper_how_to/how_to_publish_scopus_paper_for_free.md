@@ -1,23 +1,34 @@
 # How to publish Scopus paper for free
 
-[Self link]()
+[Self link](https://github.com/foobar167/articles/blob/master/Machine_Learning/free_scopus_paper_how_to/how_to_publish_scopus_paper_for_free.md)
 
 - [Task](#task)
 - [Open Access Journals with No APC](#free-journals)
-    - [Scientific Journals with Open Access and no APC](#journals-list-01)
-    - [JournalSearches](#journals-list-02)
+    - [Scientific Journals with Open Access and no APC](#noapc)
+    - [JournalSearches](#journal-searches)
+    - [DOAJ](#doaj)
+    - [Eigenfactor Project](#eigenfactor)
+    - [Google Sheet](#google-sheet)
+    - [Country Of Papers](#countryofpapers)
 - [Journals Brief Overview](#journals-overview)
     - [Checked Journals](#checked-journals)
     - [Journals to Check](#journals-to-check)
 - [Publishing Tools](#publishing-tools)
     - [Online Editors](#online-editors)
     - [Other Tools](#other-tools)
+    - [Translators](#translators)
     - [References and Citations](#references-citations)
         - [How to use Mendeley](#mendeley-howto)
+    - [Grammar checkers](#grammar-checkers)
+    - [Writing style and paraphrase](#paraphrase)
+        - [How to use DeepL Writing Style](#deepl-writing-style)
+    - [Online plagiarism checker](#plagiarism-checker)
+    - [Smart Tips](#smart-tips)
 - [Useful Links](#useful-links)
 
 ---
 # <a name="task" />Task
+
 Instructions for publishing a scientific paper in a high-impact journal
 indexed in the major multidisciplinary **citation databases** like
 [Scopus](https://www.scopus.com/),
@@ -35,7 +46,7 @@ i.e., no paid subscription needed.
 ---
 ## <a name="free-journals" />Open Access Journals with No APC
 
-### <a name="journals-list-01" />Scientific Journals with Open Access and no APC
+### <a name="noapc" />Scientific Journals with Open Access and no APC
 
 [Open Access Journals with No APC](https://noapc.com/).
 Free to publish and Free to read journals list.
@@ -47,7 +58,7 @@ and free to read for readers. This website is supposed to list
 open-access research journals across various subject categories
 that publish without charging authors publication fees.
 
-### <a name="journals-list-02" />JournalSearches
+### <a name="journal-searches" />JournalSearches
 
 [JournalSearches](https://journalsearches.com/)
 is a free journal selection portal for researchers.
@@ -61,6 +72,24 @@ of **free** publication journals indexed in Scopus and Web of Science.
 indexed in Scopus, SCI.
 * Free publishing [Machine Learning](https://journalsearches.com/free-journals.php?id=Machine%20Learning)
 Journals indexed in Scopus, SCI.
+
+### <a name="doaj" />DOAJ
+
+The [Directory of Open Access Journals (DOAJ)](https://doaj.org/search/journals?source=%7B%22query%22%3A%7B%22bool%22%3A%7B%22must%22%3A%5B%7B%22term%22%3A%7B%22bibjson.apc.has_apc%22%3Afalse%7D%7D%2C%7B%22term%22%3A%7B%22bibjson.other_charges.has_other_charges%22%3Afalse%7D%7D%2C%7B%22terms%22%3A%7B%22index.schema_codes_tree.exact%22%3A%5B%22LCC%3AQ%22%5D%7D%7D%2C%7B%22term%22%3A%7B%22bibjson.copyright.author_retains%22%3Atrue%7D%7D%5D%7D%7D%2C%22sort%22%3A%5B%7B%22index.unpunctitle.exact%22%3A%7B%22order%22%3A%22asc%22%7D%7D%5D%2C%22track_total_hits%22%3Atrue%7D)
+is a website that hosts a community-curated list of
+open access journals.
+
+### <a name="eigenfactor" />Eigenfactor Project
+[Eigenfactor Project](http://www.eigenfactor.org/projects/openAccess/fullfree.php).
+No-fee Open Access Journals for all fields.
+
+### <a name="google-sheet" />Google Sheet
+[Google Sheet](https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vSCfhHbtTQhnjdd0LmUwUZ6lMGSbCDQC_cx2qFjmw2v983pccv9k3yHJooQEcZNIn4BTOLV-9mGBpRM/pubhtml).
+Updated automatically every 5 minutes.
+
+### <a name="countryofpapers" />Country Of Papers
+[CountryOfPapers Journals Search](https://countryofpapers.com/search-journals)
+can find journals with **low price**.
 
 ---
 ## <a name="journals-overview" />Journals Brief Overview
@@ -80,6 +109,9 @@ IJIMAI does not ask for articles processing (APC) or submissions charges.
 This journal provides immediate open access to its content.
 The [Focus and Scope](https://www.ijimai.org/journal/focus-and-scope)
 are the topics of AI, Data Mining, Semantic Web, Interactive Multimedia, etc.
+Submission of manuscripts is possible in the
+[following formats](https://www.ijimai.org/journal/author-guidelines#1):
+Microsoft Word (doc, docx); OpenOffice (odt); LaTeX.
 
 
 * [Computational Visual Media](https://jcvm.org)<br />
@@ -121,6 +153,7 @@ indexed in [Scopus](https://www.scopus.com/sourceid/23629).<br />
 ([link](https://onlinelibrary.wiley.com/page/journal/23719621/homepage/productinformation.html)).
 
 ## <a name="journals-to-check" />Journals to Check
+
 * [Data Intelligence](https://journalsearches.com/journal.php?title=data%20intelligence) High rating. Short bio at the end.
 * [Harvard Data Science Review](https://journalsearches.com/journal.php?title=harvard%20data%20science%20review)
 * [Autonomous Intelligent Systems](https://journalsearches.com/journal.php?title=autonomous%20intelligent%20systems)
@@ -132,14 +165,25 @@ indexed in [Scopus](https://www.scopus.com/sourceid/23629).<br />
 ## <a name="publishing-tools" />Publishing Tools
 
 ### <a name="online-editors" />Online Editors
+
 * [Overleaf LaTeX](https://www.overleaf.com)
 * [Google Docs](https://docs.google.com)
 * [Microsoft 365](https://word.cloud.microsoft/)
 
 ### <a name="other-tools" />Other Tools
+
 * [iLovePDF](https://www.ilovepdf.com/) online PDF tools
+* [Skype Microsoft Copilot](https://web.skype.com/)
+and [Copilot Microsoft](https://copilot.microsoft.com)
+chatGPT AI. Ask it anything.
+
+### <a name="translators" />Translators
+
+* [DeepL](https://www.deepl.com)
+* [Google Translate](https://translate.google.com)
 
 ### <a name="references-citations" />References and Citations
+
 * [Mendeley](https://www.mendeley.com)
 and [Top 10](https://www.g2.com/products/mendeley/competitors/alternatives) Mendeley alternatives and Competitors,
 [Mendeley alternatives](https://www.g2.com/products/mendeley/competitors/alternatives)
@@ -164,43 +208,77 @@ to import articles from search engine.
 with [Mendeley Cite](https://www.mendeley.com/reference-management/mendeley-cite)
 plugin to import the bibliography list into MS Word.
 
-**Grammar checkers**
-Embedded grammar checker.
-Grammarly [https://www.grammarly.com](https://www.grammarly.com) – use VPN
+### <a name="grammar-checkers" />Grammar checkers
 
-**Writing style and paraphrase**
-**How to use DeepL Write** [https://www.deepl.com/en/write](https://www.deepl.com/en/write)
-Set a writing style: simple, business, academic, casual.
+* Embedded into your Editor grammar checker.
+* [Grammarly](https://www.grammarly.com)
+
+### <a name="paraphrase" />Writing style and paraphrase
+
+* [Paraphrase tool](https://quillbot.com/paraphrasing-tool)
+* [DeepL Write](https://www.deepl.com/en/write)
+* English synonyms:
+[Collins English Thesaurus](https://www.collinsdictionary.com)
+and [Thesaurus.com](https://www.thesaurus.com)
+* [Russian synonyms](https://sinonim.org)
+
+#### <a name="deepl-writing-style" />How to use DeepL Writing Style
+
+1. Open [DeepL Write](https://www.deepl.com/en/write)
+2. Set a writing style: simple, business, academic, casual.
+<br />or<br />
 Set a tone: enthusiastic, friendly, confident, diplomatic.
-Install DeepL add-in for Microsoft Word.
+3. Install [DeepL add-in for Microsoft Word](https://www.deepl.com/en/word-addin).<br />
 Now you can translate directly in DOCX documents.
-Link: [https://www.deepl.com/en/word-addin](https://www.deepl.com/en/word-addin)
-1\. Translate through the translator. "Translator" tab of the add-in.
-2\. Set the Academic style and Confident tone. The "Write" tab of the add-in.
-Paraphrase tool [https://quillbot.com/paraphrasing-tool](https://quillbot.com/paraphrasing-tool)
-Russian synonyms [https://sinonim.org](https://sinonim.org/)
+   * Translate through the translator.
+     "Translator" tab of the add-in.
+   * Set the Academic style or Confident tone.
+     The "Write" tab of the add-in.
 
-**Online plagiarism checker**
+### <a name="plagiarism-checker" />Online plagiarism checker
+
 [11 Free Plagiarism Checker Tools for Students and Teachers in 2024](https://research.com/software/free-plagiarism-checker-tools)
-SmallSEOTools [https://smallseotools.com/plagiarism-checker](https://smallseotools.com/plagiarism-checker)
-Paraphraser [https://www.paraphraser.io/plagiarism-checker](https://www.paraphraser.io/plagiarism-checker)
-Grammarly [https://www.grammarly.com/plagiarism-checker](https://www.grammarly.com/plagiarism-checker) – use VPN
 
-**Smart Tips**
-YouTube channel @MyResearchSupport [https://youtu.be/2FDrOTcI\_dY](https://youtu.be/2FDrOTcI_dY) – smart tips
+* [SmallSEOTools](https://smallseotools.com/plagiarism-checker)
+* [Paraphraser](https://www.paraphraser.io/plagiarism-checker)
+* [Grammarly](https://www.grammarly.com/plagiarism-checker)
+
+### <a name="smart-tips" />Smart Tips
+
+* [YouTube Smart Tips How to Publish Paper](https://youtu.be/2FDrOTcI\_dY)
 
 ---
 ## <a name="useful-links" />Useful Links
+
+Text
 * [Online register converter](https://2ip.me/en/services/useful-service/converter-registers)
 * [Online Word Counter](https://wordcounter.net/)
 * [Online TTSReader](https://ttsreader.com/player/)
 text-to-speech with no limitations.
+* Text-to-speech using
+[Microsoft Edge](https://support.microsoft.com/en-us/topic/use-immersive-reader-in-microsoft-edge-78a7a17d-52e1-47ee-b0ac-eff8539015e1).
+Open MS Edge browser. Enter **Immersive Reader**
+in the address bar or press `<F9>`.
+Select **Read Aloud** from the **Immersive Reader** toolbar.
+* Read Aloud: A Text to Speech Voice Reader by LSD Software.
+[Firefox](https://addons.mozilla.org/en-US/firefox/addon/read-aloud/)
+and [Chrome](https://chromewebstore.google.com/detail/read-aloud-a-text-to-spee/hdhinadidafjejdhmfkjgnolgimiaplp)
+plugins.
+
+Code
 * [Notepad++](https://notepad-plus-plus.org/) source code editor
 * [PyCharm Community Edition and IntelliJ IDEA Community Edition](https://www.jetbrains.com/products/compare/?product=pycharm-ce&product=idea-ce)
 \- Python and Java IDE
+
+Images
 * [IrfanView](https://www.irfanview.com/) image viewer
 * [Photopea Online Photo Editor](https://www.photopea.com/)
+
+Video
 * [Canva’s Online Video Editor](https://www.canva.com/video-editor/)
 * [VSDC Video Editor](https://www.videosoftdev.com/) for Windows and iOS
-* [Kdenlive Video Editor](https://kdenlive.org/) for Linux, Windows, and macOS 
+* [Kdenlive Video Editor](https://kdenlive.org/) for Linux, Windows, and macOS
+
+Other
 * [SequoiaView for Windows](https://sequoiaview.en.softonic.com/) to view file sizes
+
