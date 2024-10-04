@@ -75,7 +75,7 @@ Note the journal quartile from Q1 (highest) to Q4
 ---
 ## <a name="checked-journals" />Checked Journals
 
-[International Journal Of Interactive Multimedia And Artificial Intelligence](https://www.ijimai.org)<br />
+* [International Journal Of Interactive Multimedia And Artificial Intelligence](https://www.ijimai.org)<br />
 Check date: 2024.10.04<br />
 &emsp;According to the [policies](https://www.ijimai.org/journal/policies)
 of the journal,
@@ -84,7 +84,8 @@ This journal provides immediate open access to its content.
 The [Focus and Scope](https://www.ijimai.org/journal/focus-and-scope)
 are the topics of AI, Data Mining, Semantic Web, Interactive Multimedia, etc.
 
-[Computational Visual Media](https://jcvm.org)<br />
+
+* [Computational Visual Media](https://jcvm.org)<br />
 Check date: 2024.10.04<br />
 &emsp;[CVM Scopus info](https://www.scopus.com/sourceid/21100869486).
 The journal is published by the **Tsinghua University Press**.<br />
@@ -100,7 +101,8 @@ review articles on novel ideas, methods, and systems
     &emsp;The publication costs are covered by Tsinghua University so
 **authors do not need to pay an article-processing charge (APC)**.
 
-[Investigative Magnetic Resonance Imaging](https://www.i-mri.org)<br />
+
+* [Investigative Magnetic Resonance Imaging](https://www.i-mri.org)<br />
 Check date: 2024.10.01<br />
     &emsp;It is *not* in the
 [SCImago Journal & Country Rank](https://www.scimagojr.com/aboutus.php).<br />
@@ -112,7 +114,8 @@ Reports of original investigations in the areas of ...
 **directly relevant to magnetic resonance (MRI)**
 as well as methodology-oriented clinical studies will be accepted.
 
-[AI Magazine](https://onlinelibrary.wiley.com/journal/23719621)<br />
+
+* [AI Magazine](https://onlinelibrary.wiley.com/journal/23719621)<br />
 Check date: 2024.09.29<br />
     &emsp;Free of charge and open source journal,
 indexed in [Scopus](https://www.scopus.com/sourceid/23629).<br />
