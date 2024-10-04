@@ -204,4 +204,3 @@ text-to-speech with no limitations.
 * [VSDC Video Editor](https://www.videosoftdev.com/) for Windows and iOS
 * [Kdenlive Video Editor](https://kdenlive.org/) for Linux, Windows, and macOS 
 * [SequoiaView for Windows](https://sequoiaview.en.softonic.com/) to view file sizes
-
