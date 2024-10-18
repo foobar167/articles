@@ -254,7 +254,7 @@ Now you can translate directly in DOCX documents.
 ## <a name="imaging-tools" />Imaging Tools
 
 Open-source free software for
-[image segmentation and labeling](../free_image_segmentation_tools).
+[image segmentation and labeling](../free_image_segmentation_tools/free_image_segmentation_tools.md).
 
 ### <a name="medical-imaging" />Medical Imaging
 
