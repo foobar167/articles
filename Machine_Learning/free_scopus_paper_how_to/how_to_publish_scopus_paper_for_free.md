@@ -24,6 +24,9 @@
         - [How to use DeepL Writing Style](#deepl-writing-style)
     - [Online plagiarism checker](#plagiarism-checker)
     - [Smart Tips](#smart-tips)
+- [Imaging Tools](#imaging-tools)
+    - [Medical Imaging](#medical-imaging)
+    - [Geospatial Imaging](#geospatial-imaging)
 - [Useful Links](#useful-links)
 
 ---
@@ -248,6 +251,38 @@ Now you can translate directly in DOCX documents.
 * [YouTube Smart Tips How to Publish Paper](https://youtu.be/2FDrOTcI\_dY)
 
 ---
+## <a name="imaging-tools" />Imaging Tools
+
+Open-source free software for
+[image segmentation and labeling](../free_image_segmentation_tools).
+
+### <a name="medical-imaging" />Medical Imaging
+
+* [3D Slicer](https://www.slicer.org/) image computing platform.
+This is a desktop application with a graphical interface and
+all sorts of modules for working with medical images.
+The only inconvenience is that for conversion each **NifTI** image
+has to be loaded manually and saved as a **DICOM** series to the
+required catalogue, i.e. the whole process will take some time.
+
+* [Mango](https://mangoviewer.com/) – short for
+Multi-image Analysis GUI – is a viewer for medical research images.
+It provides analysis tools and a user interface to navigate image volumes.
+[Mango Desktop](https://mangoviewer.com/mango.html) and
+[Papaya Browser](https://mangoviewer.com/papaya.html)
+is a pure JavaScript medical research image viewer,
+supporting **DICOM** and **NIFTI** formats.
+[How-to install Mango for Ubuntu](../../Ubuntu/06_Various_software_install.md#mango-viewer)
+
+* [NiBabel](https://nipy.org/nibabel/).
+Read and write access to common neuroimaging file formats.
+
+### <a name="geospatial-imaging" />Geospatial Imaging
+
+* [GDAL](https://gdal.org/en/latest/) is a translator library for raster
+and vector geospatial data formats that is released under an MIT License.
+
+---
 ## <a name="useful-links" />Useful Links
 
 Text
@@ -271,7 +306,8 @@ Code
 \- Python and Java IDE
 
 Images
-* [IrfanView](https://www.irfanview.com/) image viewer
+* [IrfanView](https://www.irfanview.com/) image viewer for Windows.
+* [Geeqie](https://www.linuxhelp.com/how-to-install-geeqie-in-ubuntu) image viewer for Ubuntu.
 * [Photopea Online Photo Editor](https://www.photopea.com/)
 
 Video
