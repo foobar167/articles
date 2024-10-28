@@ -608,26 +608,15 @@ Install packages for https://image.org.by
 Github repository with installation instructions https://github.com/Vozf/slide_analysis_api
 
 ```shell script
-sudo apt install git
-sudo apt install python3
-sudo apt install python3-pip
-sudo apt install python3-tk
-sudo apt install openslide-tools
-sudo apt install libsm6
-sudo apt install libxext6
+sudo apt install git python3 python3-pip python3-tk openslide-tools \
+                 libsm6 libxext6 python3-openslide python3-flask nginx
 
 # Python 2 and 3 wrappers for reading whole slide image files
-sudo apt install python-openslide
-sudo apt install python3-openslide
-
 # Flask micro web framework
-sudo apt install python-flask
-sudo apt install python3-flask
 
 # nginx [engine x] is an HTTP and reverse proxy server,
 # a mail proxy server, and a generic TCP/UDP proxy server,
 # originally written by Igor Sysoev.
-sudo apt install nginx
 ```
 
 Install [GDCM and Pydicom](https://github.com/HealthplusAI/python3-gdcm)
