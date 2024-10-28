@@ -152,10 +152,17 @@ Package manager method ([link](http://maxprog.net.pl/artifficial-intelligence-in
 ```shell script
 # Install ubuntu-drivers
 sudo apt install ubuntu-drivers-common
+sudo ubuntu-drivers autoinstall
 # Check what driver is valid
 sudo ubuntu-drivers devices
 ```
+After `ubuntu-drivers` installation open menu
+`Run` → `Preferences` → `Software & Updates` → tab `Ubuntu software`→
+check `Proprietary drivers for devices (restricted)` option.
+Then update from gui or `sudo apt update`.
+
 ![sudo ubuntu-drivers devices](data/2019.09.19_ubuntu-drivers_devices.png)
+
 ```shell script
 # Pick the right driver and run it
 sudo apt install nvidia-driver-430

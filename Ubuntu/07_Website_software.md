@@ -479,6 +479,7 @@ sudo apt install libbz2-dev
 ---
 ## <a name="certbot" />Install Certbot for `nginx`
 
+### Ubuntu 22.04
 [Link to Certbot installation instruction](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx)
 
 ```shell script
@@ -513,6 +514,21 @@ sudo certbot --nginx
 
 # Test automatic renewal
 sudo certbot renew --dry-run
+```
+
+### Ubuntu 24.04
+[How to Install Nginx Web Server on Ubuntu 24.04](https://docs.vultr.com/how-to-install-nginx-web-server-on-ubuntu-24-04)
+```shell
+sudo apt update
+sudo apt install nginx -y
+sudo nginx -version
+sudo systemctl enable nginx
+sudo systemctl start nginx
+sudo systemctl status nginx
+
+sudo snap install --classic certbot
+sudo certbot --version
+sudo certbot --nginx -d app.example.com --agree-tos
 ```
 
 To confirm that your site is set up properly, visit https://image.org.by via HTTPS.

@@ -37,6 +37,7 @@ How-to:
    - [System info and benchmarks](#sys_info)
    - [Take screenshot](#screenshot)
    - [Update system packages](#update-ubuntu)
+   - [Upgrade Ubuntu from 22.04 to 24.04](#upgrade-ubuntu)
    - [View computer resources](#resources)
    - [View disk usage](#disk-usage)
    - [View screen resolution](#resolution)
@@ -1064,6 +1065,105 @@ sudo apt upgrade
 
 # If message: `The following packages have been kept back`
 sudo apt install <list of packages kept back>
+```
+
+---
+### <a name="upgrade-ubuntu" />Upgrade Ubuntu from 22.04 to 24.04
+
+- [How to Upgrade from Ubuntu 22.04 LTS to Ubuntu 24.04 LTS](https://jumpcloud.com/blog/how-to-upgrade-ubuntu-22-04-to-ubuntu-24-04)
+- [How to Upgrade Ubuntu 22.04 to 24.04 LTS: A Complete Guide](https://www.cyberciti.biz/faq/how-to-upgrade-from-ubuntu-22-04-lts-to-ubuntu-24-04-lts/)
+
+Step 1: Back Up Your Important Data
+```shell
+# Copy Home dir
+#rsync -a –progress /home/your_username /path_to_backup_location/home_backup
+
+# Backup system config files
+sudo rsync -a –progress /etc /path_to_backup_location/etc_backup
+
+# Backup list of all installed packages
+dpkg --get-selections > /path_to_backup_location/package_list.txt
+
+# To reinstall all packages type
+#sudo dpkg –-set-selections < package_list.txt
+#sudo apt-get dselect-upgrade
+```
+Step 2: Upgrade All the System Packages
+```shell
+sudo apt update && sudo apt upgrade -y
+sudo reboot
+```
+Step 3: Prepare TCP Port 1022
+
+During the upgrade process, various services and configurations
+may be restarted or reloaded, including the SSH daemon.
+If something goes wrong during these operations,
+having an additional port configured can help to avoid losing
+remote access to the server.
+```shell
+sudo ufw allow 1022/tcp
+sudo ufw reload  # reload to apply the rule
+sudo ufw status
+```
+Step 4: Upgrade from Ubuntu 22.04 LTS to Ubuntu 24.04 LTS Version
+```shell
+sudo apt-get install ubuntu-release-upgrader-core
+sudo do-release-upgrade -d
+```
+Step 5: Verify Proper and Finish
+```shell
+# Verify upgrade
+lsb_release -a
+cat /etc/os-release
+
+# Close 1022 port
+sudo ufw delete allow 1022/tcp
+
+# Uncomment and remove the # sign at the beginning
+# of each line for each repository
+ls -l /etc/apt/sources.list.d/
+
+sudo apt autoremove ––purge
+```
+
+If too many packages are kept back
+`The following packages have been kept back`
+**ignore them** or try this commands
+```shell
+sudo apt dist-upgrade
+
+sudo apt --fix-broken install
+sudo dpkg --configure -a
+sudo apt-get -f install
+
+# Install Full Update
+sudo apt update
+sudo apt full-upgrade
+```
+**Note**: durint update choose
+`N or O  : keep your currently-installed version`
+to keep your configuration files.
+
+If error `Failed to fetch
+http://archive.ubuntu.com/ubuntu/dists/noble/InRelease
+Could not resolve 'archive.ubuntu.com'`
+```shell
+# Add a DNS server to the system
+sudo apt install systemd-resolved
+#sudo systemctl start systemd-resolved.service
+#sudo systemctl enable systemd-resolved.service
+sudo systemctl status systemd-resolved.service
+```
+
+To remove message from `sudo apt upgrade`
+`Get more security updates through Ubuntu Pro with 'esm-apps' enabled`
+```shell
+cd /etc/apt/apt.conf.d/
+sudo mkdir -p apt_relocated_backup
+sudo mv 20apt-esm-hook.conf apt_relocated_backup/
+
+# Check
+sudo apt upgrade
 ```
 
 ---
