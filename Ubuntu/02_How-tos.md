@@ -567,18 +567,18 @@ Open 2 console terminals
 
 ```shell
 # In the 1st terminal: login to the server,
-# start your virtual environment, run jupyter notebook
+# start your virtual environment, and run jupyter notebook
 ssh user@192.168.1.2 -p 22  # login
 conda activate python3.12   # activate virtual env
 jupyter notebook            # default port 8888
 # or
 jupyter notebook --no-browser --port=8892
 
-# In the 2nd terminal: 8891 - local port, 8892 - server port.
+# In the 2nd terminal: 8891 - local port, 8892 - server port
 ssh -NL localhost:8891:localhost:8892 user@192.168.1.2 -p 22
-# Enter URL in the local browser:
+# Enter URL in the local browser
 localhost:8891
-# or copy-paste the URL with token if required
+# or copy-paste the URL with token from the 1st console if required
 http://localhost:8891/tree?token=23969122fd30a51a7b210dde6255313ed425e8af6aa42a6d
 # but with local port 8891 instead of 8892
 ```
