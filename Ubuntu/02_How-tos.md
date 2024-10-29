@@ -19,6 +19,7 @@ How-to:
    - [Find files owned by the user](#find-user)
    - [Install deb file](#deb)
    - [Jupyter clear output](#jupyter-clear-output)
+   - [Jupyter notebook via remote server](#jupyter-ssh)
    - [Kill the tty](#tty-kill)
    - [List all environment variables](#printenv)
    - [List installed packages](#list-installed)
@@ -555,6 +556,33 @@ When you open a large Jupyter Notebook, the browser crashes
 ```shell script
 jupyter nbconvert --clear-output --inplace filename.ipynb
 ```
+
+---
+### <a name="jupyter-ssh" />Jupyter notebook via remote server
+
+- [How to run a jupyter notebook through a remote server on local machine](https://stackoverflow.com/questions/69244218/how-to-run-a-jupyter-notebook-through-a-remote-server-on-local-machine)
+- [How to connect to a remote Jupyter notebook server](https://stackoverflow.com/a/49568184/7550928)
+
+Open 2 console terminals
+
+```shell
+# In the 1st terminal: login to the server,
+# start your virtual environment, run jupyter notebook
+ssh user@192.168.1.2 -p 22  # login
+conda activate python3.12   # activate virtual env
+jupyter notebook            # default port 8888
+# or
+jupyter notebook --no-browser --port=8892
+
+# In the 2nd terminal: 8891 - local port, 8892 - server port.
+ssh -NL localhost:8891:localhost:8892 user@192.168.1.2 -p 22
+# Enter URL in the local browser:
+localhost:8891
+# or copy-paste the URL with token if required
+http://localhost:8891/tree?token=23969122fd30a51a7b210dde6255313ed425e8af6aa42a6d
+# but with local port 8891 instead of 8892
+```
+**Note**: better use the default port 8888 everywhere.
 
 ---
 ### <a name="tty-kill" />Kill the tty
