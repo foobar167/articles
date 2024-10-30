@@ -1,6 +1,6 @@
-![Ubuntu 20.04](data/ubuntu-20-04.jpg)
+![Ubuntu 24.04](data/ubuntu-24-04-numbat.webp)
 
-Ubuntu 20.04 and 18.04 instructions, articles emerged
+Ubuntu 18.04–24.04 instructions, articles emerged
 from everyday tasks.
 
 Periodically updated instructions:
@@ -15,8 +15,8 @@ Periodically updated instructions:
    * [Nvidia driver and CUDA install](08_Nvidia_driver_and_CUDA_install.md)
    * [Docker configuration and use](11_Docker_configuration.md)
    * [Keras and TensorFlow How-to and use](13_Keras_and_TensorFlow_how-tos.md)
-   * [Raspbian configuration instruction](15_Raspbian_configuration.md)
-   * [DL4 Ubuntu 20.04 configuration instructions](16_DL4_config.md)
+   * [Raspbian configuration](15_Raspbian_configuration.md)
+   * [DL4 server configuration](16_DL4_config.md)
 
 Not supported instructions in the `old` directory:
    * [TensorFlow installation](old/09_TensorFlow_installation.md)
