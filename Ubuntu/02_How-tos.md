@@ -48,13 +48,41 @@ How-to:
 ---
 ### <a name="nvidia-smi-error" />`nvidia-smi` error after system update
 
-Unfortunately, there is `nvidia-smi` error after system update for DL3 server.
-I don't know how to turn off nVidia drivers from automatic updating yet.
+Sometimes, there is `nvidia-smi` error after system update:
 
-So after update I have to [reinstall nVidia drivers again](08_Nvidia_driver_and_CUDA_install.md/#nvidia-smi-error).
-It takes 5 minutes, but I would like to get rid of this problem in the future.
+    Failed to initialize NVML: Driver/library version mismatch
+    NVML library version: 550.120
 
-For DL4 server, please, review [Nvidia driver installation](16_DL4_config.md/#nvidia).
+[Troubleshooting](https://www.gpu-mart.com/blog/failed-to-initialize-nvml-driver-library-version-mismatch)
+
+```shell
+nvidia-smi
+# Failed to initialize NVML: Driver/library version mismatch
+
+# Check the kernel version used by the graphics card driver
+cat /proc/driver/nvidia/version
+# Remove the Nvidia Driver
+sudo apt purge nvidia-*
+sudo apt purge libnvidia-*
+# The output of the following command should be empty
+dpkg -l | grep -i nvidia
+
+# Find available driver versions
+ubuntu-drivers devices
+# Reinstall the correct (recommended) driver
+sudo apt install nvidia-driver-550
+# Or automatically install the recommended version driver
+#sudo ubuntu-drivers autoinstall
+
+# Restart the system
+sudo reboot
+# Verify the issue is fixed
+nvidia-smi
+```
+
+Deprecated info:
+- for DL3 server [reinstall nVidia drivers again](08_Nvidia_driver_and_CUDA_install.md/#nvidia-smi-error).
+- for DL4 server [Nvidia driver installation](16_DL4_config.md/#nvidia).
 
 ---
 ### <a name="add_to_path" />Add directory to the $PATH
