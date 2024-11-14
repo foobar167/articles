@@ -112,13 +112,11 @@ Note the journal quartile from Q1 (highest) to Q4
 * [Computational Visual Media](https://jcvm.org)<br />
 Check date: 2024.10.04<br />
 
-$\color{#FF0000}{like~this!}$
-
-<code style="color : #f48522">Mine Article</code>:
+$\color{#f48522}{Mine Article}$:
   Submit Date is 2024-10-03;
   Under Review from 2024-11-08.
 <br />
-<code style="color : #f48522">Current Status</code>: **Under Review**<br />
+$\color{#f48522}{Current Status}$: **Under Review**<br />
    &emsp;[CVM Scopus](https://www.scopus.com/sourceid/21100869486) info.
 [Q1 Quartile](https://www.scimagojr.com/journalsearch.php?q=21100869486&tip=sid&clean=0) rank.
 Publisher: Tsinghua University Press, China.<br />
