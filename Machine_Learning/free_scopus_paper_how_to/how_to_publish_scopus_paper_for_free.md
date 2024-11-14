@@ -156,7 +156,8 @@ of the journal,
 IJIMAI does not ask for articles processing (APC) or submissions charges.
 This journal provides immediate open access to its content.
 The [Focus and Scope](https://www.ijimai.org/journal/focus-and-scope)
-are the topics of AI, Data Mining, Semantic Web, Interactive Multimedia, etc.
+are the topics of
+**AI, Data Mining, Semantic Web, Interactive Multimedia, etc**.
 Submission of manuscripts is possible in the
 [following formats](https://www.ijimai.org/journal/author-guidelines#1):
 Microsoft Word (doc, docx); OpenOffice (odt); LaTeX.
