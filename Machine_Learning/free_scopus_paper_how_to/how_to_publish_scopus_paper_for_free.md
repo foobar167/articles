@@ -104,23 +104,21 @@ Note the journal quartile from Q1 (highest) to Q4
 
 ## <a name="checked-journals" />Checked Journals
 
-* [International Journal Of Interactive Multimedia And Artificial Intelligence](https://www.ijimai.org)<br />
-Check date: 2024.10.04<br />
-&emsp;According to the [policies](https://www.ijimai.org/journal/policies)
-of the journal,
-IJIMAI does not ask for articles processing (APC) or submissions charges.
-This journal provides immediate open access to its content.
-The [Focus and Scope](https://www.ijimai.org/journal/focus-and-scope)
-are the topics of AI, Data Mining, Semantic Web, Interactive Multimedia, etc.
-Submission of manuscripts is possible in the
-[following formats](https://www.ijimai.org/journal/author-guidelines#1):
-Microsoft Word (doc, docx); OpenOffice (odt); LaTeX.
+[//]: # (#f48522 - dark yellow color)
+
+[//]: # (#008000 - dark green color)
 
 
 * [Computational Visual Media](https://jcvm.org)<br />
 Check date: 2024.10.04<br />
-&emsp;[CVM Scopus info](https://www.scopus.com/sourceid/21100869486).
-The journal is published by the **Tsinghua University Press**.<br />
+<font color="#f48522">Mine Article</font>:
+  Submit Date is 2024-10-03;
+  Under Review from 2024-11-08.
+<br />
+<font color="#f48522">Current Status</font>: **Under Review**<br />
+    &emsp;[CVM Scopus](https://www.scopus.com/sourceid/21100869486) info.
+[Q1 Quartile](https://www.scimagojr.com/journalsearch.php?q=21100869486&tip=sid&clean=0) rank.
+Publisher: Tsinghua University Press, China.<br />
     &emsp;CVM **will cease publication with Springer Nature on completion
 of Volume 10/2024**. The journal will continue in cooperation with
 Tsinghua University Press from Volume 11/2025.
@@ -134,12 +132,48 @@ review articles on novel ideas, methods, and systems
 **authors do not need to pay an article-processing charge (APC)**.
 
 
+* [Journal of Biomedical Photonics and Engineering](https://jbpe.ssau.ru)<br />
+<font color="#008000">Mine Article</font>:
+  Paper received **23.06.2022**;
+  revised manuscript received 05.09.2022;
+  accepted for publication 16.09.2022;
+  published online **30.09.2022**.
+  About **3 months** to publish.
+<br />
+<font color="#008000">Current Status</font>: **Published**,
+  DOI: [10.18287/JBPE22.08.030307](https://doi.org/10.18287/JBPE22.08.030307)<br />
+    &emsp;[JBPE Scopus](https://www.scopus.com/sourceid/21101040209) info.
+Publisher: Samara National Research University, Russian Federation.
+[Q4 Quartile](https://www.scimagojr.com/journalsearch.php?q=21101040209&tip=sid&clean=0) rank.<br />
+    &emsp;All articles published by JBPE are
+made freely and permanently accessible online immediately upon publication,
+[without subscription charges](https://jbpe.ssau.ru/index.php/JBPE/pages/view/overview)
+or registration barriers.<br />
+    &emsp;JBPE appeals to scientists such as physicists, chemists, and biologists,
+as well as physicians and engineers interested in the
+[application of light in life sciences](https://jbpe.ssau.ru/index.php/JBPE/pages/view/overview).
+
+
+* [International Journal Of Interactive Multimedia And Artificial Intelligence](https://www.ijimai.org)<br />
+Check date: 2024.10.04<br />
+    &emsp;According to the [policies](https://www.ijimai.org/journal/policies)
+of the journal,
+IJIMAI does not ask for articles processing (APC) or submissions charges.
+This journal provides immediate open access to its content.
+The [Focus and Scope](https://www.ijimai.org/journal/focus-and-scope)
+are the topics of AI, Data Mining, Semantic Web, Interactive Multimedia, etc.
+Submission of manuscripts is possible in the
+[following formats](https://www.ijimai.org/journal/author-guidelines#1):
+Microsoft Word (doc, docx); OpenOffice (odt); LaTeX.
+
+
 * [Investigative Magnetic Resonance Imaging](https://www.i-mri.org)<br />
 Check date: 2024.10.01<br />
-    &emsp;It is *not* in the
+    &emsp;It is **not** in the
 [SCImago Journal & Country Rank](https://www.scimagojr.com/aboutus.php).<br />
     &emsp;**Open access** and **free of charge** papers indexed
-by [Scopus](https://www.scopus.com/sourceid/21101196034).<br />
+by [Scopus](https://www.scopus.com/sourceid/21101196034).
+Publisher: Korean Society of Magnetic Resonance in Medicine.<br />
     &emsp;Korean Journal
 **on the subject of radiology, nuclear medicine and imaging**.
 Reports of original investigations in the areas of ...
@@ -150,7 +184,9 @@ as well as methodology-oriented clinical studies will be accepted.
 * [AI Magazine](https://onlinelibrary.wiley.com/journal/23719621)<br />
 Check date: 2024.09.29<br />
     &emsp;Free of charge and open source journal,
-indexed in [Scopus](https://www.scopus.com/sourceid/23629).<br />
+indexed in [Scopus](https://www.scopus.com/sourceid/23629).
+Publisher: John Wiley & Sons.
+[Q3 Quartile](https://www.scimagojr.com/journalsearch.php?q=23629&tip=sid&clean=0) rank.<br />
     &emsp;However, it's more popular science journal than academic:
 "**Technical content should be kept to a minimum**"
 ([link](https://onlinelibrary.wiley.com/page/journal/23719621/homepage/productinformation.html)).
