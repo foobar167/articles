@@ -104,19 +104,13 @@ Note the journal quartile from Q1 (highest) to Q4
 
 ## <a name="checked-journals" />Checked Journals
 
-[//]: # (#f48522 - dark yellow color)
-
-[//]: # (#008000 - dark green color)
-
-
 * [Computational Visual Media](https://jcvm.org)<br />
 Check date: 2024.10.04<br />
-$\color{#f48522}{Mine~Article}$:
+Mine Article:
   Submit Date is 2024-10-03;
   Under Review from 2024-11-08.
 <br />
-$\color{#f48522}{Current~Status}$:
-**Under Review**<br />
+Current Status: **Under Review**<br />
    &emsp;[CVM Scopus](https://www.scopus.com/sourceid/21100869486) info.
 [Q1 Quartile](https://www.scimagojr.com/journalsearch.php?q=21100869486&tip=sid&clean=0) rank.
 Publisher: Tsinghua University Press, China.<br />
@@ -134,18 +128,18 @@ review articles on novel ideas, methods, and systems
 
 
 * [Journal of Biomedical Photonics and Engineering](https://jbpe.ssau.ru)<br />
-<code style="color : #008000">Mine Article</code>:
+Mine Article:
   Paper received **23.06.2022**;
   revised manuscript received 05.09.2022;
   accepted for publication 16.09.2022;
   published online **30.09.2022**.
   About **3 months** to publish.
 <br />
-<code style="color : #008000">Current Status</code>: **Published**,
-DOI: [10.18287/JBPE22.08.030307](https://doi.org/10.18287/JBPE22.08.030307)<br />
+Current Status: **Published**,
+  DOI: [10.18287/JBPE22.08.030307](https://doi.org/10.18287/JBPE22.08.030307)<br />
    &emsp;[JBPE Scopus](https://www.scopus.com/sourceid/21101040209) info.
-Publisher: Samara National Research University, Russian Federation.
-[Q4 Quartile](https://www.scimagojr.com/journalsearch.php?q=21101040209&tip=sid&clean=0) rank.<br />
+[Q4 Quartile](https://www.scimagojr.com/journalsearch.php?q=21101040209&tip=sid&clean=0) rank.
+Publisher: Samara National Research University, Russian Federation.<br />
    &emsp;All articles published by JBPE are
 made freely and permanently accessible online immediately upon publication,
 [without subscription charges](https://jbpe.ssau.ru/index.php/JBPE/pages/view/overview)
@@ -157,6 +151,9 @@ as well as physicians and engineers interested in the
 
 * [International Journal Of Interactive Multimedia And Artificial Intelligence](https://www.ijimai.org)<br />
 Check date: 2024.10.04<br />
+   &emsp;[IJIMAI Scopus](https://www.scopus.com/sourceid/21101049065) info.
+[Q1 Quartile](https://www.scimagojr.com/journalsearch.php?q=21101049065&tip=sid&clean=0) rank.
+Publisher: Universidad Internacional de la Rioja, Spain.<br />
    &emsp;According to the [policies](https://www.ijimai.org/journal/policies)
 of the journal,
 IJIMAI does not ask for articles processing (APC) or submissions charges.
@@ -186,8 +183,8 @@ as well as methodology-oriented clinical studies will be accepted.
 Check date: 2024.09.29<br />
    &emsp;Free of charge and open source journal,
 indexed in [Scopus](https://www.scopus.com/sourceid/23629).
-Publisher: John Wiley & Sons.
-[Q3 Quartile](https://www.scimagojr.com/journalsearch.php?q=23629&tip=sid&clean=0) rank.<br />
+[Q3 Quartile](https://www.scimagojr.com/journalsearch.php?q=23629&tip=sid&clean=0) rank.
+Publisher: John Wiley & Sons.<br />
    &emsp;However, it's more popular science journal than academic:
 "**Technical content should be kept to a minimum**"
 ([link](https://onlinelibrary.wiley.com/page/journal/23719621/homepage/productinformation.html)).
