@@ -119,20 +119,22 @@ Check date: 2024.10.04<br />
 [//]: # (  Under Review from 2024-11-08.)
 
 [//]: # (<br />)
-<code style="color : #f48522">Current Status</code>: **Under Review**<br />
-    &emsp;[CVM Scopus](https://www.scopus.com/sourceid/21100869486) info.
+
+[//]: # (<code style="color : #f48522">Current Status</code>: **Under Review**<br />)
+
+   &emsp;[CVM Scopus](https://www.scopus.com/sourceid/21100869486) info.
 [Q1 Quartile](https://www.scimagojr.com/journalsearch.php?q=21100869486&tip=sid&clean=0) rank.
 Publisher: Tsinghua University Press, China.<br />
-    &emsp;CVM **will cease publication with Springer Nature on completion
+   &emsp;CVM **will cease publication with Springer Nature on completion
 of Volume 10/2024**. The journal will continue in cooperation with
 Tsinghua University Press from Volume 11/2025.
 Starting from September 15, 2024, all submissions of CVM
 should be made through this new submission site:
 [https://jcvm.org](https://jcvm.org).<br />
-    &emsp;It publishes original high-quality research papers and significant
+   &emsp;It publishes original high-quality research papers and significant
 review articles on novel ideas, methods, and systems
 **relevant to visual media**.<br />
-    &emsp;The publication costs are covered by Tsinghua University so
+   &emsp;The publication costs are covered by Tsinghua University so
 **authors do not need to pay an article-processing charge (APC)**.
 
 
@@ -145,22 +147,22 @@ review articles on novel ideas, methods, and systems
   About **3 months** to publish.
 <br />
 <code style="color : #008000">Current Status</code>: **Published**,
-  DOI: [10.18287/JBPE22.08.030307](https://doi.org/10.18287/JBPE22.08.030307)<br />
-    &emsp;[JBPE Scopus](https://www.scopus.com/sourceid/21101040209) info.
+DOI: [10.18287/JBPE22.08.030307](https://doi.org/10.18287/JBPE22.08.030307)<br />
+   &emsp;[JBPE Scopus](https://www.scopus.com/sourceid/21101040209) info.
 Publisher: Samara National Research University, Russian Federation.
 [Q4 Quartile](https://www.scimagojr.com/journalsearch.php?q=21101040209&tip=sid&clean=0) rank.<br />
-    &emsp;All articles published by JBPE are
+   &emsp;All articles published by JBPE are
 made freely and permanently accessible online immediately upon publication,
 [without subscription charges](https://jbpe.ssau.ru/index.php/JBPE/pages/view/overview)
 or registration barriers.<br />
-    &emsp;JBPE appeals to scientists such as physicists, chemists, and biologists,
+   &emsp;JBPE appeals to scientists such as physicists, chemists, and biologists,
 as well as physicians and engineers interested in the
 [application of light in life sciences](https://jbpe.ssau.ru/index.php/JBPE/pages/view/overview).
 
 
 * [International Journal Of Interactive Multimedia And Artificial Intelligence](https://www.ijimai.org)<br />
 Check date: 2024.10.04<br />
-    &emsp;According to the [policies](https://www.ijimai.org/journal/policies)
+   &emsp;According to the [policies](https://www.ijimai.org/journal/policies)
 of the journal,
 IJIMAI does not ask for articles processing (APC) or submissions charges.
 This journal provides immediate open access to its content.
@@ -173,12 +175,12 @@ Microsoft Word (doc, docx); OpenOffice (odt); LaTeX.
 
 * [Investigative Magnetic Resonance Imaging](https://www.i-mri.org)<br />
 Check date: 2024.10.01<br />
-    &emsp;It is **not** in the
+   &emsp;It is **not** in the
 [SCImago Journal & Country Rank](https://www.scimagojr.com/aboutus.php).<br />
-    &emsp;**Open access** and **free of charge** papers indexed
+   &emsp;**Open access** and **free of charge** papers indexed
 by [Scopus](https://www.scopus.com/sourceid/21101196034).
 Publisher: Korean Society of Magnetic Resonance in Medicine.<br />
-    &emsp;Korean Journal
+   &emsp;Korean Journal
 **on the subject of radiology, nuclear medicine and imaging**.
 Reports of original investigations in the areas of ...
 **directly relevant to magnetic resonance (MRI)**
@@ -187,13 +189,14 @@ as well as methodology-oriented clinical studies will be accepted.
 
 * [AI Magazine](https://onlinelibrary.wiley.com/journal/23719621)<br />
 Check date: 2024.09.29<br />
-    &emsp;Free of charge and open source journal,
+   &emsp;Free of charge and open source journal,
 indexed in [Scopus](https://www.scopus.com/sourceid/23629).
 Publisher: John Wiley & Sons.
 [Q3 Quartile](https://www.scimagojr.com/journalsearch.php?q=23629&tip=sid&clean=0) rank.<br />
-    &emsp;However, it's more popular science journal than academic:
+   &emsp;However, it's more popular science journal than academic:
 "**Technical content should be kept to a minimum**"
 ([link](https://onlinelibrary.wiley.com/page/journal/23719621/homepage/productinformation.html)).
+
 
 ## <a name="journals-to-check" />Journals to Check
 
