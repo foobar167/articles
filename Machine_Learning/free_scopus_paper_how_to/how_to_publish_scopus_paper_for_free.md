@@ -105,7 +105,9 @@ Note the journal quartile from Q1 (highest) to Q4
 ## <a name="checked-journals" />Checked Journals
 
 * [Computational Visual Media](https://jcvm.org)<br />
-<code style="color : purple">Check date</code>: 2024.10.04<br />
+
+<code style="color : purple">Check date 2024.10.04</code>
+
 Mine Article:
   Submit Date is 2024-10-03;
   Under Review from 2024-11-08.<br />
