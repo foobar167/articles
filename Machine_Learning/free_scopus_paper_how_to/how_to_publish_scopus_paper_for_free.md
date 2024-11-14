@@ -105,10 +105,7 @@ Note the journal quartile from Q1 (highest) to Q4
 ## <a name="checked-journals" />Checked Journals
 
 * [Computational Visual Media](https://jcvm.org)<br />
-
-<code style="color : purple">Check date 2024.10.04</code>
-
-Mine Article:
+**Mine Article**:
   Submit Date is 2024-10-03;
   Under Review from 2024-11-08.<br />
 Current Status: **Under Review**<br />
@@ -129,7 +126,7 @@ review articles on novel ideas, methods, and systems
 
 
 * [Journal of Biomedical Photonics and Engineering](https://jbpe.ssau.ru)<br />
-Mine Article:
+**Mine Article**:
   Paper received **23.06.2022**;
   revised manuscript received 05.09.2022;
   accepted for publication 16.09.2022;
