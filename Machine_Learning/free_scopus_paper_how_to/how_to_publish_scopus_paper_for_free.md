@@ -111,11 +111,11 @@ Note the journal quartile from Q1 (highest) to Q4
 
 * [Computational Visual Media](https://jcvm.org)<br />
 Check date: 2024.10.04<br />
-<font color="#f48522">Mine Article</font>:
+<code style="color : #f48522">Mine Article</code>:
   Submit Date is 2024-10-03;
   Under Review from 2024-11-08.
 <br />
-<font color="#f48522">Current Status</font>: **Under Review**<br />
+<code style="color : #f48522">Current Status</code>: **Under Review**<br />
     &emsp;[CVM Scopus](https://www.scopus.com/sourceid/21100869486) info.
 [Q1 Quartile](https://www.scimagojr.com/journalsearch.php?q=21100869486&tip=sid&clean=0) rank.
 Publisher: Tsinghua University Press, China.<br />
@@ -133,14 +133,14 @@ review articles on novel ideas, methods, and systems
 
 
 * [Journal of Biomedical Photonics and Engineering](https://jbpe.ssau.ru)<br />
-<font color="#008000">Mine Article</font>:
+<code style="color : #008000">Mine Article</code>:
   Paper received **23.06.2022**;
   revised manuscript received 05.09.2022;
   accepted for publication 16.09.2022;
   published online **30.09.2022**.
   About **3 months** to publish.
 <br />
-<font color="#008000">Current Status</font>: **Published**,
+<code style="color : #008000">Current Status</code>: **Published**,
   DOI: [10.18287/JBPE22.08.030307](https://doi.org/10.18287/JBPE22.08.030307)<br />
     &emsp;[JBPE Scopus](https://www.scopus.com/sourceid/21101040209) info.
 Publisher: Samara National Research University, Russian Federation.
