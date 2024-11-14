@@ -132,8 +132,7 @@ Mine Article:
   revised manuscript received 05.09.2022;
   accepted for publication 16.09.2022;
   published online **30.09.2022**.
-  About **3 months** to publish.
-<br />
+  About **3 months** to publish.<br />
 Current Status: **Published**,
   DOI: [10.18287/JBPE22.08.030307](https://doi.org/10.18287/JBPE22.08.030307)<br />
    &emsp;[JBPE Scopus](https://www.scopus.com/sourceid/21101040209) info.
