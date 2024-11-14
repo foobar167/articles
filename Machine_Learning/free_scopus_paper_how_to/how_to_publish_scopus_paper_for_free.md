@@ -115,7 +115,8 @@ $\color{#f48522}{Mine~Article}$:
   Submit Date is 2024-10-03;
   Under Review from 2024-11-08.
 <br />
-$\color{#f48522}{Current~Status}$: **Under Review**<br />
+$\color{#f48522}{Current~Status}$:
+**Under Review**<br />
    &emsp;[CVM Scopus](https://www.scopus.com/sourceid/21100869486) info.
 [Q1 Quartile](https://www.scimagojr.com/journalsearch.php?q=21100869486&tip=sid&clean=0) rank.
 Publisher: Tsinghua University Press, China.<br />
