@@ -208,10 +208,13 @@ Publisher: John Wiley & Sons.<br />
 
 ### <a name="other-tools" />Other Tools
 
+* [Slidesgo](https://slidesgo.com/)
+    to create engaging presentations, faster.
+    Free templates for Google Slides, PowerPoint and Canva.
 * [iLovePDF](https://www.ilovepdf.com/) online PDF tools
 * [Skype Microsoft Copilot](https://web.skype.com/)
-and [Copilot Microsoft](https://copilot.microsoft.com)
-chatGPT AI. Ask it anything.
+    and [Copilot Microsoft](https://copilot.microsoft.com)
+    chatGPT AI. Ask it anything.
 
 ### <a name="translators" />Translators
 
