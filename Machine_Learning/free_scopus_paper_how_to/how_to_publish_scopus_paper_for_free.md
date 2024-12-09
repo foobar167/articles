@@ -125,8 +125,7 @@ and nuclear medicine"
 
 
 
-* [Computational Visual Media](https://jcvm.org)
-<br />
+* [Computational Visual Media](https://jcvm.org)<br />
 **Mine Article**:
   Submit Date is 2024-10-03;
   Under Review from 2024-11-08.<br />
