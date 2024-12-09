@@ -122,7 +122,9 @@ including ultrasonography, radiography, computed tomography,
 magnetic resonance imaging, interventional radiology
 and nuclear medicine"
 ([link](https://ejrnm.springeropen.com/submission-guidelines/aims-and-scope)).
-
+"Its audience includes students, clinicians at all levels of training
+including radiology trainees, newly qualified radiology/imaging
+specialists and experienced radiologists".
 
 
 * [Computational Visual Media](https://jcvm.org)<br />
