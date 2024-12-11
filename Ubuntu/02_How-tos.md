@@ -14,6 +14,7 @@ How-to:
    - [Delete package](#delete)
    - [Delete user account](#del-account)
    - [End user session](#end-user-session)
+   - [Errors](#errors)
    - [Exclude packages from `sudo apt upgrade`](#exclude-packages)
    - [Find file by name](#find)
    - [Find files owned by the user](#find-user)
@@ -165,7 +166,7 @@ Set **default group** upon file modification and creation.
 Make sure new files are owned by the default group,
 set `g+s` and set the default permissions to read, write and execute.
 
-```commandline
+```shell
 sudo chgrp -R mygroup /dir/path       # 1st option
 #sudo chown -R :mygroup /dir/path     # 2nd option
 sudo chmod -R g+s /dir/path           # set default group
@@ -469,6 +470,23 @@ See [Backup and delete deprecated user accounts](07_Website_software.md/#account
 killall -user username  # end all processes for the user
 pkill -u username
 kill -9 -1 # end all processes you can
+```
+
+---
+### <a name="errors" />Errors
+Various errors on Ubuntu system.
+
+* `The following upgrades have been deferred due to phasing:`
+
+[This is not an error](https://askubuntu.com/a/1431941/672237).
+Ignore it. Or explicitly install them with
+`sudo apt install` command.
+
+* `libdvd-pkg: `apt-get check` failed, you may have broken packages. Aborting...`
+```shell
+# Reinstall and re-run the package
+sudo apt install libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
 ```
 
 ---
