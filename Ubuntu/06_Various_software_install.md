@@ -6,8 +6,6 @@
       - [Chrome](#chrome-browser)
       - [Chromium](#chromium)
       - [Elastix](#elastix)
-      - [Emacs](#emacs)
-      - [FileZilla](#filezilla)
       - [Geeqie](#geeqie)
       - [JebBrains IntelliJ](#intellij)
       - [LibreOffice or OpenOffice](#libreoffice)
@@ -35,6 +33,7 @@ Install different software on Ubuntu 18.04.
 #### <a name="other-software" />All other different software
 
 ```shell script
+sudo apt install nvtop     # GPU monitoring
 sudo apt install htop      # CPU monitoring
 sudo apt install git       # Git
 sudo apt install mc        # Midnight Commander
@@ -46,10 +45,14 @@ sudo apt install net-tools   # ifconfig command
 sudo apt install traceroute  # traceroute command
 sudo apt install python-is-python3  # for Ubuntu 20.04 default Python
 sudo apt install nemo      # Nemo file manager from MATE
+sudo apt install emacs     # Emacs editor
+sudo apt install filezilla # FileZilla free FTP
 
 # Or in one command
-sudo apt install htop git mc autoconf make curl gcc g++ net-tools traceroute \
-                 python-is-python3 nemo
+sudo apt install nvtop htop git mc autoconf make curl gcc g++ net-tools
+                 traceroute python-is-python3 nemo emacs filezilla
+
+filezilla &> /dev/null  # start FileZilla in background
 ```
 
 ---
@@ -129,22 +132,6 @@ sudo apt install elastix
 sudo apt install elastix-doc
 # Check installation
 elastix --version
-```
-
-----
-#### <a name="emacs" />Emacs
-
-```shell script
-# Emacs editor
-sudo apt install emacs
-```
-
-----
-#### <a name="filezilla" />FileZilla
-
-```shell script
-sudo apt install filezilla
-filezilla &> /dev/null
 ```
 
 ----
