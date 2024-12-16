@@ -60,8 +60,8 @@ if any number other than zero appears.
 This ensures that all errors were corrected.
 ```shell script
 # Check drive
-sudo fsck /dev/sdb
-sudo fsck /dev/sdc
+sudo fsck -y /dev/sdb
+sudo fsck -y /dev/sdc
 ```
 
 :exclamation: **Formatting will delete everything on your hard disk.** :exclamation:
