@@ -182,7 +182,7 @@ Login in the console mode.
 ```shell script
 # Copy /home directory to the new location.
 # NOTE: Copying will take A LOT of time!
-sudo rsync -avx /home/ /hdd_gold
+sudo rsync -avzhXH --progress /home/ /hdd_gold
 
 # Check if everything is copied correctly
 ls -hal /hdd_gold
