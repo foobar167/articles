@@ -400,7 +400,7 @@ sudo deluser vozman
 sudo deluser romanroskach
 
 # Backup the whole directory and delete it from $HOME
-du -sh /home/username 2> /dev/null  # show directory size
+sudo du -sh /home/vozman 2> /dev/null  # show directory size
 sudo tar -zcvf /hdd_barracuda1/pavlenko_user_accounts_backups/vozman_2019.12.31_backup.tar.gz /home/vozman
 sudo tar -zcvf /hdd_barracuda1/pavlenko_user_accounts_backups/romanroskach_2019.12.31_backup.tar.gz /home/romanroskach
 sudo rm -r /home/vozman  # use with caution!
@@ -641,8 +641,8 @@ and for working with colour. It can perform many image manipulation
 tasks much faster than other packages.
 
 ```shell script
-sudo apt-get update -y
-sudo apt-get install -y libvips
+sudo apt update -y
+sudo apt install -y libvips
 ```
 
 ---
