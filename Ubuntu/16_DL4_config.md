@@ -153,29 +153,7 @@ See [virtual environment](05_Virtual_environments.md).
 ---
 ## <a name="software" />Install useful software
 
-```shell script
-sudo apt install -y htop  # CPU monitoring
-sudo apt install -y git  # Git
-sudo apt install -y mc  # Midnight Commander
-sudo apt install -y autoconf  # automatic configure script builder
-sudo apt install -y make  # utility for directing compilation
-sudo apt install -y curl  # tool for transferring data with URL syntax
-sudo apt install -y gcc g++  # GCC and C++ compilers
-sudo apt install -y net-tools  # ifconfig command
-sudo apt install -y traceroute  # traceroute command
-sudo apt install -y emacs  # Emacs editor
-sudo apt install -y filezilla  # FileZilla client
-sudo apt install -y geeqie geeqie-common  # Geeqie image viewer
-sudo apt install -y nautilus  # Gnome based file manager
-
-# pydot is a Python interface to Graphviz's dot
-# pydot is needed for TensorFlow
-sudo apt install graphviz
-sudo apt install python-pydot
-sudo apt install python3-pydot
-sudo apt install python-pyparsing
-sudo apt install python3-pyparsing
-```
+See [software install](06_Various_software_install.md/#a-nameother-software-all-other-different-software).
 
 ---
 ### <a name="open-slide" />OpenSlide

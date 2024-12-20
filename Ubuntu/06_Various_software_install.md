@@ -47,10 +47,21 @@ sudo apt install python-is-python3  # for Ubuntu 20.04 default Python
 sudo apt install nemo      # Nemo file manager from MATE
 sudo apt install emacs     # Emacs editor
 sudo apt install filezilla # FileZilla free FTP
+sudo apt install geeqie geeqie-common  # Geeqie image viewer
+
+# pydot is a Python interface to Graphviz's dot
+# pydot is needed for TensorFlow
+sudo apt install graphviz
+sudo apt install python-pydot
+sudo apt install python3-pydot
+sudo apt install python-pyparsing
+sudo apt install python3-pyparsing
 
 # Or in one command
-sudo apt install nvtop htop git mc autoconf make curl gcc g++ net-tools
-                 traceroute python-is-python3 nemo emacs filezilla
+sudo apt install nvtop htop git mc autoconf make curl gcc g++ net-tools \
+                 traceroute python-is-python3 nemo emacs filezilla \
+                 geeqie geeqie-common \
+                 graphviz python-pydot python3-pydot python-pyparsing python3-pyparsing
 
 filezilla &> /dev/null  # start FileZilla in background
 ```
