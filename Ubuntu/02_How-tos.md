@@ -344,25 +344,52 @@ sudo passwd username
 
 ---
 ### <a name="change_ssh_port" />Change SSH Port
-[How to Change SSH Port in Ubuntu 18.04](https://www.ubuntu18.com/ubuntu-change-ssh-port/)
+[How to Change SSH Port in Ubuntu 24.04](https://4sysops.com/archives/how-to-change-the-ssh-port-on-ubuntu-2404/)
+
+Changing the SSH port on Ubuntu 24.04 differs from that on Ubuntu 22.04 and older.
+
+Since Ubuntu 22.10, the SSH daemon (sshd) uses socket-based activation,
+which means that the traditional method of changing the port in
+/etc/ssh/sshd_config is no longer sufficient.
+In addition, you need to modify the socket configuration to specify
+the new port using the ListenStream directive.
 
 ```shell
-# Check SSH port currently running on
-sudo netstat -tulnp | grep ssh
-# Check the current configuration
-sudo grep -i port /etc/ssh/sshd_config
-# Open the `/etc/ssh/sshd_config` file and locate the line:
-  #Port 22
-# Uncomment it (remove the leading # character) and change the value
-# with an appropriate port number (for example, 22000):
-  Port 22000
-# Restart the SSH server
-sudo systemctl restart sshd
-# Make sure that the ssh daemon now listen on the new ssh port
-netstat -tulpn | grep ssh
+sudo apt install -y openssh-server  # install SSH
+sudo systemctl status ssh  # verify
+#sudo systemctl enable ssh
+#sudo systemctl start ssh
+#sudo ufw allow ssh
+#sudo ufw enable
+#sudo ufw status
+
+sudo ss -tuln  # show sockets
+#sudo ss -tuln | grep ':2222'
+
+# Change the SSH socket port
+sudo nano /lib/systemd/system/ssh.socket
+# Change ListenStream from 22 to 2222
+ListenStream=2222
+
+sudo systemctl daemon-reload  # reload the systemd daemon
+
+# For Ubuntu < 22.10
+sudo nano /etc/ssh/sshd_config
+# Change #Port 22 to 2222
+Port 2222
+
+sudo systemctl restart ssh  # restart the SSH service
+
+
+sudo ufw allow 2222/tcp  # enable 2222 port
+sudo ufw delete allow 22/tcp  # desable 22 port
+
+sudo iptables -A INPUT -p tcp --dport 2222 -j ACCEPT
+sudo iptables -D INPUT -p tcp --dport 22 -j ACCEPT
+#sudo iptables-save > /etc/iptables/rules.v4
 
 # Use `-p` flag to specify SSH port number
-ssh username@ip.add.re.ss -p 22000
+ssh username@ip.add.re.ss -p 2222
 ```
 
 ---

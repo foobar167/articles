@@ -287,11 +287,8 @@ cat /etc/group | grep xray
 # Create `xray` group
 sudo addgroup xray
 # Add users to `xray` group
-sudo usermod -a -G xray skliff13
-sudo usermod -a -G xray sergeko
 sudo usermod -a -G xray malyshevvalery
-sudo usermod -a -G xray pavlenko
-sudo usermod -a -G xray ahmed
+sudo usermod -a -G xray username
 ```
 
 Give write permission for `xray` group:

@@ -258,18 +258,7 @@ notepad-plus-plus &> /dev/null       # run Notepad++
 ----
 #### <a name="openssh" />OpenSSH server
 
-[Install OpenSSH server](https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/)
-for Ubuntu Linux.
-```shell script
-sudo apt install -y openssh-server
-sudo systemctl status ssh  # verify
-
-#sudo systemctl enable ssh
-#sudo systemctl start ssh
-#sudo ufw allow ssh
-#sudo ufw enable
-#sudo ufw status
-```
+See [Change SSH Port](02_How-tos.md#change_ssh_port).
 
 ----
 #### <a name="pycharm" />PyCharm Community
