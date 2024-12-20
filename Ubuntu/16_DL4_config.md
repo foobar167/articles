@@ -153,7 +153,7 @@ See [virtual environment](05_Virtual_environments.md).
 ---
 ## <a name="software" />Install useful software
 
-See [software install](06_Various_software_install.md/#a-nameother-software-all-other-different-software).
+See [software install](06_Various_software_install.md#other-software).
 
 ---
 ### <a name="open-slide" />OpenSlide
