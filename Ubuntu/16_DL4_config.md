@@ -148,23 +148,7 @@ sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 ---
 ## <a name="tf-how-to" />How-to configure TensorFlow
 
-You must have CUDA Toolkit and CuDNN installed to use TensorFlow.
-Use virtual environment to install CUDA Toolkit and CuDNN.
-Install [`pyenv` virtual environment](#pyenv). And then type:
-```shell script
-# Install Anaconda into virtual environment
-pyenv install anaconda3-2020.02
-# Activate virtual environment
-pyenv local anaconda3-2020.02
-# Install TF for GPU + installation of CUDA Toolkit and CuDNN inside
-conda install tensorflow-gpu
-# Enter into Iron Python
-ipython
-# Import TensorFlow
-import tensorflow as tf
-# Check available GPU
-tf.test.is_gpu_available()
-```
+See [virtual environment](05_Virtual_environments.md).
 
 ---
 ## <a name="software" />Install useful software
@@ -409,6 +393,9 @@ conda --version  # check it
 ---
 ## <a name="permissions" />Shows PIDs of NVIDIA processes
 
+<details>
+  <summary>Use `nvtop` command instead</summary>
+
 Create `nvidia-show` command for non-root users to view NVidia processes.
 
 Create and edit file with `visudo` editor
@@ -443,3 +430,6 @@ ls -hal /usr/bin/nvidia-show /usr/bin/nvidia-smi  # check it
 # Run it
 nvidia-show
 ```
+</details>
+
+
