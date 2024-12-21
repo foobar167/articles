@@ -27,7 +27,7 @@ need to build TensorFlow from sources.
 
 ---
 ### <a name="previous" />Previous instructions
-   1. [Prepare Python](../04_Python_installation.md)
+   1. [Prepare Python](04_Python_installation.md)
    2. [Install software for virtual environments](../05_Virtual_environments.md)
    3. [Prepare GPU driver and CUDA](../08_Nvidia_driver_and_CUDA_install.md)
 

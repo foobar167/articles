@@ -214,6 +214,9 @@ code
 Install latest version of [R via CRAN](https://cran.rstudio.com)
 for [Ubuntu](https://cran.rstudio.com/bin/linux/ubuntu/).
 And then install [RStudio IDE](https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/).
+
+Also try [RStudio Builds](https://dailies.rstudio.com/rstudio/cranberry-hibiscus/)
+or [Official RStudio Desktop](https://posit.co/download/rstudio-desktop/).
 ```shell
 # update indices
 sudo apt update -qq
@@ -239,8 +242,9 @@ sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
 R --version  # `R` command to start console and q() to exit
 
 # After installing latest version of r-base, install RStudio IDE
-wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-2022.02.2-485-amd64.deb
-sudo apt install -f ./rstudio-2022.02.2-485-amd64.deb
+# New releases: https://posit.co/download/rstudio-desktop/
+wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.12.0-467-amd64.deb
+sudo apt install -f ./rstudio-2024.12.0-467-amd64.deb
 #sudo apt remove rstudio  # Uninstall RStudio IDE
 
 # If there is an error "Could not initialize GLX", fix it with this:
@@ -249,8 +253,8 @@ export QT_XCB_GL_INTEGRATION=none
 # nano ~/.bashrc
 # nano ~/.profile
 
-# Check installation
-rstudio
+rstudio --version  # check version
+rstudio  # start RStudio
 ```
 
 Check it through the menu: Programming --> RStudio

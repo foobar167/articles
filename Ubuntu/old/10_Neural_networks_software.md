@@ -18,7 +18,7 @@ This manual will install and verify additional software.
 ---
 ### <a name="previous" />Previous installations
 
-   1. [Prepare Python](../04_Python_installation.md)
+   1. [Prepare Python](04_Python_installation.md)
    2. [Install software for virtual environments](../05_Virtual_environments.md)
    3. [Prepare GPU driver and CUDA](../08_Nvidia_driver_and_CUDA_install.md)
    4. [Install TensorFlow using `pip` or build it from source](09_TensorFlow_installation.md)

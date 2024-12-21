@@ -192,7 +192,8 @@ conda install anaconda::pytest
 
 # Install PyTorch if necessary. But it's better to set it to the different environment.
 # Check https://pytorch.org for installation parameters
-#conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+#conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+# pip3 install torch torchvision torchaudio
 
 # Install Curl downloader if necessary
 #conda install -c anaconda curl

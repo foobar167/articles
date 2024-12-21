@@ -52,16 +52,14 @@ sudo apt install geeqie geeqie-common  # Geeqie image viewer
 # pydot is a Python interface to Graphviz's dot
 # pydot is needed for TensorFlow
 sudo apt install graphviz
-sudo apt install python-pydot
 sudo apt install python3-pydot
-sudo apt install python-pyparsing
 sudo apt install python3-pyparsing
 
 # Or in one command
 sudo apt install nvtop htop git mc autoconf make curl gcc g++ net-tools \
                  traceroute python-is-python3 nemo emacs filezilla \
                  geeqie geeqie-common \
-                 graphviz python-pydot python3-pydot python-pyparsing python3-pyparsing
+                 graphviz python3-pydot python3-pyparsing
 
 filezilla &> /dev/null  # start FileZilla in background
 ```
@@ -221,18 +219,18 @@ choose menu "Command" → menu "Edit extension file" → copy-paste this text:
 ```text
 [nii.gz]
 Shell=.nii.gz
-Open=~/install/mango/mango %f
-View=~/install/mango/mango %f
+Open=~/install/Mango/mango %f
+View=~/install/Mango/mango %f
 
 [nii]
 Shell=.nii
-Open=~/install/mango/mango %f
-View=~/install/mango/mango %f
+Open=~/install/Mango/mango %f
+View=~/install/Mango/mango %f
 
 [dcm]
 Shell=.dcm
-Open=~/install/mango/mango %f
-View=~/install/mango/mango %f
+Open=~/install/Mango/mango %f
+View=~/install/Mango/mango %f
 ```
 
 ----

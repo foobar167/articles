@@ -1,4 +1,4 @@
-:exclamation: **Warning**: use [virtual environments](05_Virtual_environments.md)
+:exclamation: **Warning**: use [virtual environments](../05_Virtual_environments.md)
 instead of installing packages on default Python version.
 
    - [Task](#task)
@@ -27,7 +27,7 @@ Cases to install Python packages on default Python version via
    4. if you want packages for Ubuntu, so operating system could use them too.
 
 For other Python versions it is better to use
-[virtual environment](05_Virtual_environments.md)
+[virtual environment](../05_Virtual_environments.md)
 or build and test packages from the source codes
 (_for specialists only_).
 
@@ -101,7 +101,7 @@ sudo apt autoremove
 ```
 
 If you need 3.7 or newer, install the **minimal versions** and use
-[**local virtual environment**](05_Virtual_environments.md) to install other packages.
+[**local virtual environment**](../05_Virtual_environments.md) to install other packages.
 It's a bad idea to have several versions of python 3.x globally
 at the same time. Use only currently supported
 by Ubuntu python 3.x version globally. At this moment it is 3.6
@@ -171,7 +171,7 @@ sudo apt install python3-ipykernel
 ```
 
 Install it ALL with one command.
-However try to use [virtual environments](05_Virtual_environments.md) instead
+However try to use [virtual environments](../05_Virtual_environments.md) instead
 to escape possible problems.
 
 ```shell script
@@ -204,7 +204,7 @@ sudo apt install python-pip         python2.7           \
 ```
 
 Install TensorFlow for all users on the operating system,
-but you should have [CUDA and cuDNN installed](08_Nvidia_driver_and_CUDA_install.md)
+but you should have [CUDA and cuDNN installed](../08_Nvidia_driver_and_CUDA_install.md)
 beforehand:
 
 ```shell script
