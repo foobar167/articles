@@ -88,7 +88,7 @@ conda update --all
 
 ```shell script
 # Set up conda virtual environment
-conda create --name myenv python=3.11
+conda create --name myenv python=3.11.*
 # Show virtual envs
 conda info --envs
 # Activate the environment
@@ -110,7 +110,7 @@ For Nvidia driver version 550.107.02 and CUDA version 12.4
 
 [Keras 3](https://keras.io/getting_started/) is starting with TensorFlow 2.16.
 ```shell script
-conda create --name python3.12 python=3.12  # create virtual env
+conda create --name python3.12 python=3.12.*  # create virtual env
 conda activate python3.12  # activate virtual environment
 
 pip install tensorflow[and-cuda]  # for GPU support
@@ -206,7 +206,7 @@ and then install all other packages with PIP like in
 [official tutorial](https://www.tensorflow.org/install/pip).
 
 ```shell
-conda create --name tf python=3.11
+conda create --name tf python=3.11.*
 conda info --envs
 conda activate tf
 
@@ -269,8 +269,8 @@ conda update --all
 **Configure Miniconda virtual environment**
 ```shell script
 # Set up conda virtual environment
-conda create --name myenv python=3.11
-#conda create --name myenv python=3.10
+conda create --name myenv python=3.11.*
+#conda create --name myenv python=3.10.*
 # Show virtual envs
 conda info --envs
 # Activate the environment
@@ -575,7 +575,7 @@ conda update anaconda
 source ~/.bashrc
 
 # Set up Anaconda virtual environment
-conda create --name myenv python=3.9
+conda create --name myenv python=3.9.*
 # Show virtual envs
 conda info --envs
 # Activate the environment
@@ -787,7 +787,7 @@ module load Anaconda3/5.3.0
 which anaconda
 conda --version
 # Set up 'test' Anaconda virtual environment
-conda create --name test python=3.9
+conda create --name test python=3.9.*
 # Show virtual environments
 conda info --envs
 # Activate 'test' environment
