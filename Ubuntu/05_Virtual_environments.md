@@ -117,7 +117,9 @@ pip install tensorflow[and-cuda]  # for GPU support
 # install main libraries
 pip install matplotlib scipy numpy opencv-python pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
 # install additional libraries
-pip install nibabel pytest tf_keras tensorflow-hub
+pip install nibabel pytest einops
+# install additional libraries for TensorFlow
+pip install tf_keras tensorflow-hub
 
 # To fix the error:
 #   Loaded runtime CuDNN library: 8.8.0 but source was compiled with: 8.9.6.
