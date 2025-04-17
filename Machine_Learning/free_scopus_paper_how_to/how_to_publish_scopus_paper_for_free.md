@@ -331,8 +331,8 @@ Open-source free software for
 [Netron](https://netron.app/) Visualizer for neural network,
 deep learning and machine learning models.
 The [Netron viewer](https://www.lutzroeder.com/blog/2021-06-30-netron-5/)
-is available for Linux, macOS, Windows,
-as a web app or can be run via a Python Server.
+is available for Linux, macOS, Windows, as a web app
+or can be run via a Python Server.
 
 ### <a name="medical-imaging" />Medical Imaging
 
