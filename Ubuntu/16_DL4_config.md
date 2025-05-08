@@ -269,8 +269,8 @@ drivers and
 from binary files:
 ```shell
 # Get NVidia driver
-wget https://download.nvidia.com/XFree86/Linux-x86_64/470.57.02/NVIDIA-Linux-x86_64-470.57.02.run
-sudo sh NVIDIA-Linux-x86_64-470.57.02.run
+wget https://download.nvidia.com/XFree86/Linux-x86_64/550.144.03/NVIDIA-Linux-x86_64-550.144.03.run
+sudo sh NVIDIA-Linux-x86_64-550.144.03.run
 
 # Get CUDA toolkit 11
 wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
