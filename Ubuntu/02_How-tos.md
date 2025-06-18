@@ -34,6 +34,7 @@ How-to:
    - [Run scripts on start up](#autorun)
    - [Set environment variable](#envvar)
    - [Show the model of the computer](#show_the_model)
+   - [Sleep mode disable](#do_not_sleep)
    - [Static IP address](#static_ip)
    - [Switch language hotkey](#lang)
    - [System info and benchmarks](#sys_info)
@@ -980,6 +981,14 @@ sudo dmidecode -s baseboard-manufacturer  # show manufacturer
 # Install GUI application
 sudo apt install xsysinfo
 xsysinfo &
+```
+
+---
+### <a name="do_not_sleep" />Sleep mode disable
+```shell
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+# to re-enable sleep mode
+#sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
 
 ---

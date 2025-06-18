@@ -5,9 +5,9 @@ Configurations I've made on DL4 server for **Ubuntu 20.04**.
    - [How-to configure TensorFlow](#tf-how-to)
    - [Install useful software](#software)
         - [OpenSlide](#open-slide)
+        - [R and RStudio](#rstudio)
         - [Snap](#snap)
         - [Visual Studio](#visual-studio)
-        - [R and RStudio](#rstudio)
    - [Nvidia and CUDA installation](#nvidia)
    - [`pyenv` virtual environment](#pyenv)
    - [Shows PIDs of NVIDIA processes](#permissions)
@@ -165,6 +165,108 @@ sudo apt install openslide-tools
 pip install openslide-python
 ```
 
+
+---
+### <a name="rstudio" />R and RStudio
+
+Complete remove and reinstall R, including all packages ([link](https://stackoverflow.com/a/24118876/7550928))
+```shell
+sudo apt-get remove r-base-core
+sudo apt-get remove r-base
+sudo apt-get autoremove
+
+# To know where your packages are installed.
+# Delete those folders and reinstall R.
+R -e '.libPaths()'
+```
+
+Install latest version of [R via CRAN](https://cran.rstudio.com)
+for [Ubuntu](https://cran.rstudio.com/bin/linux/ubuntu/).
+And then install [RStudio IDE](https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/).
+
+Also try [RStudio Builds](https://dailies.rstudio.com/rstudio/cranberry-hibiscus/)
+or [Official RStudio Desktop](https://posit.co/download/rstudio-desktop/).
+```shell
+sudo apt update
+sudo apt upgrade
+
+# update indices
+sudo apt update -qq
+# install two helper packages we need
+sudo apt install --no-install-recommends software-properties-common dirmngr
+# add the signing key (by Michael Rutter) for these repos
+# To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
+# Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+# add the repo from CRAN -- lsb_release adjusts to 'noble' or 'jammy' or ... as needed
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+
+# install R itself
+sudo apt install --no-install-recommends r-base
+
+
+# Get 5000+ CRAN Packages. Add the current R 4.0 or later ‘c2d4u’ repository
+#sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
+#sudo apt install --no-install-recommends r-cran-rstan
+#sudo apt install --no-install-recommends r-cran-tidyverse
+
+# Check installation of r-base
+R --version  # `R` command to start console and q() to exit
+
+# After installing latest version of r-base, install RStudio IDE
+lsb_release -a  # show Ubuntu version
+# Copy URL with new releases here: https://posit.co/download/rstudio-desktop/
+wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2025.05.1-513-amd64.deb
+sudo apt install -f ./rstudio-2025.05.1-513-amd64.deb
+#sudo apt remove rstudio  # Uninstall RStudio IDE
+
+# If there is an error "Could not initialize GLX", fix it with this:
+#export QT_XCB_GL_INTEGRATION=none
+# Add this string to the end of files: ~/.bashrc and ~/.profile
+# nano ~/.bashrc
+# nano ~/.profile
+
+rstudio --version  # check version
+rstudio  # start RStudio
+
+# Install various dependences for OpenImageR package
+# https://cran.r-project.org/web/packages/OpenImageR/index.html
+# NOTE: one line doesn't work!
+sudo apt install r-base-dev
+sudo apt install libpng-dev
+sudo apt install libjpeg-dev
+sudo apt install libtiff5-dev
+sudo apt install libfftw3-dev
+sudo apt install libcurl4-openssl-dev
+sudo apt install -y libarmadillo-dev
+sudo apt install -y libblas-dev
+sudo apt install -y liblapack-dev
+sudo apt install -y libarpack++2-dev
+sudo apt install -y gfortran
+sudo apt install -y libjpeg-dev
+sudo apt install -y libpng-dev
+sudo apt install -y libfftw3-dev
+sudo apt install -y libtiff5-dev
+
+# "pak" automatically handles depencencies
+install.packages("pak")
+# Install package with "pak"
+pak::pkg_install("readr")
+pak::pkg_install(c("readr", "ggplot2", "tidyr"))
+
+# From your RStudio install OpenImageR package
+# It will compile a source code.
+install.packages(c('jpeg', 'png', 'tiff', 'RcppArmadillo'))
+install.packages("OpenImageR")
+# or
+pak::pkg_install("OpenImageR")
+```
+
+Check it through the menu: Programming --> RStudio
+
+![RStudio IDE menu](./data/2022.05.26_rstudio_menu.jpg)
+
+
 ---
 ### <a name="snap" />Snap
 
@@ -207,59 +309,6 @@ sudo apt install code
 # Check installation
 code
 ```
-
----
-### <a name="rstudio" />R and RStudio
-
-Install latest version of [R via CRAN](https://cran.rstudio.com)
-for [Ubuntu](https://cran.rstudio.com/bin/linux/ubuntu/).
-And then install [RStudio IDE](https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/).
-
-Also try [RStudio Builds](https://dailies.rstudio.com/rstudio/cranberry-hibiscus/)
-or [Official RStudio Desktop](https://posit.co/download/rstudio-desktop/).
-```shell
-# update indices
-sudo apt update -qq
-# install two helper packages we need
-sudo apt install --no-install-recommends software-properties-common dirmngr
-# add the signing key (by Michael Rutter) for these repos
-# To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
-# Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9
-wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
-# add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
-sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
-
-# Install R
-sudo apt install --no-install-recommends r-base
-
-# Get 5000+ CRAN Packages. Add the current R 4.0 or later ‘c2d4u’ repository
-sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
-
-#sudo apt install --no-install-recommends r-cran-rstan
-#sudo apt install --no-install-recommends r-cran-tidyverse
-
-# Check installation of r-base
-R --version  # `R` command to start console and q() to exit
-
-# After installing latest version of r-base, install RStudio IDE
-# New releases: https://posit.co/download/rstudio-desktop/
-wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.12.0-467-amd64.deb
-sudo apt install -f ./rstudio-2024.12.0-467-amd64.deb
-#sudo apt remove rstudio  # Uninstall RStudio IDE
-
-# If there is an error "Could not initialize GLX", fix it with this:
-export QT_XCB_GL_INTEGRATION=none
-# Add this string to the end of files: ~/.bashrc and ~/.profile
-# nano ~/.bashrc
-# nano ~/.profile
-
-rstudio --version  # check version
-rstudio  # start RStudio
-```
-
-Check it through the menu: Programming --> RStudio
-
-![RStudio IDE menu](./data/2022.05.26_rstudio_menu.jpg)
 
 ---
 ## <a name="nvidia" />Nvidia and CUDA installation
