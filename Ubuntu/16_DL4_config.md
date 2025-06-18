@@ -229,37 +229,35 @@ sudo apt install -f ./rstudio-2025.05.1-513-amd64.deb
 rstudio --version  # check version
 rstudio  # start RStudio
 
-# Install various dependences for OpenImageR package
+# Install various dependencies for OpenImageR package
 # https://cran.r-project.org/web/packages/OpenImageR/index.html
-# NOTE: one line doesn't work!
-sudo apt install r-base-dev
-sudo apt install libpng-dev
-sudo apt install libjpeg-dev
-sudo apt install libtiff5-dev
-sudo apt install libfftw3-dev
-sudo apt install libcurl4-openssl-dev
-sudo apt install -y libarmadillo-dev
-sudo apt install -y libblas-dev
-sudo apt install -y liblapack-dev
-sudo apt install -y libarpack++2-dev
-sudo apt install -y gfortran
-sudo apt install -y libjpeg-dev
-sudo apt install -y libpng-dev
-sudo apt install -y libfftw3-dev
-sudo apt install -y libtiff5-dev
+sudo apt install -y make zlib1g-dev r-base-dev libcurl4-openssl-dev \
+    libarmadillo-dev libblas-dev liblapack-dev libarpack++2-dev \
+    gfortran libjpeg-dev libpng-dev libfftw3-dev libtiff5-dev libx11-dev
 
-# "pak" automatically handles depencencies
+sudo su another_user
+> R  # run R as another user and install packages there
+
+R  # run R
+.libPaths()  # check directories with packages installed
+
+# From your RStudio or R install OpenImageR and other packages.
+# It will compile a source code.
+
+# "pak" automatically handles dependencies.
 install.packages("pak")
 # Install package with "pak"
 pak::pkg_install("readr")
 pak::pkg_install(c("readr", "ggplot2", "tidyr"))
-
-# From your RStudio install OpenImageR package
-# It will compile a source code.
-install.packages(c('jpeg', 'png', 'tiff', 'RcppArmadillo'))
-install.packages("OpenImageR")
-# or
+pak::pkg_install(c("jpeg", "png", "tiff", "RcppArmadillo"))
 pak::pkg_install("OpenImageR")
+
+# Install without "pak" package. NOTE: it doesn't handle dependencies.
+#install.packages(c('jpeg', 'png', 'tiff', 'RcppArmadillo'))
+#install.packages("OpenImageR")
+
+# To exit from R type
+q()  # or "quit()"
 ```
 
 Check it through the menu: Programming --> RStudio
