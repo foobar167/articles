@@ -235,10 +235,10 @@ sudo apt install -y make zlib1g-dev r-base-dev libcurl4-openssl-dev \
     libarmadillo-dev libblas-dev liblapack-dev libarpack++2-dev \
     gfortran libjpeg-dev libpng-dev libfftw3-dev libtiff5-dev libx11-dev
 
-sudo su another_user
-> R  # run R as another user and install packages there
+sudo su another_user  # login as another user
+whoami  # show current user name
+R  # run R as another user and install packages there
 
-R  # run R
 .libPaths()  # check directories with packages installed
 
 # From your RStudio or R install OpenImageR and other packages.
