@@ -8,7 +8,6 @@ Periodically updated instructions:
    * [Dictionary of frequently used commands](01_Commands_dictionary.md)
    * [How-to use Ubuntu operating system](02_How-tos.md)
    * [Move HOME directory to new HDD](03_Move_HOME_to_new_HDD.md)
-   * [Python and modules installation](old/04_Python_installation.md)
    * [Virtual environments](05_Virtual_environments.md)
    * [Various software install](06_Various_software_install.md)
    * [Website software](07_Website_software.md)
@@ -18,7 +17,8 @@ Periodically updated instructions:
    * [Raspbian configuration](15_Raspbian_configuration.md)
    * [DL4 server configuration](16_DL4_config.md)
 
-Not supported instructions in the `old` directory:
+**Not supported instructions** in the [`old`](old) directory:
+   * [Python and modules installation](old/04_Python_installation.md)
    * [TensorFlow installation](old/09_TensorFlow_installation.md)
    * [Neural networks software](old/10_Neural_networks_software.md)
    * [DIGITS configuration and use](old/12_Nvidia_DIGITS.md)
