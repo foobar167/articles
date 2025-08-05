@@ -88,7 +88,7 @@ conda update --all
 
 ```shell script
 # Set up conda virtual environment
-conda create --name myenv python=3.11.*
+conda create --name myenv python=3.12.*
 # Show virtual envs
 conda info --envs
 # Activate the environment
