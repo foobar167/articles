@@ -3,6 +3,7 @@ How-to:
    - [Add directory to the $PATH](#add_to_path)
    - [Allow IP-address](#ip-address)
    - [Allow `sudo` commands and write permissions](#permissions)
+   - [Automatically clean up all resources](#clean-up)
    - [Calculator](#calculator)
    - [Clear out Git history](#clear-git)
    - [Create user](#user)
@@ -176,6 +177,15 @@ sudo chmod -R g+rwx /dir/path         # 1st option
 
 # check it
 ls -hal
+```
+
+---
+### <a name="clean-up" />Automatically clean up all resources
+```shell script
+# Clean up resources. Place this code at the end of the program.
+import os, signal
+os.kill(os.getpid(), signal.SIGTERM)  # for Linux and for Windows
+#os.kill(os.getpid(), signal.SIGKILL)  # only for Linux
 ```
 
 ---
