@@ -38,6 +38,7 @@ How-to:
    - [Sleep mode disable](#do_not_sleep)
    - [Static IP address](#static_ip)
    - [Switch language hotkey](#lang)
+   - [Symbolic link to a directory or file](#symbolic_link)
    - [System info and benchmarks](#sys_info)
    - [Take screenshot](#screenshot)
    - [Update system packages](#update-ubuntu)
@@ -1066,6 +1067,14 @@ sudo gnome-tweaks &
    - Select checkbox *Alt+Shift* there
 
 ![Gnome Tweaks Keyboard & Mouse](data/2018.12.03_keyboard_layout.png)
+
+---
+### <a name="symbolic_link" />Symbolic link to a directory or file
+[Symbolic link](https://en.wikipedia.org/wiki/Ln_(Unix))
+is a synonym to "alias" in Linux.
+```shell
+sudo ln -s /data/lab_data /data/lab225
+```
 
 ---
 ### <a name="sys_info" />System info and benchmarks
