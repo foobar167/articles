@@ -4,8 +4,9 @@
    - [Additional useful tools](#tools)
    - [Web sites to visit from time to time](#websites)
    - [TensorFlow for Android](#tensorflow-for-android)
-   - [TensorFlow CPUs and GPUs Configuration](#cpu-gpu-configuration)
-      - [Limit TensorFlow to one GPU](#limit-gpu)
+   - [GPUs and CPUs Configuration](#cpu-gpu-configuration)
+      - [Set GPU for PyTorch](#set-gpu-pytorch)
+      - [Set GPU for TensorFlow](#set-gpu-tensorflow)
       - [Limit TensorFlow to lower memory](#limit-memory)
          - [1. Reserve dynamically](#reserve-dynamically)
          - [2. Reserve fixed fraction](#reserve-fraction)
@@ -304,7 +305,7 @@ For further Android development examples and TensorFlow Lite,
 visit [this repository](https://github.com/foobar167/android).
 
 ---
-### <a name="cpu-gpu-configuration" />TensorFlow CPUs and GPUs Configuration
+### <a name="cpu-gpu-configuration" />GPUs and CPUs Configuration
 
 Links to read:
    * [TensorFlow CPUs and GPUs Configuration](https://medium.com/@lisulimowicz/tensorflow-cpus-and-gpus-configuration-9c223436d4ef)
@@ -313,18 +314,85 @@ Links to read:
    * [How can I flush GPU memory using CUDA (physical reset is unavailable)](https://stackoverflow.com/questions/15197286/how-can-i-flush-gpu-memory-using-cuda-physical-reset-is-unavailable)
 
 ---
-#### <a name="limit-gpu" />Limit TensorFlow to one GPU
-
-By default TensorFlow occupies all GPUs on the platform.
-Also you should exit Python (ipython, jupyter) console to free GPU resources. 
+#### <a name="set-gpu-pytorch" />Set GPU for PyTorch
 
 ```python
-# Calculate on the 2nd GPU
+import torch
+import torch.nn as nn
+
+# 1. Determine the device
+gpu = 3  # for DL4 server GPU can be: 0 (H800), 1 (V100), 2 (V100), 3 (V100), 4 (V100)
+# Check if CUDA (GPU) is available, otherwise use CPU
+device = f"cuda:{gpu}" if torch.cuda.is_available() else "cpu"
+print(f"Using device: {device}")
+
+# 2. Define a simple model
+class SimpleModel(nn.Module):
+    def __init__(self):
+        super(SimpleModel, self).__init__()
+        self.linear = nn.Linear(10, 1)
+
+    def forward(self, x):
+        return self.linear(x)
+
+model = SimpleModel()
+
+# 3. Move the model to the chosen device
+model.to(device)
+print(f"Model moved to: {next(model.parameters()).device}")
+
+# 4. Create some sample data
+input_data = torch.randn(5, 10)  # 5 samples, 10 features
+
+# 5. Move the data to the same device as the model
+input_data = input_data.to(device)
+print(f"Input data moved to: {input_data.device}")
+
+# 6. Perform a forward pass with the model and data on the device
+output = model(input_data)
+print(f"Output data device: {output.device}")
+print(f"Output: {output}")
+```
+
+---
+#### <a name="set-gpu-tensorflow" />Set GPU for TensorFlow
+
+You should exit Python (ipython, jupyter) console to free GPU resources. 
+
+```python
 import os
+import tensorflow as tf
+
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  # so the IDs match nvidia-smi
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"        # "0,1" for multiple GPU or "-1" for CPU
 
+# Choose free GPU
+GPU = 2  # calculate on the third GPU
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  # so the IDs match nvidia-smi
+os.environ["CUDA_VISIBLE_DEVICES"] = f"{GPU}"        # "0,1" for multiple GPU or "-1" for CPU
 # Note: it seems option "0,1" does not work for different GPU models.
+
+# Turn off debug messages
+# 0 - all messages are logged (default behavior)
+# 1 - INFO messages are not printed
+# 2 - INFO and WARNING messages are not printed
+# 3 - INFO, WARNING, and ERROR messages are not printed
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # show errors
+
+# Reserve necessary GPU memory
+# Dynamically grow the memory used on the GPU
+gpus = tf.config.list_physical_devices('GPU')
+print(gpus)
+if gpus:
+    try:
+        # Currently, memory growth needs to be the same across GPUs
+        for gpu in gpus:
+            tf.config.experimental.set_memory_growth(gpu, True)
+        logical_gpus = tf.config.list_logical_devices('GPU')
+        print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
+    except RuntimeError as e:
+        # Memory growth must be set before GPUs have been initialized
+        print(e)
 ```
 
 ```shell script
@@ -333,6 +401,8 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "1"        # "0,1" for multiple GPU or "-1"
 
 # Monitor GPU permanently. To exit, press <Ctrl>+<C> keys.
 watch -n 0.5 nvidia-smi
+# Monitor GPU permanently. The second command. To exit, press <Q> key.
+nvtop
 # Monitor CPU permanently. To exit, press <Q> key.
 htop
 ```
