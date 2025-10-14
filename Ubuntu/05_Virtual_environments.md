@@ -2,15 +2,17 @@
    - [Miniconda virtual environment](#miniconda)
 
       - [Install Miniconda](#install-miniconda)
+         - [Install Miniconda for Windows](#install-miniconda-windows)
       - [Configure Miniconda virtual environment](#configure-miniconda)
-      - [TF-GPU for CUDA 12 using PIP](#tensorflow-pip)
-      - [Install TensorFlow for GPU using Conda installer](#tensorflow-conda)
-      - [Install TensorFlow for GPU using PIP installer](#tensorflow-conda-pip)
+      - [Install TensorFlow for GPU using PIP installer](#tensorflow-gpu-pip)
+ 
 
-   - [Miniconda and pip](#miniconda-pip)
+   - [(OLD) Miniconda and pip](#miniconda-pip)
+
+[//]: # (      - [Install TensorFlow for GPU using Conda installer]&#40;#tensorflow-conda&#41;)
+[//]: # (      - [Install TensorFlow for GPU using PIP installer]&#40;#tensorflow-conda-pip&#41;)
 
    - [(OLD) virtualenvwrapper](#virtualenvwrapper-config)
-
 
    - [(OLD) Pyenv Python version manager](#pyenv)
 
@@ -84,6 +86,37 @@ conda update -n base -c defaults conda
 conda update --all
 ```
 
+##### <a name="install-miniconda-windows" />Install Miniconda for Windows
+
+First, install Linux commands on a Windows operating system.
+Use [Cygwin](https://www.cygwin.com/), [Git Bash](https://git-scm.com/downloads),
+or [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install)
+using `wsl --install` command.
+
+```shell
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
+```
+Run `Miniconda3-latest-Windows-x86_64.exe` file and install Miniconda.
+
+Use Miniconda from `Anaconda Prompt` from the start menu.
+
+Or **alternatively** add Miniconda installation path to the System PATH:
+   * Search for `Environment Variables` in the Windows search bar
+and select `Edit the system environment variables`.
+   * Click the `Environment Variables...` button.
+   * Under `System variables` or `User variables`
+(depending on your installation type), find the Path variable and click `Edit`.
+   * Click `New` and add the following paths
+(replace `c:\Programs\miniconda3\` with your actual installation path):
+      * `c:\Programs\miniconda3\`
+      * `c:\Programs\miniconda3\Scripts\`
+      * `c:\Programs\miniconda3\Library\bin\`
+(This might be necessary for certain executables)
+   * Click `OK` on all open windows to save the changes.
+   * Restart `Command Prompt`: close and reopen any existing `cmd.exe`
+windows for the changes to take effect.
+   * Check it with `conda --version` command.
+
 #### <a name="configure-miniconda" />Configure Miniconda virtual environment
 
 ```shell script
@@ -105,10 +138,12 @@ conda activate myenv
 #conda info --envs
 ```
 
-#### <a name="tensorflow-pip" />TF-GPU for CUDA 12 using PIP
+#### <a name="tensorflow-gpu-pip" />Install TensorFlow for GPU using PIP installer
+
 For Nvidia driver version 550.107.02 and CUDA version 12.4
 
 [Keras 3](https://keras.io/getting_started/) is starting with TensorFlow 2.16.
+
 ```shell script
 conda create --name python3.12 python=3.12.*  # create virtual env
 conda activate python3.12  # activate virtual environment
@@ -141,6 +176,83 @@ import os
 os.environ["TF_USE_LEGACY_KERAS"] = "1"  # use Keras 2 instead of Keras 3
 ```
 
+
+---
+### <a name="miniconda-pip" />(OLD) Miniconda and pip
+
+<details>
+  <summary>Show details</summary>
+
+**Install Miniconda**
+```shell script
+# Download latest Miniconda distribution
+mkdir -p ~/Downloads/
+cd ~/Downloads/
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# Run installation script. When asked to initialize Miniconda, type `yes`.
+bash Miniconda3-latest-Linux-x86_64.sh
+
+exec $SHELL  # restart the shell
+# Verify the installation
+conda --version
+
+# If you'd prefer that conda's base environment not be activated on startup, 
+#   set the auto_activate_base parameter to false: 
+# conda config --set auto_activate_base false
+
+# Update conda to the latest version
+conda update -n base -c defaults conda
+conda update --all
+```
+
+**Configure Miniconda virtual environment**
+```shell script
+# Set up conda virtual environment
+conda create --name myenv python=3.11.*
+#conda create --name myenv python=3.10.*
+# Show virtual envs
+conda info --envs
+# Activate the environment
+conda activate myenv
+
+# Activate and deactivate virtual environment
+conda deactivate  # exit to the "base" environment
+conda deactivate  # exit from Miniconda base env
+conda activate myenv
+
+# Delete vitrual environment if necessary
+#conda deactivate
+#conda remove --name myenv --all
+#conda info --envs
+```
+
+**Install all additional packages via PIP installer**
+
+**This instruction doesn't work for old version of CUDA==11.4**
+```shell script
+conda activate myenv  # activate virtual environment
+
+pip install --upgrade pip  # upgrade pip
+pip --version  # verify pip version
+which pip      # verify pip location
+which python3  # verify python location
+
+# Install TensorFlow with GPU support
+#python3 -m pip install tensorflow==2.12[and-cuda]
+python3 -m pip install tensorflow[and-cuda]
+# Verify the GPU setup
+python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+python3 -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
+
+# Install other packages
+pip install tensorflow-hub matplotlib scipy numpy opencv-python \
+      pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz \
+      openpyxl
+
+# View installed packages
+pip list | grep tensor
+````
 
 #### <a name="tensorflow-conda" />Install TensorFlow for GPU using Conda installer
 
@@ -239,83 +351,7 @@ pip install tensorflow-hub matplotlib scipy numpy opencv-python pillow \
     scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
 ```
 
-
-
-
----
-### <a name="miniconda-pip" />Miniconda and pip
-
-**Install Miniconda**
-```shell script
-# Download latest Miniconda distribution
-mkdir -p ~/Downloads/
-cd ~/Downloads/
-curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-
-# Run installation script. When asked to initialize Miniconda, type `yes`.
-bash Miniconda3-latest-Linux-x86_64.sh
-
-exec $SHELL  # restart the shell
-# Verify the installation
-conda --version
-
-# If you'd prefer that conda's base environment not be activated on startup, 
-#   set the auto_activate_base parameter to false: 
-# conda config --set auto_activate_base false
-
-# Update conda to the latest version
-conda update -n base -c defaults conda
-conda update --all
-```
-
-**Configure Miniconda virtual environment**
-```shell script
-# Set up conda virtual environment
-conda create --name myenv python=3.11.*
-#conda create --name myenv python=3.10.*
-# Show virtual envs
-conda info --envs
-# Activate the environment
-conda activate myenv
-
-# Activate and deactivate virtual environment
-conda deactivate  # exit to the "base" environment
-conda deactivate  # exit from Miniconda base env
-conda activate myenv
-
-# Delete vitrual environment if necessary
-#conda deactivate
-#conda remove --name myenv --all
-#conda info --envs
-```
-
-**Install all additional packages via PIP installer**
-
-**This instruction doesn't work for old version of CUDA==11.4**
-```shell script
-conda activate myenv  # activate virtual environment
-
-pip install --upgrade pip  # upgrade pip
-pip --version  # verify pip version
-which pip      # verify pip location
-which python3  # verify python location
-
-# Install TensorFlow with GPU support
-#python3 -m pip install tensorflow==2.12[and-cuda]
-python3 -m pip install tensorflow[and-cuda]
-# Verify the GPU setup
-python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
-python3 -c "import tensorflow as tf; print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
-
-# Install other packages
-pip install tensorflow-hub matplotlib scipy numpy opencv-python \
-      pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz \
-      openpyxl
-
-# View installed packages
-pip list | grep tensor
-````
-
+</details>
 
 ---
 ### <a name="virtualenvwrapper-config" />(OlD) virtualenvwrapper
