@@ -1,12 +1,13 @@
    - [Task](#task)
-   - [Miniconda virtual environment](#miniconda)
-      - [Install Miniconda](#install-miniconda)
-         - [Install Miniconda for Windows](#install-miniconda-windows)
-      - [Configure Miniconda virtual environment](#configure-miniconda)
-      - [Install TensorFlow for GPU using PIP installer](#tensorflow-gpu-pip)
-      - [Install PyTorch for GPU using PIP installer](#pytorch-gpu-pip)
-      - [Install libraries using PIP installer](#libraries-pip)
+   - [Prepare Miniconda virtual environment](#miniconda)
+   - [Install Miniconda](#install-miniconda)
+   - [Install Miniconda for Windows](#install-miniconda-windows)
+   - [Configure Miniconda virtual environment](#configure-miniconda)
+   - [Install TensorFlow for GPU using PIP installer](#tensorflow-gpu-pip)
+   - [Install PyTorch for GPU using PIP installer](#pytorch-gpu-pip)
+   - [Install libraries using PIP installer](#libraries-pip)
  
+
 
    - [(OLD) Miniconda and pip](#miniconda-pip)
 
@@ -43,7 +44,7 @@ Install software for Python virtual environments.
 Set up and configure virtual envs.
 
 ---
-### <a name="miniconda" />Miniconda virtual environment
+### <a name="miniconda" />Prepare Miniconda virtual environment
 
 To install TensorFlow, I recommend the Miniconda virtual environment,
 but you can use Anaconda or the regular virtual environment described below.
@@ -63,7 +64,8 @@ Links:
 sudo apt install python3-dev python3-pip
 ```
 
-#### <a name="install-miniconda" />Install Miniconda
+---
+### <a name="install-miniconda" />Install Miniconda
 
 ```shell script
 # Download latest Miniconda distribution
@@ -88,7 +90,8 @@ conda update -n base -c defaults conda
 conda update --all
 ```
 
-##### <a name="install-miniconda-windows" />Install Miniconda for Windows
+---
+### <a name="install-miniconda-windows" />Install Miniconda for Windows
 
 First, install Linux commands on a Windows operating system.
 Use [Cygwin](https://www.cygwin.com/), [Git Bash](https://git-scm.com/downloads),
@@ -120,7 +123,8 @@ windows for the changes to take effect.
    * Check it with `conda --version` command.
    * Set write permission to the `c:\Programs\miniconda3\` folder for all users.
 
-#### <a name="configure-miniconda" />Configure Miniconda virtual environment
+---
+### <a name="configure-miniconda" />Configure Miniconda virtual environment
 
 ```shell script
 conda create --name myenv python=3.13.*  # create virtual environment
@@ -138,7 +142,8 @@ conda activate myenv
 #conda info --envs
 ```
 
-#### <a name="tensorflow-gpu-pip" />Install TensorFlow for GPU using PIP installer
+---
+### <a name="tensorflow-gpu-pip" />Install TensorFlow for GPU using PIP installer
 
 For Nvidia driver version >= 550.107.02 and CUDA version >= 12.4
 
@@ -177,7 +182,8 @@ import os
 os.environ["TF_USE_LEGACY_KERAS"] = "1"  # use Keras 2 instead of Keras 3
 ```
 
-#### <a name="pytorch-gpu-pip" />Install PyTorch for GPU using PIP installer
+---
+### <a name="pytorch-gpu-pip" />Install PyTorch for GPU using PIP installer
 
 Visit [PyTorch](https://pytorch.org/get-started/locally/) website.
 
@@ -192,7 +198,8 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
 python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'GPU count: {torch.cuda.device_count()}'); print(f'GPU name: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"N/A\"}')"
 ```
 
-#### <a name="libraries-pip" />Install libraries using PIP installer
+---
+### <a name="libraries-pip" />Install libraries using PIP installer
 
 ```shell
 # install main libraries
