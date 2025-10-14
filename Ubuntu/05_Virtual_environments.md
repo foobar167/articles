@@ -4,6 +4,8 @@
          - [Install Miniconda for Windows](#install-miniconda-windows)
       - [Configure Miniconda virtual environment](#configure-miniconda)
       - [Install TensorFlow for GPU using PIP installer](#tensorflow-gpu-pip)
+      - [Install PyTorch for GPU using PIP installer](#pytorch-gpu-pip)
+      - [Install libraries using PIP installer](#libraries-pip)
  
 
    - [(OLD) Miniconda and pip](#miniconda-pip)
@@ -79,6 +81,7 @@ conda --version
 # If you'd prefer that conda's base environment not be activated on startup, 
 #   set the auto_activate_base parameter to false: 
 # conda config --set auto_activate_base false
+# conda init  # run initialization if necessary
 
 # Update conda to the latest version
 conda update -n base -c defaults conda
@@ -115,11 +118,12 @@ and select `Edit the system environment variables`.
    * Restart `Command Prompt`: close and reopen any existing `cmd.exe`
 windows for the changes to take effect.
    * Check it with `conda --version` command.
+   * Set write permission to the `c:\Programs\miniconda3\` folder for all users.
 
 #### <a name="configure-miniconda" />Configure Miniconda virtual environment
 
 ```shell script
-conda create --name myenv python=3.13.*  # # create virtual environment
+conda create --name myenv python=3.13.*  # create virtual environment
 conda info --envs  # show virtual environments
 conda activate myenv  # activate virtual environment
 
@@ -141,13 +145,11 @@ For Nvidia driver version >= 550.107.02 and CUDA version >= 12.4
 [Keras 3](https://keras.io/getting_started/) is starting with TensorFlow 2.16.
 
 ```shell script
-conda activate myenv  # activate virtual environment
+conda create --name tf python=3.13.*
+conda activate tf
 
 pip install tensorflow[and-cuda]  # for GPU support
-# install main libraries
-pip install matplotlib scipy numpy opencv-python pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
-# install additional libraries
-pip install nibabel pytest einops
+
 # install additional libraries for TensorFlow
 pip install tf_keras tensorflow-hub
 
@@ -161,6 +163,10 @@ echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn._
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> \
     $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+
+# Check the installation
+python -c "import tensorflow as tf; print(f'TF version: {tf.__version__}'); print(tf.config.list_physical_devices('GPU')); print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
+#python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 ```
 To use Keras 3 replace `.h5` with `.keras`. To use Keras 2:
 ```shell script
@@ -170,6 +176,32 @@ pip install tf_keras  # install it to use Keras 2
 import os
 os.environ["TF_USE_LEGACY_KERAS"] = "1"  # use Keras 2 instead of Keras 3
 ```
+
+#### <a name="pytorch-gpu-pip" />Install PyTorch for GPU using PIP installer
+
+Visit [PyTorch](https://pytorch.org/get-started/locally/) website.
+
+```shell
+conda create --name pytorch python=3.13.*
+conda activate pytorch
+
+# Not tested yet. Sorry!
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
+
+# Check the installation
+python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'GPU count: {torch.cuda.device_count()}'); print(f'GPU name: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"N/A\"}')"
+```
+
+#### <a name="libraries-pip" />Install libraries using PIP installer
+
+```shell
+# install main libraries
+pip install matplotlib scipy numpy opencv-python pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
+# install additional libraries
+pip install nibabel pytest einops
+```
+
+
 
 
 ---
