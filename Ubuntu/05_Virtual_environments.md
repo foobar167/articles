@@ -6,7 +6,7 @@
    - [Install TensorFlow for GPU using PIP installer](#tensorflow-gpu-pip)
    - [Install PyTorch for GPU using PIP installer](#pytorch-gpu-pip)
    - [Install libraries using PIP installer](#libraries-pip)
- 
+
 
 
    - [(OLD) Miniconda and pip](#miniconda-pip)
@@ -35,6 +35,7 @@
 [//]: # (         - [Virtual environment for Ubuntu 18.04]&#40;#venv_18.04&#41;)
 
    - [(OLD) EasyBuild environment on SURFsara server](#easy-build)
+
 
 
 ---
