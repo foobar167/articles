@@ -1,6 +1,5 @@
    - [Task](#task)
    - [Miniconda virtual environment](#miniconda)
-
       - [Install Miniconda](#install-miniconda)
          - [Install Miniconda for Windows](#install-miniconda-windows)
       - [Configure Miniconda virtual environment](#configure-miniconda)
@@ -120,12 +119,9 @@ windows for the changes to take effect.
 #### <a name="configure-miniconda" />Configure Miniconda virtual environment
 
 ```shell script
-# Set up conda virtual environment
-conda create --name myenv python=3.12.*
-# Show virtual envs
-conda info --envs
-# Activate the environment
-conda activate myenv
+conda create --name myenv python=3.13.*  # # create virtual environment
+conda info --envs  # show virtual environments
+conda activate myenv  # activate virtual environment
 
 # Activate and deactivate virtual environment
 conda deactivate  # exit to the "base" environment
@@ -140,13 +136,12 @@ conda activate myenv
 
 #### <a name="tensorflow-gpu-pip" />Install TensorFlow for GPU using PIP installer
 
-For Nvidia driver version 550.107.02 and CUDA version 12.4
+For Nvidia driver version >= 550.107.02 and CUDA version >= 12.4
 
 [Keras 3](https://keras.io/getting_started/) is starting with TensorFlow 2.16.
 
 ```shell script
-conda create --name python3.12 python=3.12.*  # create virtual env
-conda activate python3.12  # activate virtual environment
+conda activate myenv  # activate virtual environment
 
 pip install tensorflow[and-cuda]  # for GPU support
 # install main libraries
