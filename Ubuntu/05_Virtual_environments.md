@@ -1,11 +1,11 @@
    - [Task](#task)
    - [Prepare Miniconda virtual environment](#miniconda)
-   - [Install Miniconda](#install-miniconda)
-   - [Install Miniconda for Windows](#install-miniconda-windows)
-   - [Configure Miniconda virtual environment](#configure-miniconda)
-   - [Install TensorFlow for GPU using PIP installer](#tensorflow-gpu-pip)
-   - [Install PyTorch for GPU using PIP installer](#pytorch-gpu-pip)
-   - [Install libraries using PIP installer](#libraries-pip)
+       - [Install Miniconda](#install-miniconda)
+       - [Install Miniconda for Windows](#install-miniconda-windows)
+       - [Configure Miniconda virtual environment](#configure-miniconda)
+       - [Install TensorFlow for GPU using PIP installer](#tensorflow-gpu-pip)
+       - [Install PyTorch for GPU using PIP installer](#pytorch-gpu-pip)
+       - [Install libraries using PIP installer](#libraries-pip)
 
 
 
