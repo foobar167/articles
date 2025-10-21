@@ -192,8 +192,12 @@ Visit [PyTorch](https://pytorch.org/get-started/locally/) website.
 conda create --name pytorch python=3.13.*
 conda activate pytorch
 
-# Not tested yet. Sorry!
+# New CUDA doesn't support old GPU
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
+
+# Example: Install old CUDA versions and previous versions of PyTorch
+# At the end write `cu???` with CUDA version that supports your GPU
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 
 # Check the installation
 python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'GPU count: {torch.cuda.device_count()}'); print(f'GPU name: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"N/A\"}')"
@@ -208,6 +212,18 @@ pip install matplotlib scipy numpy opencv-python pillow scikit-learn scikit-imag
 # install additional libraries
 pip install nibabel pytest einops
 ```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
