@@ -195,8 +195,8 @@ conda activate pytorch
 # New CUDA doesn't support old GPU
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
 
-# Example: Install old CUDA versions and previous versions of PyTorch
-# At the end write `cu???` with CUDA version that supports your GPU
+# Install old CUDA versions and previous versions of PyTorch for your old GPU.
+# At the end of command write `cu???` with CUDA version that supports your GPU
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 
 # Check the installation
@@ -204,7 +204,7 @@ python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f
 ```
 
 Small script to check PyTorch installation.
-Enter `ipython` or `python` colsole and copy-paste:
+Enter `ipython` or `python` console and copy-paste:
 ```python
 import torch
 print(f"PyTorch version: {torch.__version__}")
