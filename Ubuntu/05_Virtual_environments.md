@@ -204,7 +204,7 @@ python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f
 ```
 
 Small script to check PyTorch installation.
-Enter `ipython` or `python` colsole and type:
+Enter `ipython` or `python` colsole and copy-paste:
 ```python
 import torch
 print(f"PyTorch version: {torch.__version__}")
