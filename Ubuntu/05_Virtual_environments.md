@@ -203,6 +203,21 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'GPU count: {torch.cuda.device_count()}'); print(f'GPU name: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"N/A\"}')"
 ```
 
+Small script to check PyTorch installation.
+Enter `ipython` or `python` colsole and type:
+```python
+import torch
+print(f"PyTorch version: {torch.__version__}")
+print(f"CUDA available: {torch.cuda.is_available()}")
+if torch.cuda.is_available():  # make sure GPU is available
+    num = torch.cuda.device_count()
+    print(f'GPU count: {num}')
+    for i in range(num):
+        print(f'GPU {i} name: {torch.cuda.get_device_name(i)}')
+else:
+    print("GPU is not available")
+```
+
 ---
 ### <a name="libraries-pip" />Install libraries using PIP installer
 
