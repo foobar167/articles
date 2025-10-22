@@ -128,6 +128,7 @@ windows for the changes to take effect.
 ### <a name="configure-miniconda" />Configure Miniconda virtual environment
 
 ```shell script
+#conda create --name myenv python=3.12.*  # older Python for old GPU
 conda create --name myenv python=3.13.*  # create virtual environment
 conda info --envs  # show virtual environments
 conda activate myenv  # activate virtual environment
@@ -156,7 +157,7 @@ conda activate tf
 
 pip install tensorflow[and-cuda]  # for GPU support
 
-# install additional libraries for TensorFlow
+# Install additional libraries for TensorFlow
 pip install tf_keras tensorflow-hub
 
 # To fix the error:
@@ -186,21 +187,36 @@ os.environ["TF_USE_LEGACY_KERAS"] = "1"  # use Keras 2 instead of Keras 3
 ---
 ### <a name="pytorch-gpu-pip" />Install PyTorch for GPU using PIP installer
 
-Visit [PyTorch](https://pytorch.org/get-started/locally/) website.
+For new GPU visit [PyTorch get started](https://pytorch.org/get-started/locally/) website.
+
+For old GPU visit [PyTorch previous versions](https://pytorch.org/get-started/previous-versions/).
+
+Also for old GPU use older versions of Python. For example,
+`torch==2.5.1` use `python=3.12.*` or older.
+
+With the upcoming release of **Transformers v5**, Hugging Face has announced
+the deprecation of TensorFlow and JAX support in favor of a stronger focus
+on PyTorch. While efforts will be made to maintain compatibility with
+the broader JAX/TF/Keras ecosystem, the core library will be streamlined,
+and code related to TensorFlow and JAX will be removed in future versions.
 
 ```shell
+#conda create --name pytorch python=3.12.*  # for old GPU
 conda create --name pytorch python=3.13.*
 conda activate pytorch
 
 # New CUDA doesn't support old GPU
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu129
 
-# Install old CUDA versions and previous versions of PyTorch for your old GPU.
-# At the end of command write `cu???` with CUDA version that supports your GPU
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+# For old GPU install previous versions of CUDA and PyTorch.
+pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
 
 # Check the installation
 python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'GPU count: {torch.cuda.device_count()}'); print(f'GPU name: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"N/A\"}')"
+
+# Install additional libraries for PyTorch
+# Hugging Face libraries
+pip install transformers datasets
 ```
 
 Small script to check PyTorch installation.
