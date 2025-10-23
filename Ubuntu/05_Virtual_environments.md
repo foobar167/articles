@@ -216,7 +216,7 @@ python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f
 
 # Install additional libraries for PyTorch
 # Hugging Face libraries
-pip install transformers datasets
+pip install transformers datasets huggingface_hub
 ```
 
 Small script to check PyTorch installation.
