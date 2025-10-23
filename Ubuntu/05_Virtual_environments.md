@@ -88,7 +88,7 @@ conda --version
 
 # Update conda to the latest version
 conda update -n base -c defaults conda
-conda update --all
+#conda update --all
 ```
 
 ---
@@ -128,8 +128,8 @@ windows for the changes to take effect.
 ### <a name="configure-miniconda" />Configure Miniconda virtual environment
 
 ```shell script
-#conda create --name myenv python=3.12.*  # older Python for old GPU
-conda create --name myenv python=3.13.*  # create virtual environment
+conda create --name myenv python=3.12.*  # older Python for old GPU
+#conda create --name myenv python=3.13.*  # create virtual environment
 conda info --envs  # show virtual environments
 conda activate myenv  # activate virtual environment
 
@@ -152,7 +152,8 @@ For Nvidia driver version >= 550.107.02 and CUDA version >= 12.4
 [Keras 3](https://keras.io/getting_started/) is starting with TensorFlow 2.16.
 
 ```shell script
-conda create --name tf python=3.13.*
+conda create --name pytorch python=3.12.*  # for old GPU
+#conda create --name tf python=3.13.*
 conda activate tf
 
 pip install tensorflow[and-cuda]  # for GPU support
@@ -201,8 +202,8 @@ the broader JAX/TF/Keras ecosystem, the core library will be streamlined,
 and code related to TensorFlow and JAX will be removed in future versions.
 
 ```shell
-#conda create --name pytorch python=3.12.*  # for old GPU
-conda create --name pytorch python=3.13.*
+conda create --name pytorch python=3.12.*  # for old GPU
+#conda create --name pytorch python=3.13.*
 conda activate pytorch
 
 # New CUDA doesn't support old GPU
