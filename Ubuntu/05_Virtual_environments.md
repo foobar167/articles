@@ -217,9 +217,9 @@ python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f
 
 # Install additional libraries for PyTorch
 # Hugging Face libraries
-pip install transformers datasets huggingface_hub
+pip install transformers[torch] datasets huggingface_hub
 
-# Downgrade to "ipykernel==6.30.1" to fix the error:
+# Downgrade to `ipykernel==6.30.1` to fix the following error:
 #   ERROR  Python exception updating progress:, error: PyErr ...
 pip install ipykernel==6.30.1
 ```
