@@ -373,45 +373,41 @@ Remember to backup and delete obsolede and unnecessary user accounts.
 
 ```shell script
 # Find all directories owned by a particular user
-sudo find / -type d -user vozman
+sudo find / -type d -user username
 # Find all files owned by a particular user. If necessary.
-#sudo find / -type f -user vozman
+#sudo find / -type f -user username
 
 # Disable user accounts
-sudo usermod -L vozman
-sudo usermod -L romanroskach
-#sudo usermod -U tempuser  # enable user account
+sudo usermod -L username
+#sudo usermod -U username  # enable user account
 
-# Delete users from `webmasters` group
-sudo deluser vozman webmasters
-sudo deluser romanroskach webmasters
+# Delete user from `webmasters` group
+sudo deluser username webmasters
 
-# If error:
-#     userdel: user NAME is currently used by process 1234
+# If error: userdel: user NAME is currently used by process 1234
 sudo killall -u username  # kill all user processes
 #sudo kill -9 1864  # kill the process
 #htop -u username  # list processes by user name
 
-# Delete users
-sudo deluser vozman
-sudo deluser romanroskach
+# Delete user
+sudo deluser username
+
+# Show directories size including hidden directories
+sudo du -sh /home/username/.[!.]* * 2> /dev/null
 
 # Backup the whole directory and delete it from $HOME
-sudo du -sh /home/vozman 2> /dev/null  # show directory size
-
-sudo tar -zcvf /hdd_barracuda1/pavlenko_user_accounts_backups/vozman_2019.12.31_backup.tar.gz /home/vozman
-sudo tar -zcvf /hdd_barracuda1/pavlenko_user_accounts_backups/romanroskach_2019.12.31_backup.tar.gz /home/romanroskach
+sudo tar -zcvf /hdd_barracuda1/_user_accounts_backups/username_2025.11.19_backup.tar.gz /home/username
 
 # To view the contents of a tar.gz file without extracting it
-tar -tvf vozman_2019.12.31_backup.tar.gz | tree
+tar -tvf username_2025.11.19_backup.tar.gz | tree
 
-sudo rm -r /home/vozman  # use with caution!
-sudo rm -r /home/romanroskach  # use with caution!
+sudo rm -r /home/username  # use with caution!
+sudo mv /data/username /data/_old_users
 
 # Check
-cat /etc/group | grep 'vozman\|romanroskach'
-cat /etc/passwd | grep 'vozman\|romanroskach'
-ls /home | grep 'vozman\|romanroskach'
+cat /etc/group | grep 'username\|username2'
+cat /etc/passwd | grep 'username\|username2'
+ls /home | grep 'username\|username2'
 ```
 
 ---
