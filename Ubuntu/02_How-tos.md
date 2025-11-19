@@ -170,14 +170,36 @@ Make sure new files are owned by the default group,
 set `g+s` and set the default permissions to read, write and execute.
 
 ```shell
-sudo chgrp -R mygroup /dir/path       # 1st option
-#sudo chown -R :mygroup /dir/path     # 2nd option
-sudo chmod -R g+s /dir/path           # set default group
-sudo chmod -R g+rwx /dir/path         # 1st option
-#sudo setfacl -d -m g::rwx /dir/path  # 2nd option
+sudo chgrp -R mygroup /dir/path  # change group
+
+# First -x: remove executable for files AND dirs
+# Then +X: add executable for directories only
+# +s: set default group
+sudo chmod -R g-wx+rX+s,o-wrx /dir/path
+
+# Grant read (r) and execute (x) permissions to a specific user
+# -m, --modify: Modifies or adds an ACL entry for a file or directory
+# -d, --default: Modifies or removes the default ACL for a directory
+# -R, --recursive: Performs the operation on all files and subdirectories
+# -b, --remove-all: Remove all ACL entries from a file
+# -x, --remove: Remove a specific ACL entry
+# -k, --remove-default: Remove default ACL entries from a directory
+sudo setfacl -m u:username:rx /dir/path
+sudo setfacl -m u:username:rx /dir/path/path2
+sudo setfacl -Rm u:username:rX /dir/path/path2   # user
+sudo setfacl -Rdm u:username:rX /dir/path/path2  # default (future) user
+
+# sudo setfacl -Rx u:username /dir/path  # remove user from ACL
+#sudo setfacl -d -m g::rwx /dir/path  # add group in ACL
+
+# check it
+getfacl /dir/path/path2
 
 # check it
 ls -hal
+
+# Remove executablefrom all PNG files in the directory
+find /dir/path -type f -name "*.png" -exec chmod -x {} \;
 ```
 
 ---
