@@ -176,6 +176,8 @@ sudo chgrp -R mygroup /dir/path  # change group
 # Then +X: add executable for directories only
 # +s: set default group
 sudo chmod -R g-wx+rX+s,o-wrx /dir/path
+# or
+sudo chmod -R g-w,o-wrx /dir/path
 
 # Grant read (r) and execute (x) permissions to a specific user
 # -m, --modify: Modifies or adds an ACL entry for a file or directory
@@ -198,8 +200,14 @@ getfacl /dir/path/path2
 # check it
 ls -hal
 
-# Remove executablefrom all PNG files in the directory
-find /dir/path -type f -name "*.png" -exec chmod -x {} \;
+# Remove executable from all PNG files in the directory
+sudo find /dir/path -type f -name "*.png" -exec sudo chmod ugo-x {} \;
+
+# Count number of PNG files in the directory
+find /dir/path -type f -name "*.png" | wc -l
+
+# Find and change the owner of the files
+sudo find /dir/path -user username1 -exec sudo chown username2:groupname {} \;
 ```
 
 ---
