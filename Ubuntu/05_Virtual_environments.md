@@ -217,7 +217,7 @@ python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f
 
 # Install additional libraries for PyTorch
 # Hugging Face libraries
-pip install transformers[torch] datasets huggingface_hub timm evaluate rouge_score textattack
+pip install transformers[torch] datasets huggingface_hub timm evaluate rouge_score textattack pip install safetensors
 
 # Downgrade to `ipykernel==6.30.1` to fix the following error:
 #   ERROR  Python exception updating progress:, error: PyErr ...
