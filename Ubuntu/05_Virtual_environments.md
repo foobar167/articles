@@ -246,7 +246,7 @@ else:
 # install main libraries
 pip install matplotlib scipy numpy opencv-python pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
 # install additional libraries
-pip install nibabel pytest einops nltk
+pip install nibabel pytest einops nltk albumentations
 ```
 
 
