@@ -48,6 +48,7 @@ sudo apt install nemo      # Nemo file manager from MATE
 sudo apt install emacs     # Emacs editor
 sudo apt install filezilla # FileZilla free FTP
 sudo apt install geeqie geeqie-common  # Geeqie image viewer
+sudo apt install sqlitebrowser  # DB Browser for SQLite
 
 # pydot is a Python interface to Graphviz's dot
 # pydot is needed for TensorFlow
@@ -59,7 +60,8 @@ sudo apt install python3-pyparsing
 sudo apt install nvtop htop git mc autoconf make curl gcc g++ net-tools \
                  traceroute python-is-python3 nemo emacs filezilla \
                  geeqie geeqie-common \
-                 graphviz python3-pydot python3-pyparsing
+                 graphviz python3-pydot python3-pyparsing \
+                 sqlitebrowser
 
 filezilla &> /dev/null  # start FileZilla in background
 ```
