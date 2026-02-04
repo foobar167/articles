@@ -83,9 +83,12 @@ exec $SHELL  # restart the shell
 conda --version
 
 # If you'd prefer that conda's base environment not be activated on startup, 
-#   set the auto_activate_base parameter to false: 
-# conda config --set auto_activate_base false
-# conda init  # run initialization if necessary
+#   set the auto_activate_base parameter to false 
+
+# Initialize base virtual environment
+#./conda config --set auto_activate_base true
+#./conda init  # run initialization if necessary
+#exec $SHELL  # restart the shell
 
 # Update conda to the latest version
 conda update -n base -c defaults conda
