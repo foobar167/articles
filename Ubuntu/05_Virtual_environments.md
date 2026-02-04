@@ -169,13 +169,17 @@ and code related to TensorFlow and JAX will be removed in future versions.
 
 ![PyTorch install](./data/PyTorch_install.jpg)
 
+New CUDA doesn't support old GPU.
 For the **new GPU** choose CUDA version and run the code:
+
 ```shell
-conda create --name myenv  # create new virtual environment
+# For CUDA 13.0, you should install a Python version between 3.10 and 3.14
+conda create --name myenv python=3.13.*  # create new virtual env.
 conda activate myenv  # activate virtual environment
 
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
 ```
+
 For the **old GPU**:
 
 ```shell
@@ -183,12 +187,13 @@ conda create --name pytorch python=3.12.*  # for old GPU
 #conda create --name pytorch python=3.13.*
 conda activate pytorch
 
-# New CUDA doesn't support old GPU
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu129
-
 # For old GPU install previous versions of CUDA and PyTorch.
 pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+```
 
+Check the installation and install additional libraries:
+
+```shell
 # Check the installation
 python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'GPU count: {torch.cuda.device_count()}'); print(f'GPU name: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"N/A\"}')"
 
@@ -208,6 +213,7 @@ pip install "fastprogress==1.0.3"
 
 Small script to check PyTorch installation.
 Enter `ipython` or `python` console and copy-paste:
+
 ```python
 import torch
 print(f"PyTorch version: {torch.__version__}")
