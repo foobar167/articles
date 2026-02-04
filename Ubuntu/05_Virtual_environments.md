@@ -167,6 +167,17 @@ on PyTorch. While efforts will be made to maintain compatibility with
 the broader JAX/TF/Keras ecosystem, the core library will be streamlined,
 and code related to TensorFlow and JAX will be removed in future versions.
 
+![PyTorch install](./data/PyTorch_install.jpg)
+
+For the **new GPU** choose CUDA version and run the code:
+```shell
+conda create --name myenv  # create new virtual environment
+conda activate myenv  # activate virtual environment
+
+pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+```
+For the **old GPU**:
+
 ```shell
 conda create --name pytorch python=3.12.*  # for old GPU
 #conda create --name pytorch python=3.13.*
