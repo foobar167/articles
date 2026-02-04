@@ -177,7 +177,7 @@ For the **new GPU** choose CUDA version and run the code:
 conda create --name myenv python=3.13.*  # create new virtual env.
 conda activate myenv  # activate virtual environment
 
-pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
 ```
 
 For the **old GPU**:
@@ -203,12 +203,12 @@ pip install transformers[torch] datasets huggingface_hub timm evaluate rouge_sco
 
 # Downgrade to `ipykernel==6.30.1` to fix the following error:
 #   ERROR  Python exception updating progress:, error: PyErr ...
-pip install ipykernel==6.30.1
+#pip install ipykernel==6.30.1
 
 # Downgrade for old version of fastai
-pip install -Uqq ddgs fastai
-pip uninstall -y fastprogress
-pip install "fastprogress==1.0.3"
+#pip install -Uqq ddgs fastai
+#pip uninstall -y fastprogress
+#pip install "fastprogress==1.0.3"
 ```
 
 Small script to check PyTorch installation.
