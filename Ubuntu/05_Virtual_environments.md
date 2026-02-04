@@ -3,9 +3,9 @@
        - [Install Miniconda](#install-miniconda)
        - [Install Miniconda for Windows](#install-miniconda-windows)
        - [Configure Miniconda virtual environment](#configure-miniconda)
-       - [Install TensorFlow for GPU using PIP installer](#tensorflow-gpu-pip)
        - [Install PyTorch for GPU using PIP installer](#pytorch-gpu-pip)
        - [Install libraries using PIP installer](#libraries-pip)
+       - [Install TensorFlow for GPU using PIP installer](#tensorflow-gpu-pip)
 
 
 
@@ -78,6 +78,7 @@ curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 
 exec $SHELL  # restart the shell
+
 # Verify the installation
 conda --version
 
@@ -89,6 +90,9 @@ conda --version
 # Update conda to the latest version
 conda update -n base -c defaults conda
 #conda update --all
+
+# If conda update fails, specify the newest version explicitly
+#conda install -n base conda=26.1.0
 ```
 
 ---
@@ -145,47 +149,6 @@ conda activate myenv
 ```
 
 ---
-### <a name="tensorflow-gpu-pip" />Install TensorFlow for GPU using PIP installer
-
-For Nvidia driver version >= 550.107.02 and CUDA version >= 12.4
-
-[Keras 3](https://keras.io/getting_started/) is starting with TensorFlow 2.16.
-
-```shell script
-conda create --name pytorch python=3.12.*  # for old GPU
-#conda create --name tf python=3.13.*
-conda activate tf
-
-pip install tensorflow[and-cuda]  # for GPU support
-
-# Install additional libraries for TensorFlow
-pip install tf_keras tensorflow-hub
-
-# To fix the error:
-#   Loaded runtime CuDNN library: 8.8.0 but source was compiled with: 8.9.6.
-#   One should explicitly write CUDNN path to virtual environment.
-# Configure the system paths to activate when running the virtual environment
-mkdir -p $CONDA_PREFIX/etc/conda/activate.d
-echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> \
-    $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> \
-    $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-
-# Check the installation
-python -c "import tensorflow as tf; print(f'TF version: {tf.__version__}'); print(tf.config.list_physical_devices('GPU')); print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
-#python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
-```
-To use Keras 3 replace `.h5` with `.keras`. To use Keras 2:
-```shell script
-pip install tf_keras  # install it to use Keras 2
-
-# These lines would need to be before any `import tensorflow` statement
-import os
-os.environ["TF_USE_LEGACY_KERAS"] = "1"  # use Keras 2 instead of Keras 3
-```
-
----
 ### <a name="pytorch-gpu-pip" />Install PyTorch for GPU using PIP installer
 
 For new GPU visit [PyTorch get started](https://pytorch.org/get-started/locally/) website.
@@ -195,7 +158,7 @@ For old GPU visit [PyTorch previous versions](https://pytorch.org/get-started/pr
 Also for old GPU use older versions of Python. For example,
 `torch==2.5.1` use `python=3.12.*` or older.
 
-With the upcoming release of **Transformers v5**, Hugging Face has announced
+**Important note:** With the upcoming release of **Transformers v5**, Hugging Face has announced
 the deprecation of TensorFlow and JAX support in favor of a stronger focus
 on PyTorch. While efforts will be made to maintain compatibility with
 the broader JAX/TF/Keras ecosystem, the core library will be streamlined,
@@ -254,6 +217,51 @@ pip install matplotlib scipy numpy opencv-python pillow scikit-learn scikit-imag
 pip install nibabel pytest einops nltk albumentations
 
 ```
+
+
+
+---
+### <a name="tensorflow-gpu-pip" />Install TensorFlow for GPU using PIP installer
+
+For Nvidia driver version >= 550.107.02 and CUDA version >= 12.4
+
+[Keras 3](https://keras.io/getting_started/) is starting with TensorFlow 2.16.
+
+```shell script
+conda create --name pytorch python=3.12.*  # for old GPU
+#conda create --name tf python=3.13.*
+conda activate tf
+
+pip install tensorflow[and-cuda]  # for GPU support
+
+# Install additional libraries for TensorFlow
+pip install tf_keras tensorflow-hub
+
+# To fix the error:
+#   Loaded runtime CuDNN library: 8.8.0 but source was compiled with: 8.9.6.
+#   One should explicitly write CUDNN path to virtual environment.
+# Configure the system paths to activate when running the virtual environment
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> \
+    $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> \
+    $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+
+# Check the installation
+python -c "import tensorflow as tf; print(f'TF version: {tf.__version__}'); print(tf.config.list_physical_devices('GPU')); print('\n' + str(len(tf.config.list_physical_devices('GPU'))) + ' GPU available\n')"
+#python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+```
+To use Keras 3 replace `.h5` with `.keras`. To use Keras 2:
+```shell script
+pip install tf_keras  # install it to use Keras 2
+
+# These lines would need to be before any `import tensorflow` statement
+import os
+os.environ["TF_USE_LEGACY_KERAS"] = "1"  # use Keras 2 instead of Keras 3
+```
+
+
 
 
 
