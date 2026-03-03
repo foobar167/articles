@@ -18,5 +18,5 @@ for GGML and GGUF models, inspired by the original KoboldAI.
 ---
 ### <a name="install" />Install KoboldCpp
 
-To install KoboldCPP...
+To install KoboldCPP on Ubuntu ...
 
