@@ -426,12 +426,15 @@ Port 2222
 
 sudo systemctl restart ssh  # restart the SSH service
 
-
 sudo ufw allow 2222/tcp  # enable 2222 port
-sudo ufw delete allow 22/tcp  # desable 22 port
+sudo ufw delete allow 22/tcp  # disable 22 port
 
-sudo iptables -A INPUT -p tcp --dport 2222 -j ACCEPT
-sudo iptables -D INPUT -p tcp --dport 22 -j ACCEPT
+sudo ufw allow 443/tcp  # open HTTPS port
+sudo ufw allow 80/tcp   # open HTTP port
+
+# ufw is a frontend for iptables
+#sudo iptables -A INPUT -p tcp --dport 2222 -j ACCEPT
+#sudo iptables -D INPUT -p tcp --dport 22 -j ACCEPT
 #sudo iptables-save > /etc/iptables/rules.v4
 
 # Use `-p` flag to specify SSH port number
