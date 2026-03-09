@@ -31,7 +31,7 @@ How-to:
    - [Mount USB](#mount)
    - [Open console](#console)
    - [Open image in Midnight Commander](#open-image-in-mc)
-   - [Power-limit NVIDIA GPU to 300 Wt](#power-limit)
+   - [Power-limit NVIDIA GPU to 300 W](#power-limit)
    - [Restart system](#ubuntu-reboot)
    - [Run scripts on start up](#autorun)
    - [Set environment variable](#envvar)
@@ -867,7 +867,7 @@ type/^JPEG
 ```
 
 ---
-### <a name="power-limit" />Power-limit NVIDIA GPU to 300 Wt
+### <a name="power-limit" />Power-limit NVIDIA GPU to 300 W
 
 View the acceptable power range for the H800 video card:
 ```shell
