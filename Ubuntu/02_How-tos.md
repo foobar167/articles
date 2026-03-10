@@ -544,9 +544,11 @@ See [Backup and delete deprecated user accounts](07_Website_software.md/#account
 ---
 ### <a name="end-user-session" />End user session
 ```shell script
-killall -user username  # end all processes for the user
-pkill -u username
-kill -9 -1 # end all processes you can
+sudo killall -user username  # end all processes for the user
+sudo pkill -u username
+sudo ps -u username  # view all processes for the user
+
+#kill -9 -1 # end all processes you can
 ```
 
 ---
