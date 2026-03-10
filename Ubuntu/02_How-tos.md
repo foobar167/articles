@@ -924,6 +924,11 @@ sudo systemctl start nvidia-limit.service
 # Output
 # Created symlink /etc/systemd/system/multi-user.target.wants/nvidia-limit.service →
 #   /etc/systemd/system/nvidia-limit.service.
+
+# To fix the "Unit nvidia-persistenced.service is masked" error, you must
+# unmask and enable the service, as it is currently blocked from starting.
+#sudo systemctl unmask nvidia-persistenced
+#sudo systemctl enable --now nvidia-persistenced
 ```
 
 Check the service is running:
