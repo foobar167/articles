@@ -272,12 +272,12 @@ Press `<Ctrl>+<Alt>+<T>` and open console window.
 
 ```shell script
 # Show list of all users
-cat /etc/passwd
+cat /etc/passwd | grep username
 # or
 cut -d: -f1 /etc/passwd
 
-# Show list of all goups
-cat /etc/group
+# Show list of all goups or info about user
+cat /etc/group | grep username
 
 # To create user with questions, directory and sceleton files
 sudo adduser username
@@ -312,6 +312,8 @@ sudo chfn username
 sudo addgroup groupname
 # Add existing user to the group
 sudo usermod -a -G groupname username
+# Delete existing user from the group
+sudo gpasswd -d username groupname
 ```
 
 Enable or disable the user account:
