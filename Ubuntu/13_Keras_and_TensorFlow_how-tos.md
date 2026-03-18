@@ -322,9 +322,20 @@ import torch.nn as nn
 
 # 1. Determine the device
 gpu = 3  # for DL4 server GPU can be: 0 (H800), 1 (V100), 2 (V100), 3 (V100), 4 (V100)
+#%set_env CUDA_VISIBLE_DEVICES={GPU}  # for Jupyter Notebook, after change, restart the kernel
+
 # Check if CUDA (GPU) is available, otherwise use CPU
 device = f"cuda:{gpu}" if torch.cuda.is_available() else "cpu"
 print(f"Using device: {device}")
+
+# Show GPU name
+if torch.cuda.is_available():  # make sure GPU is available
+    num = torch.cuda.device_count()
+    print(f"GPU count: {num}")
+    for i in range(num):
+        print(f"GPU {i} name: {torch.cuda.get_device_name(i)}")
+else:
+    print("GPU is not available")
 
 # 2. Define a simple model
 class SimpleModel(nn.Module):
