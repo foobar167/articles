@@ -924,6 +924,7 @@ Activate the `nvidia-limit.service` service:
 sudo systemctl daemon-reload
 sudo systemctl enable nvidia-limit.service
 sudo systemctl start nvidia-limit.service
+sudo systemctl restart nvidia-limit.service
 
 # Output
 # Created symlink /etc/systemd/system/multi-user.target.wants/nvidia-limit.service →
