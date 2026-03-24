@@ -31,7 +31,7 @@ How-to:
    - [Mount USB](#mount)
    - [Open console](#console)
    - [Open image in Midnight Commander](#open-image-in-mc)
-   - [Power-limit NVIDIA GPU to 300 W](#power-limit)
+   - [Power-limit NVIDIA GPU to 200 W](#power-limit)
    - [Restart system](#ubuntu-reboot)
    - [Run scripts on start up](#autorun)
    - [Set environment variable](#envvar)
@@ -871,7 +871,7 @@ type/^JPEG
 ```
 
 ---
-### <a name="power-limit" />Power-limit NVIDIA GPU to 300 W
+### <a name="power-limit" />Power-limit NVIDIA GPU to 200 W
 
 View the acceptable power range for the H800 video card:
 ```shell
@@ -912,7 +912,7 @@ Requires=nvidia-persistenced.service
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/nvidia-smi --persistence-mode=1
-ExecStart=/usr/bin/nvidia-smi -i 4 --power-limit=300
+ExecStart=/usr/bin/nvidia-smi -i 4 --power-limit=200
 RemainAfterExit=yes
 
 [Install]
@@ -942,26 +942,32 @@ sudo systemctl status nvidia-limit.service
 #nvidia-smi -q | grep "Persistence Mode"
 ```
 
-Check that GPU has `Persistence-M` is `On` and `Pwr:Usage/Cap` is `46W / 300W`.
-Also, check that `Current Power Limit` is `300.00 W` and
-`Requested Power Limit` is `300.00 W`:
+Check that GPU has `Persistence-M` is `On` and `Pwr:Usage/Cap` is `46W / 200W`.
+Also, check that `Current Power Limit` is `200.00 W` and
+`Requested Power Limit` is `200.00 W`:
 ```shell
-nvidia-smi
+nvidia-smi  # check the temperature, should be from 60°C to 85°C
+
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA H800 PCIe               On  |   00000000:B5:00.0 Off |                    0 |
+| N/A   76C    P0            192W /  200W |   78024MiB /  81559MiB |     80%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
 
 nvidia-smi -q -d POWER -i 4
 
 ==============NVSMI LOG==============
 
-Timestamp                                 : Mon Mar  9 10:19:36 2026
+Timestamp                                 : Tue Mar 24 15:48:35 2026
 Driver Version                            : 550.144.03
 CUDA Version                              : 12.4
 
 Attached GPUs                             : 5
 GPU 00000000:B5:00.0
     GPU Power Readings
-        Power Draw                        : 46.38 W
- --->>  Current Power Limit               : 300.00 W
- --->>  Requested Power Limit             : 300.00 W
+        Power Draw                        : 46.55 W
+ ---->> Current Power Limit               : 200.00 W
+ ---->> Requested Power Limit             : 200.00 W
         Default Power Limit               : 310.00 W
         Min Power Limit                   : 200.00 W
         Max Power Limit                   : 350.00 W
