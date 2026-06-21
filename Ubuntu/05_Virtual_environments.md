@@ -123,7 +123,7 @@ and select `Edit the system environment variables`.
 (replace `c:\ProgramData\miniconda3\` with your actual installation path):
       * `c:\ProgramData\miniconda3\`
       * `c:\ProgramData\miniconda3\Scripts\`
-      * 'c:\ProgramData\miniconda3\condabin\'
+      * `c:\ProgramData\miniconda3\condabin\`
       * `c:\ProgramData\miniconda3\Library\bin\`
 (This might be necessary for certain executables)
    * Click `OK` on all open windows to save the changes.
