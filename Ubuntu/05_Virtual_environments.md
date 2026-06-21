@@ -178,7 +178,8 @@ For the **new GPU** choose CUDA version and run the code:
 conda create --name myenv python=3.13.*  # create new virtual env.
 conda activate myenv  # activate virtual environment
 
-pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu132
+#pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
 ```
 
 For the **old GPU**:
@@ -189,7 +190,7 @@ conda create --name pytorch python=3.12.*  # for old GPU
 conda activate pytorch
 
 # For old GPU install previous versions of CUDA and PyTorch.
-pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+pip3 install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
 ```
 
 Check the installation and install additional libraries:
@@ -200,16 +201,19 @@ python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f
 
 # Install additional libraries for PyTorch
 # Hugging Face libraries
-pip install transformers[torch] datasets huggingface_hub timm evaluate rouge_score textattack safetensors fastai
+pip3 install transformers[torch] datasets huggingface_hub timm evaluate safetensors fastai
+
+# Additional libraries
+#pip3 install rouge_score textattack
 
 # Downgrade to `ipykernel==6.30.1` to fix the following error:
 #   ERROR  Python exception updating progress:, error: PyErr ...
-#pip install ipykernel==6.30.1
+#pip3 install ipykernel==6.30.1
 
 # Downgrade for old version of fastai
-#pip install -Uqq ddgs fastai
-#pip uninstall -y fastprogress
-#pip install "fastprogress==1.0.3"
+#pip3 install -Uqq ddgs fastai
+#pip3 uninstall -y fastprogress
+#pip3 install "fastprogress==1.0.3"
 ```
 
 Small script to check PyTorch installation.
@@ -233,9 +237,9 @@ else:
 
 ```shell
 # install main libraries
-pip install matplotlib scipy numpy opencv-python pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
+pip3 install matplotlib scipy numpy opencv-python pillow scikit-learn scikit-image pandas ipython jupyter tqdm graphviz
 # install additional libraries
-pip install nibabel pytest einops nltk albumentations
+pip3 install nibabel pytest einops nltk albumentations
 ```
 
 
