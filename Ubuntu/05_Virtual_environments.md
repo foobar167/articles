@@ -120,16 +120,17 @@ and select `Edit the system environment variables`.
    * Under `System variables` or `User variables`
 (depending on your installation type), find the Path variable and click `Edit`.
    * Click `New` and add the following paths
-(replace `c:\Programs\miniconda3\` with your actual installation path):
-      * `c:\Programs\miniconda3\`
-      * `c:\Programs\miniconda3\Scripts\`
-      * `c:\Programs\miniconda3\Library\bin\`
+(replace `c:\ProgramData\miniconda3\` with your actual installation path):
+      * `c:\ProgramData\miniconda3\`
+      * `c:\ProgramData\miniconda3\Scripts\`
+      * 'c:\ProgramData\miniconda3\condabin\'
+      * `c:\ProgramData\miniconda3\Library\bin\`
 (This might be necessary for certain executables)
    * Click `OK` on all open windows to save the changes.
    * Restart `Command Prompt`: close and reopen any existing `cmd.exe`
 windows for the changes to take effect.
    * Check it with `conda --version` command.
-   * Set write permission to the `c:\Programs\miniconda3\` folder for all users.
+   * Set write permission to the `c:\ProgramData\miniconda3\` folder for all users.
 
 ---
 ### <a name="configure-miniconda" />Configure Miniconda virtual environment
