@@ -191,6 +191,7 @@ conda activate pytorch
 
 # For old GPU install previous versions of CUDA and PyTorch.
 pip3 install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+pip3 install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
 ```
 
 Check the installation and install additional libraries:
