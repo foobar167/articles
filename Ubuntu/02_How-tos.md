@@ -906,8 +906,10 @@ Add the following text in the `nvidia-limit.service` file:
 ```shell
 [Unit]
 Description=Set NVIDIA Power Limit
-After=nvidia-persistenced.service
-Requires=nvidia-persistenced.service
+# Old dependency - After=nvidia-persistenced.service
+# Old dependency - Requires=nvidia-persistenced.service
+# New dependency:
+After=graphical.target
 
 [Service]
 Type=oneshot
