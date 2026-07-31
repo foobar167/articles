@@ -171,6 +171,9 @@ Make sure new files are owned by the default group,
 set `g+s` and set the default permissions to read, write and execute.
 
 ```shell
+# Change owner and group for the directory
+sudo chown -R username:username /data/username
+
 # Set default write permission for group 
 sudo setfacl -R -m g::rwx,d:g::rwx working_directory/
 #sudo chmod g+s working_directory/
