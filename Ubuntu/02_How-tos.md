@@ -878,7 +878,7 @@ type/^JPEG
 
 View the acceptable power range for the H800 video card:
 ```shell
-nvidia-smi -q -d POWER -i 4
+nvidia-smi -q -d POWER -i 3
 
 ==============NVSMI LOG==============
 
@@ -908,16 +908,14 @@ sudo nano /etc/systemd/system/nvidia-limit.service
 Add the following text in the `nvidia-limit.service` file:
 ```shell
 [Unit]
-Description=Set NVIDIA Power Limit
-# Old dependency - After=nvidia-persistenced.service
-# Old dependency - Requires=nvidia-persistenced.service
-# New dependency:
-After=graphical.target
+Description=Set NVIDIA H800 Power Limit
+# Should I uncomment it?
+# After=graphical.target
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/nvidia-smi --persistence-mode=1
-ExecStart=/usr/bin/nvidia-smi -i 4 --power-limit=200
+ExecStart=/usr/bin/nvidia-smi -i 3 --power-limit=200
 RemainAfterExit=yes
 
 [Install]
@@ -959,7 +957,7 @@ nvidia-smi  # check the temperature, should be from 60°C to 85°C
 |                                         |                        |             Disabled |
 +-----------------------------------------+------------------------+----------------------+
 
-nvidia-smi -q -d POWER -i 4
+nvidia-smi -q -d POWER -i 3
 
 ==============NVSMI LOG==============
 
